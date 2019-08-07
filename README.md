@@ -40,7 +40,7 @@ README.md
 ```
 
 ### Data structure
-// Put screen of the tree here
+![Tree structure](http://www.cse.unsw.edu.au/~billw/cs9414/notes/kr/rules/rules1.gif)
 
 ```buildoutcfg
 class Node:

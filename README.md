@@ -42,7 +42,16 @@ README.md
 ### Data structure
 ![Tree structure](http://www.cse.unsw.edu.au/~billw/cs9414/notes/kr/rules/rules1.gif)
 
-```buildoutcfg
+A node can be of 2 types. A connector node representing: `| & ^ -> <->`. Or an atom. Atoms are the <Explain here>.
+```python
 class Node:
+    nodes: Node # Link to child nodes
+
+class ConnectorNode(Node):
+    type: ConnectorType
+
+class AtomNode(Node):
+    name: String
+
     
 ```

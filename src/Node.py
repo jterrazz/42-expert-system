@@ -1,6 +1,5 @@
 from enum import Enum
 
-
 class ConnectorType(Enum):
     OR = '|'
     AND = '&'
@@ -17,10 +16,11 @@ class NodeLink:
 
 class Node:
     def __init__(self):
-        self.nodes = []
+        self.children = []
+        self.status = None
 
-    def append_node(self, node):
-        self.nodes.append(node)
+    def append_child(self, node):
+        self.children.append(node)
 
 
 # A connector can be | & ^ -> <->

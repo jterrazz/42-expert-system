@@ -52,6 +52,4 @@ class ConnectorNode(Node):
 
 class AtomNode(Node):
     name: String
-
-    
 ```

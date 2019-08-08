@@ -46,27 +46,11 @@ README.md
 
 A **tree** represents a set of rules. It is composed of nodes divided in two types : `ConnectorNode` and `AtomNode`. They are linked with `NodeLink` instances.
 
-Each **connector** and **atom** are represented uniquely, meaning that we **will never have any duplication**. Also a `!node` will be  the same as `!node`.
-
-```python
-AtomNode('A') # No duplicated
-
-# Only one '&' ConnectorNode for:
-(A & B)
-!(A & B)
-
-# Different '&' ConnectorNode for:
-(A & B)
-(!A & B)
-```
-
-For example you will never find two `A` atoms, but also never find two times the same exact `ConnectorNode` instance ` *(more detail for what connectors are after)*.
-
-This is really important for cases where an OR is placed in the conclusion side. For example with `A | B => C ; D => A | B`. If we know `D` is true, we must consider the `(A | B)` as true without knowing A or B.
-
 #### The node class
 
 Both of `ConnectorNode` and `AtomNode` share the `Node` class. Each node instance can have **many children** (saved in`node_instance.children` ). A child can have a negative relation to its parent, for example in `!A = B`. The `NodeLink` class is used to represent this relation between two nodes. This process is abstracted and you can follow the example below.
+
+A child represents the left part of the equation. So **if one a child is true, its parent is true**.
 
 ```python
 # !A => B
@@ -79,7 +63,22 @@ node_b.append_child(node_a, Sign.NEGATIVE)
 print(node_b.children) # [NodeLink(node_a, Sign.NEGATIVE)]
 ```
 
-A child represents the left part of the equation. So **if one your child is true, the current node is true**.
+Each **nodes** must be represented uniquely, meaning that we **must never have any duplication**. A `(node)` is considered the same as `!(node)`.
+
+For example you will never find two `A` atoms, but also never find two times the same exact `ConnectorNode` instance  *(more detail for what connectors are after)*. This is really important for cases where an OR is placed in the conclusion side. For example with `A | B => C ; D => A | B`. If we know `D` is true, we must consider the `(A | B)` as true without knowing A or B.
+
+```python
+AtomNode('A') # Only 1 instance for the whole tree
+AtomNode('B') # Only 1 instance for the whole tree
+
+# Only one '&' ConnectorNode for:
+(A & B)
+!(A & B)
+
+# Different '&' ConnectorNode for:
+(A & B)
+(!A & B)
+```
 
 #### The atom class
 

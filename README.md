@@ -6,8 +6,6 @@
 
 The project receives an **input file** as the first parameter.
 
-
-
 The file should describe a set of rules, initial facts and queries.
 
 ```
@@ -51,10 +49,16 @@ A **tree** represents a set of rules. It is composed of nodes divided in two typ
 Each **connector** and **atom** are represented uniquely, meaning that we **will never have any duplication**. Also a `!node` will be  the same as `!node`.
 
 ```python
-AtomNode('A') # Never two times the same
+AtomNode('A') # No duplicated
+
+# Only one '&' ConnectorNode for:
+(A & B)
+!(A & B)
+
+# Different '&' ConnectorNode for:
+(A & B)
+(!A & B)
 ```
-
-
 
 For example you will never find two `A` atoms, but also never find two times the same exact `ConnectorNode` instance ` *(more detail for what connectors are after)*.
 
@@ -82,13 +86,10 @@ A child represents the left part of the equation. So **if one your child is true
 An `AtomNode` represents one fact. It's presentation is an uppercase character.
 
 ```python
-AtomNode('A') # Unique
-
-# Only one & ConnectorNode for:
-(A & B)
+AtomNode('A')
 ```
 
-f#### The connector class
+#### The connector class
 
 A `ConnectorNode` is used to represent one operator in the `ConnectorType` set  ( one of `& | ^`). The elements used for this connector are saved in the `connector_nodes` property.
 
@@ -154,3 +155,10 @@ TODO (a & !a) impossible
 TODO (a XOR !a) always true, (a XOR a) always false
 
 TODO Since a child is equivalent to a OR Two childs a or !a always true
+
+```python
+(A & B) => C
+(!A & B)=> C # should detect impossible
+```
+
+

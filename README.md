@@ -130,6 +130,13 @@ c_or_d.append_connector_node(atom_d, Sign.POSITIVE)
 
 a_or_b.append_child(c_or_d)
 c_or_d.append_child(a_or_b)
+
+# We connect all the nodes to the tree
+tree = Tree()
+tree.add_atom(atom_a)
+tree.add_atom(atom_b)
+tree.add_atom(atom_c)
+tree.add_atom(atom_d)
 ```
 
 ### Special cases

@@ -93,7 +93,7 @@ class ConnectorNode(Node):
         self.type = connector_type
         self.connector_nodes = []
 
-    def append_connector_nodes(self, child, sign):
+    def append_connector_node(self, child, sign):
         link = NodeLink(child, sign)
         self.connector_nodes.append(link)
 

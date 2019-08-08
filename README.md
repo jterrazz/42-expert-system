@@ -82,10 +82,13 @@ A child represents the left part of the equation. So **if one your child is true
 An `AtomNode` represents one fact. It's presentation is an uppercase character.
 
 ```python
-node_a = AtomNode('A')
+AtomNode('A') # Unique
+
+# Only one & ConnectorNode for:
+(A & B)
 ```
 
-#### The connector class
+f#### The connector class
 
 A `ConnectorNode` is used to represent one operator in the `ConnectorType` set  ( one of `& | ^`). The elements used for this connector are saved in the `connector_nodes` property.
 

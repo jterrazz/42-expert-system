@@ -1,5 +1,5 @@
 # Rename Tree class
-from .Node import AtomNode, ConnectorNode, ConnectorType
+from Node import AtomNode, ConnectorNode, ConnectorType
 from asciitree import LeftAligned
 from collections import OrderedDict as OD
 
@@ -45,10 +45,18 @@ class Tree:
 
     @staticmethod
     def create_printable_node(parent):
+        children = []
         child_id = 0
         child = parent.children.first
-        while (child):
 
+        printable_name = "CONNECTOR" if isinstance(ConnectorType, parent) else parent.name
+
+        while child:
+            children.append(Tree.create_printable_node(child))
             child_id += 1
             child = parent.children[child_id]
 
+        return OD({ printable_name : children })
+
+tree = Tree()
+tree.print()

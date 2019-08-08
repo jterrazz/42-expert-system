@@ -1,12 +1,12 @@
 # Rename Tree class
-from Node import AtomNode, ConnectorNode, ConnectorType
-from asciitree import LeftAligned
-from collections import OrderedDict as OD
+from Node import AtomNode, ConnectorNode, ConnectorType, Sign
 
+
+# TODO Test to print with no nodes
 class Tree:
     def __init__(self):
         self.atoms = []
-        self.root = ConnectorType(ConnectorType.AND)
+        rootNode = ConnectorNode(ConnectorType.AND)
 
         atom_a = AtomNode('A')
         atomB = AtomNode('B')
@@ -14,49 +14,41 @@ class Tree:
         atomD = AtomNode('D')
         atomE = AtomNode('E')
 
-        connectorBC = ConnectorNode(ConnectorType.AND)
-        connectorBC.append_child(atomB)
-        connectorBC.append_child(atomC)
+        rootNode.append_child(atom_a, Sign.POSITIVE)
+        rootNode.append_child(atomB, Sign.POSITIVE)
+        rootNode.append_child(atomC, Sign.POSITIVE)
+        rootNode.append_child(atomD, Sign.POSITIVE)
+        rootNode.append_child(atomE, Sign.POSITIVE)
+        self.root_node = rootNode
 
-        atom_a.append_child(connectorBC)
+        connectorBC = ConnectorNode(ConnectorType.AND)
+        connectorBC.append_child(atomB, Sign.POSITIVE)
+        connectorBC.append_child(atomC, Sign.POSITIVE)
+
+        atom_a.append_child(connectorBC, Sign.POSITIVE)
 
         connectorDE = ConnectorNode(ConnectorType.OR)
-        connectorDE.append_child(atomD)
-        connectorDE.append_child(atomE)
-        atomB.append_child(connectorDE)
+        connectorDE.append_child(atomD, Sign.POSITIVE)
+        connectorDE.append_child(atomE, Sign.POSITIVE)
+        atomB.append_child(connectorDE, Sign.POSITIVE)
 
-        atomC.append_child(atomB)
+        atomC.append_child(atomB, Sign.POSITIVE)
 
         connectorBC2 = ConnectorNode(ConnectorType.AND)
-        connectorBC2.append_child(atomC)
-        connectorBC2.append_child(atomB)
+        connectorBC2.append_child(atomC, Sign.POSITIVE)
+        connectorBC2.append_child(atomB, Sign.POSITIVE)
 
         connectorBCorA = ConnectorNode(ConnectorType.OR)
-        connectorBCorA.append_child(connectorBC2)
-        connectorBCorA.append_child(atom_a)
-        atomD.append_child(connectorBCorA)
+        connectorBCorA.append_child(connectorBC2, Sign.POSITIVE)
+        connectorBCorA.append_child(atom_a, Sign.POSITIVE)
+        atomD.append_child(connectorBCorA, Sign.POSITIVE)
 
     # def resolve(self):
+    # Resulte not until  true is found but also try filling everything to set some data
 
-    def print(self): # Replace the official print method
-        self.printable_tree = {
-            'TREEEEEEE': self.create_printable_node(self.root) # Replace name
-        }
-
-    @staticmethod
-    def create_printable_node(parent):
-        children = []
-        child_id = 0
-        child = parent.children.first
-
-        printable_name = "CONNECTOR" if isinstance(ConnectorType, parent) else parent.name
-
-        while child:
-            children.append(Tree.create_printable_node(child))
-            child_id += 1
-            child = parent.children[child_id]
-
-        return OD({ printable_name : children })
+    def __repr__(self):
+        print("🌲🌲🌲 \033[95mTree representation\033[0m 🌲🌲🌲")
+        print (self.root_node)
 
 tree = Tree()
-tree.print()
+# print(tree)

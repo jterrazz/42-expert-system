@@ -14,33 +14,33 @@ class Tree:
         atomD = AtomNode('D')
         atomE = AtomNode('E')
 
-        rootNode.append_child(atom_a, Sign.POSITIVE)
-        rootNode.append_child(atomB, Sign.POSITIVE)
-        rootNode.append_child(atomC, Sign.POSITIVE)
-        rootNode.append_child(atomD, Sign.POSITIVE)
-        rootNode.append_child(atomE, Sign.POSITIVE)
+        rootNode.append_connector_nodes(atom_a, Sign.POSITIVE)
+        rootNode.append_connector_nodes(atomB, Sign.POSITIVE)
+        rootNode.append_connector_nodes(atomC, Sign.POSITIVE)
+        rootNode.append_connector_nodes(atomD, Sign.POSITIVE)
+        rootNode.append_connector_nodes(atomE, Sign.POSITIVE)
         self.root_node = rootNode
 
         connectorBC = ConnectorNode(ConnectorType.AND)
-        connectorBC.append_child(atomB, Sign.POSITIVE)
-        connectorBC.append_child(atomC, Sign.POSITIVE)
+        connectorBC.append_connector_nodes(atomB, Sign.POSITIVE)
+        connectorBC.append_connector_nodes(atomC, Sign.POSITIVE)
 
         atom_a.append_child(connectorBC, Sign.POSITIVE)
 
         connectorDE = ConnectorNode(ConnectorType.OR)
-        connectorDE.append_child(atomD, Sign.POSITIVE)
-        connectorDE.append_child(atomE, Sign.POSITIVE)
+        connectorDE.append_connector_nodes(atomD, Sign.POSITIVE)
+        connectorDE.append_connector_nodes(atomE, Sign.POSITIVE)
         atomB.append_child(connectorDE, Sign.POSITIVE)
 
         atomC.append_child(atomB, Sign.POSITIVE)
 
         connectorBC2 = ConnectorNode(ConnectorType.AND)
-        connectorBC2.append_child(atomC, Sign.POSITIVE)
-        connectorBC2.append_child(atomB, Sign.POSITIVE)
+        connectorBC2.append_connector_nodes(atomC, Sign.POSITIVE)
+        connectorBC2.append_connector_nodes(atomB, Sign.POSITIVE)
 
         connectorBCorA = ConnectorNode(ConnectorType.OR)
-        connectorBCorA.append_child(connectorBC2, Sign.POSITIVE)
-        connectorBCorA.append_child(atom_a, Sign.POSITIVE)
+        connectorBCorA.append_connector_nodes(connectorBC2, Sign.POSITIVE)
+        connectorBCorA.append_connector_nodes(atom_a, Sign.POSITIVE)
         atomD.append_child(connectorBCorA, Sign.POSITIVE)
 
     # def resolve(self):

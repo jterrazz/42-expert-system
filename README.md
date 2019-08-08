@@ -110,6 +110,28 @@ print(connector_ab.connector_nodes) # [NodeLink(node_a, Sign.POSITIVE), NodeLink
 
 The `Tree` class keeps an `AND` opertor connected to each of the Atoms in the `root`property. So that we have unique tree for the whole set of rules.
 
+#### Example
+
+```python
+# Example: (A | !B) <=> (C & D)
+
+atom_a = AtomNode('A')
+atom_b = AtomNode('B')
+atom_c = AtomNode('C')
+atom_d = AtomNode('D')
+
+a_or_b = ConnectorNode(ConnectorType.OR)
+a_or_b.append_connector_node(atom_a, Sign.POSITIVE)
+a_or_b.append_connector_node(atom_b, Sign.NEGATIVE)
+
+c_or_d = ConnectorNode(ConnectorType.AND)
+c_or_d.append_connector_node(atom_c, Sign.POSITIVE)
+c_or_d.append_connector_node(atom_d, Sign.POSITIVE)
+
+a_or_b.append_child(c_or_d)
+c_or_d.append_child(a_or_b)
+```
+
 ### Special cases
 
 #### Equivalence
@@ -158,7 +180,14 @@ TODO Since a child is equivalent to a OR Two childs a or !a always true
 
 ```python
 (A & B) => C
-(!A & B)=> C # should detect impossible
+(!A & B)=> C # should detect impossible (or maybe it's valid ????)
+
+# Maybe we can check that by saying that at the same level, the same letter must have same sign
+
+(A & B) | (!A & B) => C # Same problem
+
 ```
 
+TODO A => !A
 
+TODO A | B => !B | C # should be  valid  I guess (!B  Becomes false so its (A | B) => C))

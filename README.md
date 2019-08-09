@@ -163,11 +163,11 @@ node_a = AtomNode('A')
 node_b = AtomNode('B')
 node_c = AtomNode('C')
 
-connector_ab = ConnectorNode(ConnectorType.AND)
-connector_ab.append_connector_node(node_b, Sign.POSITIVE)
-connector_ab.append_connector_node(node_c, Sign.POSITIVE)
+connector_bc = ConnectorNode(ConnectorType.AND)
+connector_bc.append_connector_node(node_b, Sign.POSITIVE)
+connector_bc.append_connector_node(node_c, Sign.POSITIVE)
 
-connector_ab.append_child(node_a)
+connector_bc.append_child(node_a)
 ```
 
 #### Negatives in conclusion

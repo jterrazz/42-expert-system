@@ -40,7 +40,7 @@ def ft_check_queries_in_list_atoms(atoms, queries):
     return True
 
 def ft_parser(content_file):
-    regex_rule = re.compile(r"(^(\()*(!)?(\()*[A-Z](\))*((\s*[(+|^\|)]\s*(\()*(!)?(\()*[A-Z](\))*)*)?\s*(=>|<=>)\s*(\()*(!)?(\()*[A-Z](\))*((\s*[(+|^\|)]\s*(\()*(!)?(\()*[A-Z](\))*)*)?\s*$)")
+    regex_rule = re.compile(r"(^((\()*(!){0,2})*[A-Z](\))*((\s*[(+|^\|)]\s*((\()*(!){0,2})*[A-Z](\))*)*)?\s*(=>|<=>)\s*((\()*(!){0,2})*[A-Z](\))*((\s*[(+|^\|)]\s*((\()*(!){0,2})*[A-Z](\))*)*)?\s*$)")
     # regex_rule = re.compile(r"(^(\()*(!)?(\()*[A-Z](\))*\s+[(+|^\|)]\s+(\()*(!)?(\()*[A-Z](\))*((\s+[(+|^\|)]\s+(\()*(!)?(\()*[A-Z](\))*)*)?\s+(=>|<=>)\s(\()*(!)?(\()*[A-Z](\))*((\s+[(+|^\|)]\s+(\()*(!)?(\()*[A-Z](\))*)*)?$)")
     regex_fact = re.compile(r"(^=[A-Z]*$)")
     regex_queries = re.compile(r"(^\?[A-Z]*$)")
@@ -80,7 +80,7 @@ def ft_parser(content_file):
 if __name__ == "__main__":
    try:
        with open(sys.argv[1]) as f:
-           content = f.readlines()
+           content = f.readlines(1000)
    except:
        print('Error opening file for reading ..!!')
 

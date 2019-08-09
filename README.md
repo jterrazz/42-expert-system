@@ -82,7 +82,7 @@ AtomNode('B') # Only 1 instance for the whole tree
 
 #### The atom class
 
-An `AtomNode` represents one fact. It's presentation is an uppercase character.
+An `AtomNode` represents one fact. It's representation is an uppercase character.
 
 ```python
 AtomNode('A')
@@ -107,7 +107,7 @@ print(connector_ab.connector_nodes) # [NodeLink(node_a, Sign.POSITIVE), NodeLink
 
 #### The tree class
 
-The `Tree` class keeps an `AND` opertor connected to each of the Atoms in the `root`property. So that we have unique tree for the whole set of rules.
+The `Tree` class keeps an `AND` operator connected to each of the Atoms in the `root`property. So that we have one tree for the whole set of rules.
 
 #### Example
 
@@ -142,7 +142,7 @@ tree.add_atom(atom_d)
 
 #### Equivalence
 
-In the special case of an equivalence, both nodes will be mutually children.
+In the case of an equivalence, both nodes will be parent and child.
 
 ```python
 # Example: Creates the A <=> B

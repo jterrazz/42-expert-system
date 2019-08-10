@@ -57,7 +57,9 @@ connectorBC.append_operand(atomB)
 connectorBC.append_operand(atomB.negative)  # When the algo will check for incoherence it will bug here
 connectorBC.append_operand(atomC)
 
-atom_a.negative.append_child(connectorBC)
+connectorBC.negative.append_child(atomE.negative) # TODO Not printed
+
+atom_a.negative.append_child(connectorBC) # should print as -(A)
 
 connectorDE = ConnectorNode(ConnectorType.OR)
 connectorDE.append_operand(atomD)

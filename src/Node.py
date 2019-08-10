@@ -40,7 +40,7 @@ class ConnectorNode(Node):
         self.operands = []
 
     def __repr__(self):
-        return "Connector: " + self.type.value + "\n"
+        return f'({self.type.value})'
 
     def append_operand(self, child, sign):
         if sign == Sign.NEGATIVE:
@@ -57,4 +57,4 @@ class AtomNode(Node):
         self.name = name
 
     def __repr__(self):
-        return "Atom: " + self.name + "\n"
+        return f'({self.name})'

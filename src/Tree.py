@@ -8,7 +8,7 @@ class Tree:
         self.root_node = ConnectorNode(ConnectorType.AND)
 
     def add_atom(self, node):
-        self.root_node.append_operand(node, Sign.POSITIVE)
+        self.root_node.append_operand(node)
 
     def __repr__(self):
         str = "🌲🌲🌲 \033[92mTree representation\033[0m 🌲🌲🌲\n"
@@ -27,9 +27,11 @@ class Tree:
     def print_node_children_handler(node, node_result, operand_results, children_results):
         str = node_result
         for res in operand_results:
-            str += res
+            if res:
+                str += res
         for res in children_results:
-            str += res
+            if res:
+                str += res
         return str
 
 
@@ -51,26 +53,26 @@ tree.add_atom(atomD)
 tree.add_atom(atomE)
 
 connectorBC = ConnectorNode(ConnectorType.AND)
-connectorBC.append_operand(atomB, Sign.POSITIVE)
-connectorBC.append_operand(atomB, Sign.NEGATIVE)  # When the algo will check for incoherence it will bug here
-connectorBC.append_operand(atomC, Sign.POSITIVE)
+connectorBC.append_operand(atomB)
+connectorBC.append_operand(atomB.negative)  # When the algo will check for incoherence it will bug here
+connectorBC.append_operand(atomC)
 
-atom_a.append_child(connectorBC, Sign.POSITIVE)
+atom_a.negative.append_child(connectorBC)
 
 connectorDE = ConnectorNode(ConnectorType.OR)
-connectorDE.append_operand(atomD, Sign.POSITIVE)
-connectorDE.append_operand(atomE, Sign.POSITIVE)
-atomB.append_child(connectorDE, Sign.POSITIVE)
+connectorDE.append_operand(atomD)
+connectorDE.append_operand(atomE)
+atomB.append_child(connectorDE)
 
-atomC.append_child(atomB, Sign.POSITIVE)
+atomC.append_child(atomB)
 
 connectorBC2 = ConnectorNode(ConnectorType.AND)
-connectorBC2.append_operand(atomC, Sign.POSITIVE)
-connectorBC2.append_operand(atomB, Sign.POSITIVE)
+connectorBC2.append_operand(atomC)
+connectorBC2.append_operand(atomB)
 
 connectorBCorA = ConnectorNode(ConnectorType.OR)
-connectorBCorA.append_operand(connectorBC2, Sign.POSITIVE)
-connectorBCorA.append_operand(atom_a, Sign.POSITIVE)
-atomD.append_child(connectorBCorA, Sign.POSITIVE)
+connectorBCorA.append_operand(connectorBC2)
+connectorBCorA.append_operand(atom_a)
+atomD.append_child(connectorBCorA)
 
 print(tree)

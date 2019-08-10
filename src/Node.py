@@ -28,6 +28,29 @@ class Node:
         else:
             self.children.append(child)
 
+    def parse(self, node_handler, child_results_handler):
+        return self.parse_handler(node_handler, child_results_handler, 0, True)
+
+    def parse_handler(self, node_handler, result_handler, level, force_node):
+        if self.parsed and not force_node:
+            return ""
+
+        node_result = node_handler(self, level)
+        if self.parsed:
+            return node_result
+
+        self.parsed = True
+        child_results = []
+        operand_results = []
+        if isinstance(self, ConnectorNode):
+            for child in self.operands:
+                operand_results.append(child.parse_handler(node_handler, result_handler, level + (1 if isinstance(child, ConnectorNode) else 0), True))
+        for child in self.children:
+            child_results.append(child.parse_handler(node_handler, result_handler, level + 1, False))
+        self.parsed = False
+
+        return result_handler(self, node_result, operand_results, child_results)
+
 '''
 A connector can be one of | & ^ -> <->
 '''

@@ -48,25 +48,38 @@ class Tree:
 
     def __repr__(self):
         str = "🌲🌲🌲 \033[92mTree representation\033[0m 🌲🌲🌲\n"
-        return str + self.parse_full_node(self.root_node, 0, True)
+        return str + self.root_node.parse(self.print_node_handler, self.print_node_children_handler)
 
     @staticmethod
-    def parse_full_node(node, increment, force_node):
-        if node.parsed and not force_node:
-            return ""
+    def print_node_handler(node, level):
+        return ' ' * level * 4 + node.__repr__() + '\n'
 
-        str = ' ' * increment +  node.__repr__() + '\n'
-        if node.parsed:
-            return str
-
-        node.parsed = True
-        if isinstance(node, ConnectorNode):
-            for child in node.operands:
-                str += Tree.parse_full_node(child, increment + (4 if isinstance(child, ConnectorNode) else 0), True)
-        for child in node.children:
-            str += Tree.parse_full_node(child, increment + 4, False)
-        node.parsed = False
+    @staticmethod
+    def print_node_children_handler(node, node_result, operand_results, children_results):
+        str = node_result
+        for res in operand_results:
+            str += res
+        for res in children_results:
+            str += res
         return str
+
+    # @staticmethod
+    # def parse_full_node(node, increment, force_node):
+    #     if node.parsed and not force_node:
+    #         return ""
+    #
+    #     str =
+    #     if node.parsed:
+    #         return str
+    #
+    #     node.parsed = True
+    #     if isinstance(node, ConnectorNode):
+    #         for child in node.operands:
+    #             str += Tree.parse_full_node(child, increment + (4 if isinstance(child, ConnectorNode) else 0), True)
+    #     for child in node.children:
+    #         str += Tree.parse_full_node(child, increment + 4, False)
+    #     node.parsed = False
+    #     return str
 
 
 tree = Tree()

@@ -22,7 +22,7 @@ class Tree:
         self.root_node = rootNode
 
         connectorBC = ConnectorNode(ConnectorType.AND)
-        connectorBC.append_operand(atomB, Sign.POSITIVE)
+        connectorBC.append_operand(atomB, Sign.NEGATIVE)
         connectorBC.append_operand(atomC, Sign.POSITIVE)
 
         atom_a.append_child(connectorBC, Sign.POSITIVE)
@@ -51,8 +51,13 @@ class Tree:
         return str + self.root_node.parse(self.print_node_handler, self.print_node_children_handler)
 
     @staticmethod
-    def print_node_handler(node, level):
-        return ' ' * level * 4 + node.__repr__() + '\n'
+    def print_node_handler(node, negative, level):
+        str = ' ' * level * 4
+        if (negative):
+            str += '\033[91m-\033[0m'
+        if isinstance(node, ConnectorNode):
+            return str + '\033[95m' + node.__repr__() + '\033[0m\n'
+        return str + '\033[94m' + node.__repr__() + '\033[0m\n'
 
     @staticmethod
     def print_node_children_handler(node, node_result, operand_results, children_results):
@@ -62,25 +67,6 @@ class Tree:
         for res in children_results:
             str += res
         return str
-
-    # @staticmethod
-    # def parse_full_node(node, increment, force_node):
-    #     if node.parsed and not force_node:
-    #         return ""
-    #
-    #     str =
-    #     if node.parsed:
-    #         return str
-    #
-    #     node.parsed = True
-    #     if isinstance(node, ConnectorNode):
-    #         for child in node.operands:
-    #             str += Tree.parse_full_node(child, increment + (4 if isinstance(child, ConnectorNode) else 0), True)
-    #     for child in node.children:
-    #         str += Tree.parse_full_node(child, increment + 4, False)
-    #     node.parsed = False
-    #     return str
-
 
 tree = Tree()
 print(tree)

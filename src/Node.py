@@ -5,7 +5,6 @@ class ConnectorType(Enum):
     OR = '|'
     AND = '&'
     XOR = '^'
-    NOT = '!'
 
 
 class Sign(Enum):
@@ -13,29 +12,37 @@ class Sign(Enum):
     NEGATIVE = "-"
 
 
+class NegativeNode():
+    def __init__(self, positive_node):
+        self.node = positive_node
+        self.children = []
+
+    # Add the negative state here
+    def parse_handler(self, node_handler, result_handler, negative, level, force_node):
+        return self.node.parse_handler(node_handler, result_handler, True, level, force_node)
+
+
 class Node:
     def __init__(self):
         self.children = []
         self.parsed = 0
         self.result = None
-        self.negative_node = None
+        self.opposite_node = NegativeNode(self)
 
     def append_child(self, child, sign):
         if sign == Sign.NEGATIVE:
-            if not self.negative_node:
-                self.negative_node = ConnectorNode(ConnectorType.NOT)
-            self.negative_node.children.append(child)
+            self.opposite_node.children.append(child)
         else:
             self.children.append(child)
 
     def parse(self, node_handler, child_results_handler):
-        return self.parse_handler(node_handler, child_results_handler, 0, True)
+        return self.parse_handler(node_handler, child_results_handler, False, 0, True)
 
-    def parse_handler(self, node_handler, result_handler, level, force_node):
+    def parse_handler(self, node_handler, result_handler, negative, level, force_node):
         if self.parsed and not force_node:
             return ""
 
-        node_result = node_handler(self, level)
+        node_result = node_handler(self, negative, level)
         if self.parsed:
             return node_result
 
@@ -44,9 +51,9 @@ class Node:
         operand_results = []
         if isinstance(self, ConnectorNode):
             for child in self.operands:
-                operand_results.append(child.parse_handler(node_handler, result_handler, level + (1 if isinstance(child, ConnectorNode) else 0), True))
+                operand_results.append(child.parse_handler(node_handler, result_handler, False, level + (1 if isinstance(child, ConnectorNode) else 0), True))
         for child in self.children:
-            child_results.append(child.parse_handler(node_handler, result_handler, level + 1, False))
+            child_results.append(child.parse_handler(node_handler, result_handler, False, level + 1, False))
         self.parsed = False
 
         return result_handler(self, node_result, operand_results, child_results)
@@ -67,9 +74,7 @@ class ConnectorNode(Node):
 
     def append_operand(self, child, sign):
         if sign == Sign.NEGATIVE:
-            if not self.negative_node:
-                self.negative_node = ConnectorNode(ConnectorType.NOT)
-            self.negative_node.operands.append(child)
+            self.operands.append(child.opposite_node)
         else:
             self.operands.append(child)
 

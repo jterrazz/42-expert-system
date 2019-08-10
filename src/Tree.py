@@ -16,9 +16,9 @@ class Tree:
 
     @staticmethod
     def print_node_handler(node, negative, level):
-        str = ' ' * level * 4
-        if negative:
-            str += '\033[97m!\033[0m'
+        str = ' ' * level
+        # if negative:
+        #     str += '\033[97m!\033[0m'
         if isinstance(node, ConnectorNode):
             return str + '\033[95m' + node.__repr__() + '\033[0m\n'
         return str + '\033[94m' + node.__repr__() + '\033[0m\n'
@@ -45,6 +45,7 @@ atomB = AtomNode('B')
 atomC = AtomNode('C')
 atomD = AtomNode('D')
 atomE = AtomNode('E')
+atomY = AtomNode('Y')
 
 tree.add_atom(atom_a)
 tree.add_atom(atomB)
@@ -58,8 +59,11 @@ connectorBC.append_operand(atomB.negative)  # When the algo will check for incoh
 connectorBC.append_operand(atomC)
 
 connectorBC.negative.append_child(atomE.negative) # TODO Badly printed
+connectorBC.append_child(atomE.negative)
 
-atom_a.negative.append_child(connectorBC) # should print as -(A)
+# atom_a.negative.append_child(connectorBC) # should print as -(A)
+atom_a.negative.append_child(connectorBC.negative)
+# atomB.negative.append_child(atomY)
 
 connectorDE = ConnectorNode(ConnectorType.OR)
 connectorDE.append_operand(atomD)

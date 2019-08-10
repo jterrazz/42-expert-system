@@ -24,11 +24,12 @@ class NegativeNode():
     # Add the negative state here
     def parse_handler(self, node_handler, result_handler, negative, level, force_node):
         if not self.children.__len__():
-            str = ' ' * level * 4 + f'-{ self.node.__repr__()}\n'
-        else:
-            str = ' ' * level * 4 + f'-\n'
+            return ' ' * level + f'-{ self.node.__repr__()}\n'
+
+        str = ' ' * level + "-\n"
         for child in self.children:
-            str += child.parse_handler(node_handler, result_handler, True, level + 1, False)
+            str += child.parse_handler(node_handler, result_handler, True, level + 4, False)
+        str += self.node.parse_handler(node_handler, result_handler, False, level, False)
         return str
         # return self.parse_handler(node_handler, result_handler, True, level, force_node)
 
@@ -48,7 +49,7 @@ class Node:
 
     def parse_handler(self, node_handler, result_handler, negative, level, force_node):
         if self.parsed and not force_node:
-            return None
+            return ""
 
         node_result = node_handler(self, negative, level)
         if self.parsed:
@@ -59,11 +60,11 @@ class Node:
         operand_results = []
         if isinstance(self, ConnectorNode):
             for child in self.operands:
-                operand_results.append(child.parse_handler(node_handler, result_handler, False, level + (1 if isinstance(child, ConnectorNode) else 0), True))
+                operand_results.append(child.parse_handler(node_handler, result_handler, False, level + (4 if isinstance(child, ConnectorNode) else 0), True))
         for child in self.children:
-            child_results.append(child.parse_handler(node_handler, result_handler, False, level + 1, False))
+            child_results.append(child.parse_handler(node_handler, result_handler, False, level + 4, False))
         if self.negative.children.__len__():
-            child_results.append( self.negative.parse_handler(node_handler, result_handler, True, level + 1, False)) # Need to handle result better
+            child_results.append(self.negative.parse_handler(node_handler, result_handler, True, level, False)) # Need to handle result better
         self.parsed = False
 
         return result_handler(self, node_result, operand_results, child_results)

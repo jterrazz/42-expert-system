@@ -99,8 +99,8 @@ connector_ab = ConnectorNode(ConnectorType.AND)
 node_a = AtomNode('A')
 node_b = AtomNode('B')
 
-connector_ab.append_connector_node(node_a, Sign.POSITIVE)
-connector_ab.append_connector_node(node_b, Sign.NEGATIVE)
+connector_ab.append_operand(node_a, Sign.POSITIVE)
+connector_ab.append_operand(node_b, Sign.NEGATIVE)
 
 print(connector_ab.connector_nodes) # [NodeLink(node_a, Sign.POSITIVE), NodeLink(node_b, Sign.NEGATIVE)]
 ```
@@ -120,12 +120,12 @@ atom_c = AtomNode('C')
 atom_d = AtomNode('D')
 
 a_or_b = ConnectorNode(ConnectorType.OR)
-a_or_b.append_connector_node(atom_a, Sign.POSITIVE)
-a_or_b.append_connector_node(atom_b, Sign.NEGATIVE)
+a_or_b.append_operand(atom_a, Sign.POSITIVE)
+a_or_b.append_operand(atom_b, Sign.NEGATIVE)
 
 c_or_d = ConnectorNode(ConnectorType.AND)
-c_or_d.append_connector_node(atom_c, Sign.POSITIVE)
-c_or_d.append_connector_node(atom_d, Sign.POSITIVE)
+c_or_d.append_operand(atom_c, Sign.POSITIVE)
+c_or_d.append_operand(atom_d, Sign.POSITIVE)
 
 a_or_b.append_child(c_or_d)
 c_or_d.append_child(a_or_b)
@@ -164,8 +164,8 @@ node_b = AtomNode('B')
 node_c = AtomNode('C')
 
 connector_bc = ConnectorNode(ConnectorType.AND)
-connector_bc.append_connector_node(node_b, Sign.POSITIVE)
-connector_bc.append_connector_node(node_c, Sign.POSITIVE)
+connector_bc.append_operand(node_b, Sign.POSITIVE)
+connector_bc.append_operand(node_c, Sign.POSITIVE)
 
 connector_bc.append_child(node_a)
 ```

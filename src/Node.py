@@ -23,7 +23,10 @@ class NegativeNode():
 
     # Add the negative state here
     def parse_handler(self, node_handler, result_handler, negative, level, force_node):
-        str = ' ' * level * 4 + f'-{ self.node.__repr__()}\n'
+        if not self.children.__len__():
+            str = ' ' * level * 4 + f'-{ self.node.__repr__()}\n'
+        else:
+            str = ' ' * level * 4 + f'-\n'
         for child in self.children:
             str += child.parse_handler(node_handler, result_handler, True, level + 1, False)
         return str
@@ -60,7 +63,7 @@ class Node:
         for child in self.children:
             child_results.append(child.parse_handler(node_handler, result_handler, False, level + 1, False))
         if self.negative.children.__len__():
-            child_results.append( self.negative.parse_handler(node_handler, result_handler, True, level, False)) # Need to handle result better
+            child_results.append( self.negative.parse_handler(node_handler, result_handler, True, level + 1, False)) # Need to handle result better
         self.parsed = False
 
         return result_handler(self, node_result, operand_results, child_results)

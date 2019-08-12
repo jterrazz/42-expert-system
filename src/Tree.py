@@ -7,12 +7,16 @@ class Tree:
         self.atoms = []
         self.root_node = ConnectorNode(ConnectorType.AND)
 
+    def __repr__(self):
+        str = "🌲🌲🌲 \033[92mTree representation\033[0m 🌲🌲🌲\n"
+        return str + self.root_node.parse(self.print_node_handler, self.print_node_result_handler)
+
     def add_atom(self, node):
         self.root_node.append_operand(node)
 
-    def __repr__(self):
-        str = "🌲🌲🌲 \033[92mTree representation\033[0m 🌲🌲🌲\n"
-        return str + self.root_node.parse(self.print_node_handler, self.print_node_children_handler)
+    def resolve_atom(self, atom_str):
+        return
+
 
     @staticmethod
     def print_node_handler(node, negative, level):
@@ -24,7 +28,7 @@ class Tree:
         return str + '\033[94m' + node.__repr__() + '\033[0m\n'
 
     @staticmethod
-    def print_node_children_handler(node, node_result, operand_results, children_results):
+    def print_node_result_handler(node, node_result, operand_results, children_results):
         str = node_result
         for res in operand_results:
             if res:
@@ -48,21 +52,21 @@ atomE = AtomNode('E')
 atomY = AtomNode('Y')
 
 tree.add_atom(atom_a)
-tree.add_atom(atomB)
-tree.add_atom(atomC)
-tree.add_atom(atomD)
-tree.add_atom(atomE)
+# tree.add_atom(atomB)
+# tree.add_atom(atomC)
+# tree.add_atom(atomD)
+# tree.add_atom(atomE)
 
 connectorBC = ConnectorNode(ConnectorType.AND)
 connectorBC.append_operand(atomB)
-connectorBC.append_operand(atomB.negative)  # When the algo will check for incoherence it will bug here
+# connectorBC.append_operand(atomB.negative)  # When the algo will check for incoherence it will bug here
 connectorBC.append_operand(atomC)
 
-connectorBC.negative.append_child(atomE.negative) # TODO Badly printed
-connectorBC.append_child(atomE.negative)
+# connectorBC.negative.append_child(atomE.negative) # TODO Badly printed
+# connectorBC.append_child(atomE.negative)
 
-# atom_a.negative.append_child(connectorBC) # should print as -(A)
-atom_a.negative.append_child(connectorBC.negative)
+atom_a.append_child(connectorBC) # should print as -(A)
+# atom_a.negative.append_child(connectorBC.negative)
 # atomB.negative.append_child(atomY)
 
 connectorDE = ConnectorNode(ConnectorType.OR)

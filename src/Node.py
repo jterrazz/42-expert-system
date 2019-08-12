@@ -13,7 +13,7 @@ class Sign(Enum):
     NEGATIVE = "-"
 
 
-class NegativeNode():
+class NegativeNode:
     def __init__(self, positive_node):
         self.node = positive_node
         self.children = []

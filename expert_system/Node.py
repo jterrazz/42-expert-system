@@ -46,6 +46,8 @@ class Node:
 
     def set_status(self, status):
         self.status = status
+        print(f'{ self.__repr__() } is now', status)
+        return status
 
     '''
     Recursive parser, used for
@@ -94,7 +96,7 @@ class Node:
 
     @staticmethod
     def resolve_node(node, negative, level):
-        print("resolving node", node.status)
+        print(f'Current node { node.__repr__() } is', node.status)
         return node.status
 
     @staticmethod
@@ -103,8 +105,7 @@ class Node:
 
         for child_res in  children_res:
             if child_res is not None:
-                node.status = child_res
-                return node.status
+                return node.set_status(child_res)
 
         # Need refactoring
         if isinstance(node, ConnectorNode):
@@ -113,12 +114,14 @@ class Node:
             for op_res in operands_res:
                 # If none stop
 
-                if res is None:
-                    res = op_res
+                if op_res is None:
+                    print("Found none")
+                    found_none = True
                     continue
 
-                if op_res is None:
-                    found_none = True
+                if res is None:
+                    print("Set first el to ", op_res)
+                    res = op_res
                     continue
 
                 if node.type is ConnectorType.AND:
@@ -129,18 +132,14 @@ class Node:
                     res ^= op_res
 
             if found_none:
-                if node.type is ConnectorType.OR and res is False:
-                    node.status = None
-                    return node.status
-                elif node.type is ConnectorType.AND or node.type is ConnectorType.XOR:
+                if node.type is ConnectorType.OR:
+                    if res is False:
+                        return node.set_status(None)
+                elif (node.type is ConnectorType.AND and res is True) or (node.type is ConnectorType.XOR):
                     node.status = None
                     return node.status
 
-            node.status = res
-            return res
-
-        # Set node.status if children give it
-        print("Resolved children", node.status)
+            return node.set_status(res)
 
         return node.status
 
@@ -173,6 +172,7 @@ class AtomNode(Node):
 
     def __repr__(self):
         return repr_node_status(f'({self.name})', self.status)
+
 
 # Put in class
 def repr_node_status(str, value):

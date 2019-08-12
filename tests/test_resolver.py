@@ -38,11 +38,19 @@ def test_and_relations_true():
     assert tree.resolve_atom("D") is True
 
 
-def test_and_relations_false():
+def test_and_relations_false_0():
     tree = TreeFactory.get_and_abc()
     tree.add_fact("A", True)
     tree.add_fact("B", False)
     tree.add_fact("C", True)
+    assert tree.resolve_atom("D") is False
+
+
+def test_and_relations_false_1():
+    tree = TreeFactory.get_and_abc()
+    tree.add_fact("A", False)
+    tree.add_fact("B", None)
+    tree.add_fact("C", False)
     assert tree.resolve_atom("D") is False
 
 
@@ -54,7 +62,14 @@ def test_and_relations_none():
     assert tree.resolve_atom("D") is None
 
 
-def test_or_relations_true():
+def test_or_relations_true_0():
+    tree = TreeFactory.get_or_ab()
+    tree.add_fact("A", False)
+    tree.add_fact("B", True)
+    assert tree.resolve_atom("C") is True
+
+
+def test_or_relations_true_1():
     tree = TreeFactory.get_or_abc()
     tree.add_fact("A", False)
     tree.add_fact("B", True)
@@ -70,11 +85,18 @@ def test_or_relations_false():
     assert tree.resolve_atom("D") is False
 
 
-def test_or_relations_none():
+def test_or_relations_none_0():
     tree = TreeFactory.get_or_abc()
     tree.add_fact("A", False)
     tree.add_fact("B", None)
     tree.add_fact("C", None)
+    assert tree.resolve_atom("D") is None
+
+
+def test_or_relations_none_1():
+    tree = TreeFactory.get_or_ab()
+    tree.add_fact("A", None)
+    tree.add_fact("B", False)
     assert tree.resolve_atom("D") is None
 
 
@@ -106,5 +128,25 @@ def test_xor_relations_false_1():
     tree = TreeFactory.get_xor_abc()
     tree.add_fact("A", True)
     tree.add_fact("B", None)
+    tree.add_fact("C", False)
+    assert tree.resolve_atom("D") is None
+
+
+def test_medium_0():
+    tree = TreeFactory.get_medium_0()
+    tree.add_fact("A", True)
+    assert tree.resolve_atom("D") is True
+
+
+def test_medium_1():
+    tree = TreeFactory.get_medium_0()
+    tree.add_fact("A", False)
+    tree.add_fact("B", False)
+    assert tree.resolve_atom("D") is False
+
+
+def test_medium_2():
+    tree = TreeFactory.get_medium_0()
+    tree.add_fact("B", False)
     tree.add_fact("C", False)
     assert tree.resolve_atom("D") is None

@@ -132,21 +132,83 @@ def test_xor_relations_false_1():
     assert tree.resolve_atom("D") is None
 
 
-def test_medium_0():
+def test_medium_true_0():
     tree = TreeFactory.get_medium_0()
     tree.add_fact("A", True)
     assert tree.resolve_atom("D") is True
 
 
-def test_medium_1():
+def test_medium_true_1():
+    tree = TreeFactory.get_medium_0()
+    tree.add_fact("B", True)
+    assert tree.resolve_atom("D") is True
+
+
+def test_medium_true_2():
+    tree = TreeFactory.get_medium_0()
+    tree.add_fact("B", True)
+    tree.add_fact("A", False)
+    assert tree.resolve_atom("D") is True
+
+
+def test_medium_true_3():
+    tree = TreeFactory.get_medium_0()
+    tree.add_fact("B", None)
+    tree.add_fact("C", None)
+    tree.add_fact("A", True)
+    assert tree.resolve_atom("D") is True
+
+
+def test_medium_false_0():
     tree = TreeFactory.get_medium_0()
     tree.add_fact("A", False)
     tree.add_fact("B", False)
     assert tree.resolve_atom("D") is False
 
 
-def test_medium_2():
+def test_medium_none_0():
     tree = TreeFactory.get_medium_0()
     tree.add_fact("B", False)
     tree.add_fact("C", False)
     assert tree.resolve_atom("D") is None
+
+
+def test_medium_none_1():
+    tree = TreeFactory.get_medium_0()
+    tree.add_fact("A", False)
+    tree.add_fact("C", False)
+    tree.add_fact("B", None)
+    assert tree.resolve_atom("D") is None
+
+
+def test_hard_true_0():
+    tree = TreeFactory.get_hard_0()
+    tree.add_fact("D", True)
+    assert tree.resolve_atom("C") is True
+
+
+def test_hard_true_1():
+    tree = TreeFactory.get_hard_0()
+    tree.add_fact("A", True)
+    tree.add_fact("B", True)
+    assert tree.resolve_atom("C") is True
+
+
+def test_hard_false_0():
+    tree = TreeFactory.get_hard_0()
+    tree.add_fact("A", False)
+    assert tree.resolve_atom("C") is False
+
+
+def test_hard_false_1():
+    tree = TreeFactory.get_hard_0()
+    tree.add_fact("D", False)
+    assert tree.resolve_atom("C") is False
+
+
+def test_hard_none_0():
+    tree = TreeFactory.get_hard_0()
+    tree.add_fact("A", True)
+    tree.add_fact("B", True)
+    assert tree.resolve_atom("D") is None
+

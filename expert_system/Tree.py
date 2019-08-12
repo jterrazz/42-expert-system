@@ -2,10 +2,14 @@
 from .Node import AtomNode, ConnectorNode, ConnectorType, Sign
 
 # Find a python already made error class ???
+
+
 class Error:
     def __init__(self, message):
-        self.message = message;
+        self.message = message
 
+# TODO Check for no duplicated also in the Conenctors
+# TODO Do methods for create Atom in tree
 class Tree:
     def __init__(self):
         self.atoms = []
@@ -35,7 +39,7 @@ class Tree:
         for atom in self.atoms:
             if isinstance(atom, AtomNode) and atom.name is atom_name:
                 return atom.resolve()
-        return False
+        return None
 
     @staticmethod
     def repr_node_handler(node, negative, level):
@@ -52,64 +56,3 @@ class Tree:
             if res:
                 str += res
         return str
-
-
-
-# Example
-
-tree = Tree()
-
-atom_a = AtomNode('A')
-atomB = AtomNode('B')
-atomC = AtomNode('C')
-atomD = AtomNode('D')
-atomE = AtomNode('E')
-atomY = AtomNode('Y')
-
-tree.add_atom(atom_a)
-# tree.add_atom(atomY)
-
-
-tree.add_atom(atomB)
-tree.add_atom(atomC)
-# tree.add_atom(atomD)
-# tree.add_atom(atomE)
-
-connectorBC = ConnectorNode(ConnectorType.AND)
-connectorBC.append_operand(atomB)
-# connectorBC.append_operand(atomB.negative)  # When the algo will check for incoherence it will bug here
-connectorBC.append_operand(atomC)
-
-# connectorBC.negative.append_child(atomE.negative) # TODO Badly printed
-# connectorBC.append_child(atomE.negative)
-
-# atom_a.append_child(atomY)
-atom_a.append_child(connectorBC) # should print as -(A)
-# atom_a.negative.append_child(connectorBC.negative)
-# atomB.negative.append_child(atomY)
-
-# connectorDE = ConnectorNode(ConnectorType.OR)
-# connectorDE.append_operand(atomD)
-# connectorDE.append_operand(atomE)
-# atomB.append_child(connectorDE)
-#
-# atomC.append_child(atomB)
-#
-# connectorBC2 = ConnectorNode(ConnectorType.AND)
-# connectorBC2.append_operand(atomC)
-# connectorBC2.append_operand(atomB)
-#
-# connectorBCorA = ConnectorNode(ConnectorType.OR)
-# connectorBCorA.append_operand(connectorBC2)
-# connectorBCorA.append_operand(atom_a)
-# atomD.append_child(connectorBCorA)
-
-tree.add_fact("B", True)
-tree.add_fact("C", True)
-# tree.add_fact("A", True)
-
-print(tree)
-
-print("Final result:", tree.resolve_atom("A"))
-
-print(tree)

@@ -106,24 +106,44 @@ class Node:
                 node.status = child_res
                 return node.status
 
+        # Need refactoring
         if isinstance(node, ConnectorNode):
-            for op_i, op_res in enumerate(operands_res):
+            res = None
+            found_none = False
+            for op_res in operands_res:
                 # If none stop
-                res = op_res
-                if op_i is 0:
+
+                if res is None:
+                    res = op_res
                     continue
+
+                if op_res is None:
+                    found_none = True
+                    continue
+
                 if node.type is ConnectorType.AND:
                     res &= op_res
                 elif node.type is ConnectorType.OR:
                     res |= op_res
                 else:
                     res ^= op_res
+
+            if found_none:
+                if node.type is ConnectorType.OR and res is False:
+                    node.status = None
+                    return node.status
+                elif node.type is ConnectorType.AND or node.type is ConnectorType.XOR:
+                    node.status = None
+                    return node.status
+
+            node.status = res
             return res
 
         # Set node.status if children give it
         print("Resolved children", node.status)
 
         return node.status
+
 '''
 A connector can be one of | & ^ -> <->
 '''
@@ -138,8 +158,12 @@ class ConnectorNode(Node):
     def __repr__(self):
         return repr_node_status(f'({self.type.value})', self.status)
 
-    def append_operand(self, child):
-        self.operands.append(child)
+    def append_operand(self, operand):
+        self.operands.append(operand)
+
+    def append_operands(self, operands):
+        for op in operands:
+            self.append_operand(op)
 
 
 class AtomNode(Node):

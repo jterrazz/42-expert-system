@@ -1,6 +1,10 @@
 # Rename Tree class
-from Node import AtomNode, ConnectorNode, ConnectorType, Sign
+from .Node import AtomNode, ConnectorNode, ConnectorType, Sign
 
+# Find a python already made error class ???
+class Error:
+    def __init__(self, message):
+        self.message = message;
 
 class Tree:
     def __init__(self):
@@ -15,6 +19,12 @@ class Tree:
         if node not in self.atoms:
             self.root_node.append_operand(node)
             self.atoms.append(node)
+        else:
+            raise Error("Node was already created")
+
+    def add_atoms(self, nodes):
+        for node in nodes:
+            self.add_atom(node)
 
     def add_fact(self, fact_name, value):
         for atom in self.atoms:

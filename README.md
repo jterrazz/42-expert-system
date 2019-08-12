@@ -2,6 +2,12 @@
 
 > Python implementation of a backward chaining inference engine.
 
+
+Put in requirment.txt:
+> pip install -U pytest
+>
+>python3 -m pytest -v
+
 ## Presentation
 
 The project receives an **input file** as the first parameter.

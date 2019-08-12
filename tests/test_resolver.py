@@ -212,3 +212,9 @@ def test_hard_none_0():
     tree.add_fact("B", True)
     assert tree.resolve_atom("D") is None
 
+
+def test_hard_deduction_true_0():
+    tree = TreeFactory.get_hard_deduction_1()
+    tree.add_fact("C", True)
+    assert tree.resolve_atom("D") is True
+

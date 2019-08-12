@@ -117,3 +117,23 @@ class TreeFactory:
         node_and_0.append_child(node_d)
         node_c.append_child(node_and_0)
         return tree
+
+    '''
+    (A | B) => C
+    D => (A & B)
+    '''
+    @staticmethod
+    def get_hard_deduction_1():
+        tree = Tree()
+        node_a = AtomNode("A")
+        node_b = AtomNode("B")
+        node_c = AtomNode("C")
+        node_d = AtomNode("D")
+        tree.add_atoms([node_a, node_b, node_c, node_d])
+        node_and_0 = ConnectorNode(ConnectorType.AND)
+        node_or_0 = ConnectorNode(ConnectorType.OR)
+        node_or_0.append_operands([node_a, node_b])
+        node_and_0.append_operands([node_a, node_b])
+        node_and_0.append_child(node_d)
+        node_c.append_child(node_or_0)
+        return tree

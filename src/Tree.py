@@ -8,27 +8,32 @@ class Tree:
         self.root_node = ConnectorNode(ConnectorType.AND)
 
     def __repr__(self):
-        str = "🌲🌲🌲 \033[92mTree representation\033[0m 🌲🌲🌲\n"
-        return str + self.root_node.parse(self.print_node_handler, self.print_node_result_handler)
+        return "🌲🌲🌲 \033[92mTree representation\033[0m 🌲🌲🌲\n" \
+            + self.root_node.parse(self.repr_node_handler, self.repr_result_handler)
 
     def add_atom(self, node):
-        self.root_node.append_operand(node)
+        if node not in self.atoms:
+            self.root_node.append_operand(node)
+            self.atoms.append(node)
 
-    def resolve_atom(self, atom_str):
-        return
+    def add_fact(self, fact_name, value):
+        for atom in self.atoms:
+            if isinstance(atom, AtomNode) and atom.name is fact_name:
+                atom.status = value
 
+    def resolve_atom(self, atom_name):
+        for atom in self.atoms:
+            if isinstance(atom, AtomNode) and atom.name is atom_name:
+                return atom.resolve()
+        return False
 
     @staticmethod
-    def print_node_handler(node, negative, level):
+    def repr_node_handler(node, negative, level):
         str = ' ' * level
-        # if negative:
-        #     str += '\033[97m!\033[0m'
-        if isinstance(node, ConnectorNode):
-            return str + '\033[95m' + node.__repr__() + '\033[0m\n'
-        return str + '\033[94m' + node.__repr__() + '\033[0m\n'
+        return str + node.__repr__() + "\n"
 
     @staticmethod
-    def print_node_result_handler(node, node_result, operand_results, children_results):
+    def repr_result_handler(node, node_result, operand_results, children_results):
         str = node_result
         for res in operand_results:
             if res:
@@ -52,8 +57,11 @@ atomE = AtomNode('E')
 atomY = AtomNode('Y')
 
 tree.add_atom(atom_a)
-# tree.add_atom(atomB)
-# tree.add_atom(atomC)
+# tree.add_atom(atomY)
+
+
+tree.add_atom(atomB)
+tree.add_atom(atomC)
 # tree.add_atom(atomD)
 # tree.add_atom(atomE)
 
@@ -65,24 +73,33 @@ connectorBC.append_operand(atomC)
 # connectorBC.negative.append_child(atomE.negative) # TODO Badly printed
 # connectorBC.append_child(atomE.negative)
 
+# atom_a.append_child(atomY)
 atom_a.append_child(connectorBC) # should print as -(A)
 # atom_a.negative.append_child(connectorBC.negative)
 # atomB.negative.append_child(atomY)
 
-connectorDE = ConnectorNode(ConnectorType.OR)
-connectorDE.append_operand(atomD)
-connectorDE.append_operand(atomE)
-atomB.append_child(connectorDE)
+# connectorDE = ConnectorNode(ConnectorType.OR)
+# connectorDE.append_operand(atomD)
+# connectorDE.append_operand(atomE)
+# atomB.append_child(connectorDE)
+#
+# atomC.append_child(atomB)
+#
+# connectorBC2 = ConnectorNode(ConnectorType.AND)
+# connectorBC2.append_operand(atomC)
+# connectorBC2.append_operand(atomB)
+#
+# connectorBCorA = ConnectorNode(ConnectorType.OR)
+# connectorBCorA.append_operand(connectorBC2)
+# connectorBCorA.append_operand(atom_a)
+# atomD.append_child(connectorBCorA)
 
-atomC.append_child(atomB)
+tree.add_fact("B", True)
+tree.add_fact("C", False)
+# tree.add_fact("A", True)
 
-connectorBC2 = ConnectorNode(ConnectorType.AND)
-connectorBC2.append_operand(atomC)
-connectorBC2.append_operand(atomB)
+print(tree)
 
-connectorBCorA = ConnectorNode(ConnectorType.OR)
-connectorBCorA.append_operand(connectorBC2)
-connectorBCorA.append_operand(atom_a)
-atomD.append_child(connectorBCorA)
+print("Final result:", tree.resolve_atom("A"))
 
 print(tree)

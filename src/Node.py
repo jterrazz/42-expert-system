@@ -107,11 +107,18 @@ class Node:
                 return node.status
 
         if isinstance(node, ConnectorNode):
-            if node.type == ConnectorType.AND:
-                res = True
-                for op in operands_res:
-                    res &= op
-                node.status = res
+            for op_i, op_res in enumerate(operands_res):
+                # If none stop
+                res = op_res
+                if op_i is 0:
+                    continue
+                if node.type is ConnectorType.AND:
+                    res &= op_res
+                elif node.type is ConnectorType.OR:
+                    res |= op_res
+                else:
+                    res ^= op_res
+            return res
 
         # Set node.status if children give it
         print("Resolved children", node.status)

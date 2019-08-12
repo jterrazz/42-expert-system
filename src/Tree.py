@@ -95,7 +95,7 @@ atom_a.append_child(connectorBC) # should print as -(A)
 # atomD.append_child(connectorBCorA)
 
 tree.add_fact("B", True)
-tree.add_fact("C", False)
+tree.add_fact("C", True)
 # tree.add_fact("A", True)
 
 print(tree)

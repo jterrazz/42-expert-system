@@ -14,6 +14,7 @@ class Tree:
     def __init__(self):
         self.atoms = []
         self.root_node = ConnectorNode(ConnectorType.AND)
+        self.root_node.parsed = True
 
     def __repr__(self):
         return "🌲🌲🌲 \033[92mTree representation\033[0m 🌲🌲🌲\n" \

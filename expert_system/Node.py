@@ -40,19 +40,18 @@ class NegativeNode:
         # return self.parse_handler(node_handler, result_handler, True, level, force_node)
 
 
+# Rename parent to operand_parent (find the Real name maybe connector)
 class Node:
     def __init__(self):
         self.children = []
         self.parents = []
-        self.parsed = 0
+        self.parsed = False
         self.status = None
         self.negative = NegativeNode(self)
 
     def append_child(self, child):
         if child not in self.children:
             self.children.append(child)
-        if self not in child.parents:
-            self.parents.append(self)
 
     def set_status(self, status):
         self.status = status
@@ -78,6 +77,7 @@ class Node:
             return ""
 
         node_result = node_handler(self, negative, level)
+
         if self.parsed:
             return node_result
 
@@ -119,8 +119,10 @@ class Node:
             return node_res
 
         # Better tests
+        # RESTART CANT HAPPEND HERE
         restart = True
         tested_parents = False
+
         while restart:
             print("Resolving the node ", node.__repr__())
             restart = False
@@ -128,18 +130,16 @@ class Node:
             for child_res in children_res:
                 if child_res is not None:
                     return node.set_status(child_res)
-            print("BLYATTTT1")
 
             # Need refactoring
             # Next try from the operands
+
             if isinstance(node, ConnectorNode):
                 res = None
                 found_none = False
-                print("BLYATTTT2")
 
                 for op_res in operands_res:
                     # If none stop
-                    print("BLYATTTT3")
 
                     # NEED TO CHECK ALL CHILDS ????? OR SIMPLY DON"T ALLOW MANY OPERANDS FOR THIS OP
                     if node.type is ConnectorType.IMPLY:
@@ -172,18 +172,14 @@ class Node:
 
             # Next try if a parent node
             if node.status is None and tested_parents is False:  # Find better way to check condition
-                print("Node status is actually ", node.status, " and node will check for parents")
-
-                # restart = True
+                print("WILL CHECK FOR NODE PAERENTS")
+                restart = False
                 tested_parents = True
                 for parent in node.parents:
-                    print("CHECKING PARENT :", parent.__repr__())
+                    print("PARENT", parent.__repr__(), " Parsed ", parent.parsed)
                     # Need to handle negatives
                     if parent.parsed is False:
-                        parent.parsed = True
                         parent.resolve()
-                        parent.parsed = False
-                print("ENDING CHECKING PARENTS: Node", node.__repr__())
 
         return node.status
 
@@ -203,6 +199,8 @@ class ConnectorNode(Node):
 
     def append_operand(self, operand):
         self.operands.append(operand)
+        if self not in operand.parents:
+            operand.parents.append(self)
 
     def append_operands(self, operands):
         for op in operands:
@@ -211,17 +209,38 @@ class ConnectorNode(Node):
     def set_status(self, status):
         super(ConnectorNode, self).set_status(status)
 
+        total = None
+        none_number = 0
+        none_index = 0
+
+        # GET RECURSIVELY THEIR VALUE FOR ALL OPERANDS WITH THE 3 TYPES AND FIND UNIT TEST FOR IT !!!!!!!!!!
+
         # Pass result to children
-        print("Will deduct node", self.__repr__())
-        if status is True:
-            print("WILL INDEEDDD   DEDUCT")
-            if self.type is ConnectorType.AND:
+        if self.type is ConnectorType.AND:
+            if status is True:
                 for op in self.operands:
                     # if op.status is not self.status:
                         # raise ConfictError("XX was XXX and XXXX asked to be set to XXXXX")
                     op.status = self.status
+        elif self.type is ConnectorType.OR:
+            # Check for conflicts here too
+            print("WILL DEDUCT FOR OR RELATION")
+            for i, op in enumerate(self.operands):
+                if op.status is None:
+                    none_index = i
+                    none_number += 1
+                    continue
+
+                if total is None:
+                    total = op.status
+                else:
+                    total |= op.status
+            # Only if one is None then we can deduct
+            if none_number is 1 and self.status is True:
+                self.operands[none_index].set_status(True)
+
+
             # Need OR and XOR cases
-        print("ENDED THE DEDUCTION")
         return status
 
 class AtomNode(Node):

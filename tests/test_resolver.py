@@ -226,3 +226,11 @@ def test_hard_deduction_none_1():
     assert tree.resolve_atom("A") is None
     assert tree.resolve_atom("B") is None
 
+
+"""  D => (A | B) Avec D Vrai et A faux """
+def test_hard_deduction_true():
+    tree = TreeFactory.get_hard_deduction_2()
+    tree.add_fact("D", True)
+    tree.add_fact("A", False)
+    assert tree.resolve_atom("B") is True
+

@@ -1,0 +1,8 @@
+A | B + C => E # E is false
+(F | G) + H => E # E is false
+
+?E
+=H
+
+# assertions
+# =H

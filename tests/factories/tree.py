@@ -178,9 +178,9 @@ class TreeFactory:
         D => !(A & B) Avec D Vrai
         D => !(A ^ B) Avec D Vrai => A None et B none
         
-        D => (A ^ B ^ C) with D True , C False
+        D => (A ^ B ^ C) with D True , C False => Indef
         
-        D => (A ^ B ^ C) with D True , C False
+        D => (A ^ B ^ C) with D True , A true => All to Index
         (X & Y) => A With X and Y True
     '''
 

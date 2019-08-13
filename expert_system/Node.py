@@ -209,6 +209,9 @@ class ConnectorNode(Node):
     def set_status(self, status):
         super(ConnectorNode, self).set_status(status)
 
+        if status is None:
+            return status
+
         total = None
         none_number = 0
         none_index = 0
@@ -239,6 +242,25 @@ class ConnectorNode(Node):
             # Only if one is None then we can deduct
             if none_number is 1 and self.status is True and total is False:
                 self.operands[none_index].set_status(True)
+
+
+        # Try finding  common ft with OR
+        elif self.type is ConnectorType.XOR:
+            # Check for conflicts here too
+            print("WILL DEDUCT FOR XOR RELATION")
+            for i, op in enumerate(self.operands):
+                if op.status is None:
+                    none_index = i
+                    none_number += 1
+                    continue
+
+                if total is None:
+                    total = op.status
+                elif op.status is not None:
+                    total ^= op.status
+            # Only if one is None then we can deduct
+            if none_number is 1:
+                self.operands[none_index].set_status(total ^ self.status)
 
 
             # Need OR and XOR cases

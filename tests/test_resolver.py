@@ -124,6 +124,9 @@ def test_xor_relations_false_0():
     assert tree.resolve_atom("D") is False
 
 
+'''
+A ^ B ^ C => D
+'''
 def test_xor_relations_false_1():
     tree = TreeFactory.get_xor_abc()
     tree.add_fact("A", True)
@@ -243,9 +246,9 @@ def test_hard_deduction_true():
 
 
 """ D => (A ^ B) Avec 2 connu """
-# def test_hard_xor_0():
-#     tree = TreeFactory.get_hard_xor()
-#     tree.add_fact("D", True)
-#     tree.add_fact("A", False)
-#     assert tree.resolve_atom("B") is True
+def test_hard_xor_0():
+    tree = TreeFactory.get_hard_xor()
+    tree.add_fact("D", True)
+    tree.add_fact("A", False)
+    assert tree.resolve_atom("B") is True
 

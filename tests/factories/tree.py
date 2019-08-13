@@ -131,10 +131,12 @@ class TreeFactory:
         node_a = AtomNode("A")
         node_b = AtomNode("B")
         node_d = AtomNode("D")
+        imply_node = ConnectorNode(ConnectorType.IMPLY)
         tree.add_atoms([node_a, node_b, node_d])
         node_and_0 = ConnectorNode(ConnectorType.AND)
         node_and_0.append_operands([node_a, node_b])
-        node_and_0.append_child(node_d)
+        node_and_0.append_child(imply_node)
+        imply_node.append_operand(node_d)
         return tree
 
     '''

@@ -1,4 +1,5 @@
 from enum import Enum
+from .Error import TreeError
 
 
 class ConnectorType(Enum):
@@ -197,8 +198,15 @@ class ConnectorNode(Node):
     def __repr__(self):
         return repr_node_status(f'({self.type.value})', self.status)
 
+    def append_child(self, child):
+        if self.type is ConnectorType.IMPLY:
+            raise TreeError("Implications child must set as an operand")
+        super(ConnectorNode, self).append_child(child)
+
     def append_operand(self, operand):
         self.operands.append(operand)
+
+        # PROBABLY ADD NO CONDITION FOR IMPLICATION
         if self not in operand.parents:
             operand.parents.append(self)
 

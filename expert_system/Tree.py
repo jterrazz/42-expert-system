@@ -1,12 +1,10 @@
 # Rename Tree class
 from .Node import AtomNode, ConnectorNode, ConnectorType, Sign
-
+from .Error import TreeError
 # Find a python already made error class ???
 
 
-class Error:
-    def __init__(self, message):
-        self.message = message
+
 
 # TODO Check for no duplicated also in the Conenctors
 # TODO Do methods for create Atom in tree
@@ -25,7 +23,7 @@ class Tree:
             self.root_node.append_operand(node)
             self.atoms.append(node)
         else:
-            raise Error("Node was already created")
+            raise TreeError("Node was already created")
 
     def add_atoms(self, nodes):
         for node in nodes:
@@ -37,6 +35,7 @@ class Tree:
                 atom.status = value
 
     def resolve_atom(self, atom_name):
+        print("WILL RESOLVE ATOM", atom_name)
         for atom in self.atoms:
             if isinstance(atom, AtomNode) and atom.name is atom_name:
                 return atom.resolve()

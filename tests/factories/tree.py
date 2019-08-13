@@ -243,10 +243,10 @@ class TreeFactory:
 
         d_imply = ConnectorNode(ConnectorType.IMPLY)
         node_or_0.append_child(d_imply)
-        d_imply.append_child(node_d)
+        d_imply.append_operand(node_d)
 
         c_imply = ConnectorNode(ConnectorType.IMPLY)
-        c_imply.append_child(node_or_0)
+        c_imply.append_operand(node_or_0)
         node_c.append_child(c_imply)
         return tree
 

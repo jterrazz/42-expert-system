@@ -5,6 +5,7 @@ class ConnectorType(Enum):
     OR = '|'
     AND = '&'
     XOR = '^'
+    IMPLY = '<='
 
 
 # Not need anymore
@@ -13,13 +14,18 @@ class Sign(Enum):
     NEGATIVE = "-"
 
 
+# Use common structure class with children and parents
 class NegativeNode:
     def __init__(self, positive_node):
         self.node = positive_node
         self.children = []
+        self.parents = []
 
     def append_child(self, child):
-        self.children.append(child)
+        if child not in self.children:
+            self.children.append(child)
+        if self not in child.parents:
+            child.parents.append(self)
 
     # Add the negative state here
     def parse_handler(self, node_handler, result_handler, negative, level, force_node):
@@ -37,12 +43,16 @@ class NegativeNode:
 class Node:
     def __init__(self):
         self.children = []
+        self.parents = []
         self.parsed = 0
         self.status = None
         self.negative = NegativeNode(self)
 
     def append_child(self, child):
-        self.children.append(child)
+        if child not in self.children:
+            self.children.append(child)
+        if self not in child.parents:
+            self.parents.append(self)
 
     def set_status(self, status):
         self.status = status
@@ -70,6 +80,8 @@ class Node:
         node_result = node_handler(self, negative, level)
         if self.parsed:
             return node_result
+
+        # Stop here if node is found
 
         child_results = []
         operand_results = []
@@ -103,43 +115,75 @@ class Node:
     def resolve_results(node, node_res, operands_res, children_res):
         # print("Resolving children", node.status)
 
-        for child_res in  children_res:
-            if child_res is not None:
-                return node.set_status(child_res)
+        if node_res is not None:
+            return node_res
 
-        # Need refactoring
-        if isinstance(node, ConnectorNode):
-            res = None
-            found_none = False
-            for op_res in operands_res:
-                # If none stop
+        # Better tests
+        restart = True
+        tested_parents = False
+        while restart:
+            print("Resolving the node ", node.__repr__())
+            restart = False
+            # First try child results
+            for child_res in children_res:
+                if child_res is not None:
+                    return node.set_status(child_res)
+            print("BLYATTTT1")
 
-                if op_res is None:
-                    print("Found none")
-                    found_none = True
-                    continue
+            # Need refactoring
+            # Next try from the operands
+            if isinstance(node, ConnectorNode):
+                res = None
+                found_none = False
+                print("BLYATTTT2")
 
-                if res is None:
-                    print("Set first el to ", op_res)
-                    res = op_res
-                    continue
+                for op_res in operands_res:
+                    # If none stop
+                    print("BLYATTTT3")
 
-                if node.type is ConnectorType.AND:
-                    res &= op_res
-                elif node.type is ConnectorType.OR:
-                    res |= op_res
-                else:
-                    res ^= op_res
+                    # NEED TO CHECK ALL CHILDS ????? OR SIMPLY DON"T ALLOW MANY OPERANDS FOR THIS OP
+                    if node.type is ConnectorType.IMPLY:
+                        return node.set_status(True if (res is True) else None)
 
-            if found_none:
-                if node.type is ConnectorType.OR:
-                    if res is False:
+                    if op_res is None:
+                        found_none = True
+                        continue
+
+                    if res is None:
+                        res = op_res
+                        continue
+
+                    if node.type is ConnectorType.AND:
+                        res &= op_res
+                    elif node.type is ConnectorType.OR:
+                        res |= op_res
+                    elif node.type is ConnectorType.XOR:
+                        res ^= op_res
+
+                if found_none:
+                    if node.type is ConnectorType.OR:
+                        if res is False:
+                            return node.set_status(None)
+                    elif (node.type is ConnectorType.AND and res is True) or (node.type is ConnectorType.XOR):
                         return node.set_status(None)
-                elif (node.type is ConnectorType.AND and res is True) or (node.type is ConnectorType.XOR):
-                    node.status = None
-                    return node.status
 
-            return node.set_status(res)
+                if res is not None:
+                    return node.set_status(res)
+
+            # Next try if a parent node
+            if node.status is None and tested_parents is False:  # Find better way to check condition
+                print("Node status is actually ", node.status, " and node will check for parents")
+
+                # restart = True
+                tested_parents = True
+                for parent in node.parents:
+                    print("CHECKING PARENT :", parent.__repr__())
+                    # Need to handle negatives
+                    if parent.parsed is False:
+                        parent.parsed = True
+                        parent.resolve()
+                        parent.parsed = False
+                print("ENDING CHECKING PARENTS: Node", node.__repr__())
 
         return node.status
 
@@ -164,6 +208,21 @@ class ConnectorNode(Node):
         for op in operands:
             self.append_operand(op)
 
+    def set_status(self, status):
+        super(ConnectorNode, self).set_status(status)
+
+        # Pass result to children
+        print("Will deduct node", self.__repr__())
+        if status is True:
+            print("WILL INDEEDDD   DEDUCT")
+            if self.type is ConnectorType.AND:
+                for op in self.operands:
+                    # if op.status is not self.status:
+                        # raise ConfictError("XX was XXX and XXXX asked to be set to XXXXX")
+                    op.status = self.status
+            # Need OR and XOR cases
+        print("ENDED THE DEDUCTION")
+        return status
 
 class AtomNode(Node):
     def __init__(self, name):

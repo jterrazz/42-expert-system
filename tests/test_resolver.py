@@ -197,13 +197,13 @@ def test_hard_true_1():
 def test_hard_false_0():
     tree = TreeFactory.get_hard_0()
     tree.add_fact("A", False)
-    assert tree.resolve_atom("C") is False
+    assert tree.resolve_atom("C") is None
 
 
 def test_hard_false_1():
     tree = TreeFactory.get_hard_0()
     tree.add_fact("D", False)
-    assert tree.resolve_atom("C") is False
+    assert tree.resolve_atom("C") is None
 
 
 def test_hard_none_0():
@@ -215,6 +215,6 @@ def test_hard_none_0():
 
 def test_hard_deduction_true_0():
     tree = TreeFactory.get_hard_deduction_1()
-    tree.add_fact("C", True)
-    assert tree.resolve_atom("D") is True
+    tree.add_fact("D", True)
+    assert tree.resolve_atom("A") is False
 

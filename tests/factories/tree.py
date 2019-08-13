@@ -157,12 +157,27 @@ class TreeFactory:
         return tree
 
     '''
-        D => (A | B) Avec D Vrai et A faux
+    D => (A ^ B)
+    '''
+    @staticmethod
+    def get_hard_xor():
+        tree = Tree()
+        node_a = AtomNode("A")
+        node_b = AtomNode("B")
+        node_d = AtomNode("D")
+        imply_node = ConnectorNode(ConnectorType.IMPLY)
+        tree.add_atoms([node_a, node_b, node_d])
+        node_and_0 = ConnectorNode(ConnectorType.XOR)
+        node_and_0.append_operands([node_a, node_b])
+        node_and_0.append_child(imply_node)
+        imply_node.append_operand(node_d)
+        return tree
+
+    '''
         D => !(A | B) Avec D Vrai alors tous faux
         D => !(A & B) Avec D Vrai
         D => !(A ^ B) Avec D Vrai => A None et B none
         
-        D => (A ^ B) Avec 2 connu
         D => (A ^ B ^ C) with D True , C False
         
         D => (A ^ B ^ C) with D True , C False

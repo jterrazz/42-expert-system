@@ -217,6 +217,7 @@ class ConnectorNode(Node):
 
         # Pass result to children
         if self.type is ConnectorType.AND:
+            print("WILL DEDUCT FOR AND RELATION")
             if status is True:
                 for op in self.operands:
                     # if op.status is not self.status:
@@ -236,7 +237,7 @@ class ConnectorNode(Node):
                 else:
                     total |= op.status
             # Only if one is None then we can deduct
-            if none_number is 1 and self.status is True:
+            if none_number is 1 and self.status is True and total is False:
                 self.operands[none_index].set_status(True)
 
 

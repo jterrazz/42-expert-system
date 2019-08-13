@@ -216,8 +216,8 @@ def test_hard_none_0():
 def test_hard_deduction_none_0():
     tree = TreeFactory.get_hard_deduction_1()
     tree.add_fact("D", True)
-    assert tree.resolve_atom("A") is None
-    assert tree.resolve_atom("B") is None
+    assert tree.resolve_atom("A") is True # NOT SURE
+    assert tree.resolve_atom("B") is True # NOT SURE
 
 
 def test_hard_deduction_none_1():
@@ -233,4 +233,19 @@ def test_hard_deduction_true():
     tree.add_fact("D", True)
     tree.add_fact("A", False)
     assert tree.resolve_atom("B") is True
+
+"""  D => (A | B) Avec D Vrai et A True """
+def test_hard_deduction_true():
+    tree = TreeFactory.get_hard_deduction_2()
+    tree.add_fact("D", True)
+    tree.add_fact("A", True)
+    assert tree.resolve_atom("B") is None
+
+
+""" D => (A ^ B) Avec 2 connu """
+# def test_hard_xor_0():
+#     tree = TreeFactory.get_hard_xor()
+#     tree.add_fact("D", True)
+#     tree.add_fact("A", False)
+#     assert tree.resolve_atom("B") is True
 

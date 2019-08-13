@@ -193,37 +193,46 @@ class TreeFactory:
 
     '''
         D => !(A | B) Avec D Vrai alors tous faux
+        D => !(A | !B) Avec D Vrai alors tous faux
         D => !(A & B) Avec D Vrai
+        D => !(A & !B) Avec D Vrai
         D => !(A ^ B) Avec D Vrai => A None et B none
+        D => !(A ^ !B) Avec D Vrai => A None et B none
         
-        (X & Y) => A With X and Y True
+        !(X & Y) => A With X False and Y True => A Is true
+        !(X & !Y) => A      With X true and Y False => A None
+        !(X & !Y) => A      With X true and Y True => A True
     '''
 
 
     '''
     (A | B) => C
-    D => (A & B)]
-    
-    
-    D => !(A & B)
+    D => (A & B)
     '''
-    # @staticmethod
-    # def get_hard_deduction_1():
-    #     tree = Tree()
-    #     node_a = AtomNode("A")
-    #     node_b = AtomNode("B")
-    #     node_c = AtomNode("C")
-    #     node_d = AtomNode("D")
-    #     tree.add_atoms([node_a, node_b, node_c, node_d])
-    #     node_and_0 = ConnectorNode(ConnectorType.AND)
-    #     node_or_0 = ConnectorNode(ConnectorType.OR)
-    #     node_or_0.append_operands([node_a, node_b])
-    #     node_and_0.append_operands([node_a, node_b])
-    #     node_and_0.append_child(node_d)
-    #     node_c.append_child(node_or_0)
-    #     return tree
+    @staticmethod
+    def get_hard_combi_0():
+        tree = Tree()
+        node_a = AtomNode("A")
+        node_b = AtomNode("B")
+        node_c = AtomNode("C")
+        node_d = AtomNode("D")
+        tree.add_atoms([node_a, node_b, node_c, node_d])
+        node_and_0 = ConnectorNode(ConnectorType.AND)
+        node_or_0 = ConnectorNode(ConnectorType.OR)
+        node_or_0.append_operands([node_a, node_b])
+        node_and_0.append_operands([node_a, node_b])
+        node_and_0.append_child(node_d)
+        node_c.append_child(node_or_0)
+        return tree
 
     '''
+    
+    
+    (A | B) => C
+    D => !(A & B)
+
+
+
     (A | B) => C
     D => (A | B)
     

@@ -270,3 +270,14 @@ def test_hard_xor_abc_1():
     assert tree.resolve_atom("B") is None
     assert tree.resolve_atom("C") is None
 
+
+'''
+(A | B) => C
+D => (A & B)
+'''
+def test_hard_combi_0():
+    tree = TreeFactory.get_hard_combi_0()
+    tree.add_fact("D", True)
+    assert tree.resolve_atom("B") is True
+    assert tree.resolve_atom("C") is True
+

@@ -1,0 +1,8 @@
+A | B => C  # A and B are True, so C is True
+D | E => F  # Only D is True, so F is True
+
+=ABD
+?CF
+
+# assertions
+# =ABDHCF

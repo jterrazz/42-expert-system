@@ -1,0 +1,10 @@
+A ^ B => C  # A and B are True, so C is False
+D ^ E => F  # Only D is True, so F is True
+G ^ H => I  # Only H is True, so I is True
+J ^ K => L  # J and K are False, so J is False
+
+=ABDH
+?CFIL
+
+# assertions
+# =ABDHFI

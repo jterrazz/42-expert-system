@@ -1,0 +1,10 @@
+!(A + B) ^ (D | K) => P # P is False
+X | (A | K ^ Z) => N # N is True
+!T + !X => G # G is true
+!L => M # M is True
+
+  =AD
+?GTX
+
+# assertions
+# =ADFNGM

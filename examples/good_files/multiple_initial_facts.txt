@@ -1,0 +1,8 @@
+A + B => E # E is True
+C + D => F # F is True
+
+=
+?EF
+
+# assertions
+# =ABECDFGHIZ

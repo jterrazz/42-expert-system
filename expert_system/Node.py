@@ -143,7 +143,7 @@ class Node:
 
                     # NEED TO CHECK ALL CHILDS ????? OR SIMPLY DON"T ALLOW MANY OPERANDS FOR THIS OP
                     if node.type is ConnectorType.IMPLY:
-                        return node.set_status(True if (res is True) else None)
+                        return node.set_status(True if (op_res is True) else None)
 
                     if op_res is None:
                         found_none = True

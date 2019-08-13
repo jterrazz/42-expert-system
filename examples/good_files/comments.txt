@@ -6,7 +6,7 @@ C + D => F #  #  #
 # # A + B => C
 # A + B => C #
 A + B => I # I is true
-=ABDH
+=ABD
 ?CDF
 
 # assertions

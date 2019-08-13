@@ -1,10 +1,7 @@
-=AB
 A + B => E # E is True
-=C
-=D
 C + D => F # F is True
 
-=GHIZ
+=
 ?EF
 
 # assertions

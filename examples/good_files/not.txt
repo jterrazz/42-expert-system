@@ -1,8 +1,8 @@
 !A => B # A is True, so B is False
 !C => D # C is False, so D is True
 
-=AE
-?BDF
+=A
+?BD
 
 # assertions
 # =AED

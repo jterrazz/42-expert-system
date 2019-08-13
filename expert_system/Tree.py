@@ -1,6 +1,6 @@
 # Rename Tree class
-from .Node import AtomNode, ConnectorNode, ConnectorType, Sign
-from .Error import TreeError
+from .Node import AtomNode, ConnectorNode, ConnectorType
+from expert_system.helper.Error import TreeError
 # Find a python already made error class ???
 
 

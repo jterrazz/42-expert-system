@@ -1,0 +1,13 @@
+B => A # A is true
+D + E => B # B is true
+G + H => F # F is true
+I + J => G # G is true
+G => H # H is true
+L + M => K # K is false
+O + P => L + N # L and N are false
+N => M # M is false
+
+=DEIJP
+?AFKP
+# assertions
+# =DEIJPABFGH

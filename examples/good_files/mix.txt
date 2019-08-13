@@ -3,7 +3,7 @@ X | (A | K ^ Z) => N # N is True
 !T + !X => G # G is true
 !L => M # M is True
 
-=ADF
+  =AD
 ?GTX
 
 # assertions

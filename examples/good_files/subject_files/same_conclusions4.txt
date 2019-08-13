@@ -1,0 +1,8 @@
+B => A # A is true
+C => A # A is true
+=BC
+?A
+
+
+# assertions
+# =BCA

@@ -1,5 +1,5 @@
 from enum import Enum
-from .Error import TreeError
+from expert_system.helper.Error import TreeError
 
 
 class ConnectorType(Enum):

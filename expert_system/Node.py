@@ -178,7 +178,7 @@ class Node:
                 for parent in node.parents:
                     print("PARENT", parent.__repr__(), " Parsed ", parent.parsed)
                     # Need to handle negatives
-                    if parent.parsed is False:
+                    if parent.parsed is False and parent.type is not ConnectorType.IMPLY:
                         parent.resolve()
 
         return node.status

@@ -281,3 +281,27 @@ def test_hard_combi_0():
     assert tree.resolve_atom("B") is True
     assert tree.resolve_atom("C") is True
 
+
+'''
+(A | B) => C
+D => (A | B)
+'''
+def test_hard_combi_1():
+    tree = TreeFactory.get_hard_combi_1()
+    tree.add_fact("D", True)
+    assert tree.resolve_atom("A") is None
+    assert tree.resolve_atom("B") is None
+    assert tree.resolve_atom("C") is True
+
+
+'''
+(A | B) => C
+D => (A | B)
+'''
+def test_hard_combi_2():
+    tree = TreeFactory.get_hard_combi_1()
+    tree.add_fact("D", False)
+    assert tree.resolve_atom("A") is None
+    assert tree.resolve_atom("B") is None
+    assert tree.resolve_atom("C") is None
+

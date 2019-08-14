@@ -10,12 +10,12 @@ if __name__ == "__main__":
             content = f.readlines(1000) # TODO anyway to set no limits ???
             parser = ExpertParser(content)
 
-            # rules = parser.get_rules()
+            # npi_rules = parser.get_rules()
             # facts = parser.get_facts()
-            rules = ""
+            npi_rules = ""
             facts = ""
 
-            tree = NPITree(rules, facts)
+            tree = NPITree(npi_rules, facts)
             # queries = parser.get_queries()
             queries = ["A"]
 

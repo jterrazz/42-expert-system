@@ -78,14 +78,23 @@ class Tree:
         return str
 
 
+"""
+Build a tree from NPI notation.
+- npi_rules formatted as "AB+"
+- facts formatted as ["A", "B"]
+"""
+
 class NPITree(Tree):
-    def __init__(self, rules, facts):
+    def __init__(self, npi_rules, facts):
         super(NPITree, self).__init__()
-        self.init_nodes(rules)
+        self.init_nodes(npi_rules)
         self.set_facts(facts)
 
     def init_nodes(self, rules):
-        # For example: ((A + B + C) | D) => E
+        ########################################
+        # TMP Example for: ((A + B + C) | D) => E
+        ########################################
+
         atom_a = self.create_atom("A")
         atom_b = self.create_atom("B")
         atom_c = self.create_atom("C")
@@ -107,8 +116,14 @@ class NPITree(Tree):
         atom_e.append_child(connector_imply)
         connector_imply.append_child(connector_or)
 
+        ########################################
+        ########################################
+        ########################################
+
         if self.atoms.__len__() is 0:
             raise BaseException("The tree is empty")
 
     def set_facts(self, facts):
+        for fact in facts:
+            self.add_fact(fact, True)
         return

@@ -195,6 +195,10 @@ class ConnectorNode(Node):
         self.type = connector_type
         self.operands = []
 
+    def __eq__(self, other):
+        # TODO Maybe check if both classes are operands
+        return set(self.operands) == set(other.operands) and self.type is other.type
+
     def __repr__(self):
         return repr_node_status(f'({self.type.value})', self.status)
 
@@ -280,6 +284,9 @@ class AtomNode(Node):
     def __init__(self, name):
         super(AtomNode, self).__init__()
         self.name = name
+
+    # def __eq__(self, other):
+    #     return self.name == other.name
 
     def __repr__(self):
         return repr_node_status(f'({self.name})', self.status)

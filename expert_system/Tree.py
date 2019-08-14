@@ -93,6 +93,7 @@ class NPITree(Tree):
     def __init__(self, npi_rules, facts, queries):
         super(NPITree, self).__init__()
         self.good_atoms = {}
+        self.good_connectors = []
         self.set_atoms(npi_rules)
         self.set_facts(facts, queries)
         self.set_node_relations(npi_rules)
@@ -149,8 +150,20 @@ class NPITree(Tree):
         if self.atoms.__len__() is 0:
             raise BaseException("The tree is empty")
 
+        """
+        A ^ B = > C  # A and B are True, so C is False
+        D ^ E = > F  # Only D is True, so F is True
+        G ^ H = > I  # Only H is True, so I is True
+        J ^ K = > L  # J and K are False, so J is False
+
+        =ABDH
+        ?CFIL
+        """
         for rule in rules:
             stack = []
+
+            # TODO Do same function for left and right
+            # Handle only one and node
             for x in rule.npi_left:
                 if x not in OPERATORS:
                     stack.append(self.good_atoms[x])
@@ -159,6 +172,15 @@ class NPITree(Tree):
                     connector_x = self.create_connector(LST_OP[x])
                     # TODO Check if pop return not None
                     connector_x.append_operands([stack.pop(), stack.pop()])
+
+                    # Put in right too
+                    # TODO Check if infinite recursion can happen (if A child of B and B child of A)
+                    try:
+                        i = self.good_connectors.index(connector_x)
+                        connector_x = self.good_connectors[i]
+                    except:
+                        self.good_connectors.append(connector_x)
+
                     stack.append(connector_x)
                     #handle !
             left_start = stack.pop()
@@ -171,6 +193,15 @@ class NPITree(Tree):
                     connector_x = self.create_connector(LST_OP[x])
                     # TODO Check if pop return not None
                     connector_x.append_operands([stack.pop(), stack.pop()])
+
+                    # Put in right too
+                    # TODO Check if infinite recursion can happen (if A child of B and B child of A)
+                    try:
+                        i = self.good_connectors.index(connector_x)
+                        connector_x = self.good_connectors[i]
+                    except:
+                        self.good_connectors.append(connector_x)
+
                     stack.append(connector_x)
             right_start = stack.pop()
 

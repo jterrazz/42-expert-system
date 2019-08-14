@@ -183,6 +183,16 @@ class NPITree(Tree):
 
                     stack.append(connector_x)
                     #handle !
+
+
+            """
+            A => E
+            D => A | B
+            
+            =D
+            ?E
+            
+            """
             left_start = stack.pop()
             stack = []
             for x in rule.npi_right:

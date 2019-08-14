@@ -5,7 +5,7 @@ from expert_system.Tree import NPITree
 
 
 if __name__ == "__main__":
-    # try:
+    try:
         with open(sys.argv[1]) as f:
             content = f.readlines(1000) # TODO anyway to set no limits ???
             parser = ExpertParser(content)
@@ -14,5 +14,5 @@ if __name__ == "__main__":
 
             for query in parser.queries:
                 print(f"Resolve {query}", tree.resolve_atom(query))
-    # except:
-    #     print('Error opening file for reading ..!!')
+    except:
+        print('Error opening file for reading ..!!')

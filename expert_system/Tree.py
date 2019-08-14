@@ -115,7 +115,7 @@ class NPITree(Tree):
         # Each imply connector must be unique
         connector_imply = self.create_connector(ConnectorType.IMPLY)
         atom_e.append_child(connector_imply)
-        connector_imply.append_child(connector_or)
+        connector_imply.append_operand(connector_or)
 
         ########################################
         ########################################

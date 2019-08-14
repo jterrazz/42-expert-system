@@ -200,7 +200,7 @@ class ConnectorNode(Node):
 
     def append_child(self, child):
         if self.type is ConnectorType.IMPLY:
-            raise TreeError("Implications child must set as an operand")
+            raise BaseException("Implications child must set as an operand")
         super(ConnectorNode, self).append_child(child)
 
     def append_operand(self, operand):

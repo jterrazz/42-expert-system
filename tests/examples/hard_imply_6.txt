@@ -1,0 +1,4 @@
+!A | !B => D
+E => A ^ B
+=E
+?D #should be true

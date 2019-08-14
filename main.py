@@ -10,17 +10,16 @@ if __name__ == "__main__":
             content = f.readlines(1000) # TODO anyway to set no limits ???
             parser = ExpertParser(content)
 
-            # npi_rules = parser.get_rules()
+            print(parser.structured_rules)
             # facts = parser.get_facts()
-            npi_rules = ""
-            facts = ""
+            # npi_rules = ""
+            # facts = ""
 
-            tree = NPITree(npi_rules, facts)
+            # tree = NPITree(npi_rules, facts)
             # queries = parser.get_queries()
-            queries = ["A"]
+            # queries = ["A"]
 
-            for query in queries:
-                tree.resolve_atom(query)
-
+            # for query in queries:
+            #     tree.resolve_atom(query)
     except:
         print('Error opening file for reading ..!!')

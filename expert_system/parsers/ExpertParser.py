@@ -1,29 +1,41 @@
 import re
 from .NPIParser import NPIParser
+from enum import Enum
 
 
-class ExpertParser(NPIParser):
+class ImplicationType(Enum):
+    IMPLY = "=>"
+    EQUAL = "<=>"
+
+
+class ImplicationRule(NPIParser):
+    def __init__(self, rule_str):
+        splitted = re.split(r'=>|<=>', rule_str)
+        self.type = (ImplicationType.IMPLY if "=>" in rule_str else ImplicationType.EQUAL)
+
+        left = list(splitted[0].replace(' ', ''))
+        right = list(splitted[1].replace(' ', ''))
+
+        self.npi_left = self.infix_to_postfix(left)
+        self.npi_right = self.infix_to_postfix(right)
+
+    def __repr__(self):
+        return f'<ImplicationRule> left: { self.npi_left }, right: { self.npi_right }, type: { self.type }'
+
+
+class ExpertParser:
     def __init__(self, raw_input):
         self.raw_input = raw_input
-        self.postfix = None
-        self.rules_postfix = None
+        self.raw_rules = []
+        self.structured_rules = []
 
-        self.parse_input()
+        self.ft_parser() # set self.raw_rules
+        self.set_structured_rules()
 
-        #  TODO TMP, Below self.rules need to be set by the parse_input() ft
-        self.rules = re.split('\s', '! ( A + B ) ^ ( D | K )')
-
-        self.set_rules_postfix()
-
-    def set_rules_postfix(self):
-        self.rules_postfix = self.infix_to_postfix(self.rules)
-
-    def parse_input(self):
-        input_lines = [x.strip() for x in self.raw_input]
-        input_lines = list(filter(None, input_lines))
-
-        if self.ft_parser(input_lines) is False:
-            raise BaseException("Parsing failed") # Replace by detailled message Error ?
+    def set_structured_rules(self):
+        # self.raw_rules = ["A + B => C"]
+        for raw_rule in self.raw_rules:
+            self.structured_rules.append(ImplicationRule(raw_rule))
 
     @staticmethod
     def ft_split_operators(formula):
@@ -62,8 +74,10 @@ class ExpertParser(NPIParser):
                 return False
         return True
 
-    @staticmethod
-    def ft_parser(content_file):
+    def ft_parser(self):
+        input_lines = [x.strip() for x in self.raw_input]
+        content_file = list(filter(None, input_lines))
+
         regex_rule = re.compile(r"(^((\()*(!){0,2})*[A-Z](\))*((\s*[(+|^\|)]\s*((\()*(!){0,2})*[A-Z](\))*)*)?\s*(=>|<=>)\s*((\()*(!){0,2})*[A-Z](\))*((\s*[(+|^\|)]\s*((\()*(!){0,2})*[A-Z](\))*)*)?\s*$)")
         regex_fact = re.compile(r"(^=[A-Z]*$)")
         regex_queries = re.compile(r"(^\?[A-Z]*$)")
@@ -81,22 +95,19 @@ class ExpertParser(NPIParser):
                 atoms = ExpertParser.ft_all_atoms(rules)
                 fact -= 1
                 if fact < 0 or queries <= 0 or regex_fact.match(elem) is None or not ExpertParser.ft_check_facts_in_list_atoms(atoms, elem):
-                    print('Error format line: {}'.format(elem))
-                    return False
+                    raise BaseException(f'Error format line: {elem}')
             elif elem[0] == '?':
                 queries -= 1
                 if fact > 0 or regex_queries.match(elem) is None or not ExpertParser.ft_check_queries_in_list_atoms(atoms, elem):
-                    print('Error format line: {}'.format(elem))
-                    return False
+                    raise BaseException(f'Error format line: {elem}')
             else:
                 rule -= 1
                 if fact <= 0 or queries <= 0 or regex_rule.match(elem) is None or not ExpertParser.ft_check_parentheses(elem):
-                    print('Error format line: {}'.format(elem))
-                    return False
+                    raise BaseException(f'Error format line: {elem}')
                 else:
                     rules += elem
+
             if elem[0] != '=' and elem[0] != '?':
-                print(re.split(r'=>|<=>', elem)[0])
+                self.raw_rules.append(elem)
         if fact > 0 or queries > 0 or rule > 0:
-            return False
-        return True
+            raise BaseException("Missing one of facts, queries or rules")

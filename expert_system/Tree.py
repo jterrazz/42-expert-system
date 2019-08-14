@@ -85,6 +85,28 @@ class NPITree(Tree):
         self.set_facts(facts)
 
     def init_nodes(self, rules):
+        # For example: ((A + B + C) | D) => E
+        atom_a = self.create_atom("A")
+        atom_b = self.create_atom("B")
+        atom_c = self.create_atom("C")
+        atom_d = self.create_atom("D")
+        atom_e = self.create_atom("E")
+
+        connector_and_abc = self.create_connector(ConnectorType.AND)
+        connector_and_abc.append_operands([atom_a, atom_b, atom_c])
+        # Or
+        # connector_and_abc.append_operand(atom_a)
+        # connector_and_abc.append_operand(atom_b)
+        # connector_and_abc.append_operand(atom_c)
+
+        connector_or = self.create_connector(ConnectorType.OR)
+        connector_or.append_operands([connector_and_abc, atom_d])
+
+        # Each imply connector must be unique
+        connector_imply = self.create_connector(ConnectorType.IMPLY)
+        atom_e.append_child(connector_imply)
+        connector_imply.append_child(connector_or)
+
         if self.atoms.__len__() is 0:
             raise BaseException("The tree is empty")
 

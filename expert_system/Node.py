@@ -204,6 +204,8 @@ class ConnectorNode(Node):
         super(ConnectorNode, self).append_child(child)
 
     def append_operand(self, operand):
+        if self.type is ConnectorType.IMPLY and self.operands.__len__() > 0:
+            raise BaseException("An imply connection must only have one operand")
         self.operands.append(operand)
 
         # PROBABLY ADD NO CONDITION FOR IMPLICATION

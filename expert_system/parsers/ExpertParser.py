@@ -28,12 +28,13 @@ class ExpertParser:
         self.raw_input = raw_input
         self.raw_rules = []
         self.structured_rules = []
+        self.facts = []
+        self.queries = []
 
         self.ft_parser() # set self.raw_rules
         self.set_structured_rules()
 
     def set_structured_rules(self):
-        # self.raw_rules = ["A + B => C"]
         for raw_rule in self.raw_rules:
             self.structured_rules.append(ImplicationRule(raw_rule))
 
@@ -109,5 +110,10 @@ class ExpertParser:
 
             if elem[0] != '=' and elem[0] != '?':
                 self.raw_rules.append(elem)
+            else:
+                if elem[0] == '=':
+                    self.facts = list(elem.replace('=', ''))
+                else:
+                    self.queries = list(elem.replace('?', ''))
         if fact > 0 or queries > 0 or rule > 0:
             raise BaseException("Missing one of facts, queries or rules")

@@ -10,7 +10,6 @@ if __name__ == "__main__":
             content = f.readlines(1000) # TODO anyway to set no limits ???
             parser = ExpertParser(content)
 
-            print(parser.structured_rules)
             # facts = parser.get_facts()
             # npi_rules = ""
             # facts = ""

@@ -84,6 +84,7 @@ Build a tree from NPI notation.
 - facts formatted as ["A", "B"]
 """
 
+
 class NPITree(Tree):
     def __init__(self, npi_rules, facts):
         super(NPITree, self).__init__()

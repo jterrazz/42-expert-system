@@ -1,9 +1,4 @@
-# Rename Tree class
 from .Node import AtomNode, ConnectorNode, ConnectorType
-from expert_system.helpers.Error import TreeError
-# Find a python already made error class ???
-
-
 
 
 # TODO Check for no duplicated also in the Conenctors
@@ -23,16 +18,35 @@ class Tree:
             self.root_node.append_operand(node)
             self.atoms.append(node)
         else:
-            raise TreeError("Node was already created")
+            raise BaseException("Node was already created")
 
     def add_atoms(self, nodes):
         for node in nodes:
             self.add_atom(node)
 
+    """
+    Build helpers
+    """
+
+    def create_atom(self, name):
+        atom = AtomNode(name)
+        self.add_atom(atom)
+        return atom
+
+    def create_connector(self, type):
+        connector = ConnectorNode(type)
+        # TODO Probably need to save connectors in list
+        return connector
+
     def add_fact(self, fact_name, value):
+        # TODO Check for duplications
         for atom in self.atoms:
             if isinstance(atom, AtomNode) and atom.name is fact_name:
                 atom.status = value
+
+    """
+    Resolver
+    """
 
     def resolve_atom(self, atom_name):
         print("WILL RESOLVE ATOM", atom_name)
@@ -40,6 +54,12 @@ class Tree:
             if isinstance(atom, AtomNode) and atom.name is atom_name:
                 return atom.resolve()
         return None
+
+
+
+
+
+    # TODO MOVE THIS
 
     @staticmethod
     def repr_node_handler(node, negative, level):
@@ -56,3 +76,17 @@ class Tree:
             if res:
                 str += res
         return str
+
+
+class NPITree(Tree):
+    def __init__(self, rules, facts):
+        super(NPITree, self).__init__()
+        self.init_nodes(rules)
+        self.set_facts(facts)
+
+    def init_nodes(self, rules):
+        if self.atoms.__len__() is 0:
+            raise BaseException("The tree is empty")
+
+    def set_facts(self, facts):
+        return

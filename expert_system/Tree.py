@@ -1,5 +1,5 @@
 from .Node import AtomNode, ConnectorNode, ConnectorType
-
+import re
 
 # TODO Check for no duplicated also in the Conenctors
 # TODO Do methods for create Atom in tree
@@ -88,13 +88,32 @@ Build a tree from NPI notation.
 class NPITree(Tree):
     def __init__(self, npi_rules, facts):
         super(NPITree, self).__init__()
-        self.init_nodes(npi_rules)
+        self.good_atoms = {}
+        self.set_atoms(npi_rules)
+        self.set_node_relations(npi_rules)
         self.set_facts(facts)
 
-    def init_nodes(self, rules):
+    def set_atoms(self, npi_rules):
+        for rule in npi_rules:
+            atoms = re.split(r'\+|\^|\||!', rule.npi_left)
+            atoms += re.split(r'\+|\^|\||!', rule.npi_right)
+            self.good_atoms.update(dict((atom_str, self.create_atom(atom_str)) for atom_str in atoms))
+
+
+    def set_node_relations(self, rules):
+        # print(self.good_atoms)
         ########################################
-        # TMP Example for: ((A + B + C) | D) => E
+        # TMP Example for: !((A + B + C) | D) => !E
+        # TMP Example for: !((A + B + C) | D) => !E
+
+        # AB+C+D|!
         ########################################
+
+        #                   !e
+        #                   !
+        #                   |
+        #          &                D
+        #      A   B   C
 
         atom_a = self.create_atom("A")
         atom_b = self.create_atom("B")

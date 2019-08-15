@@ -1,0 +1,15 @@
+A | B | C => D 
+X => B | C
+
+# A | B | C => D
+# N => B
+# M => C
+# X => N | M
+
+# A + B + C => D
+# X => B + C
+# X => A
+
+=X
+
+?D

@@ -124,16 +124,27 @@ class NPITree(Tree):
                 stack.append(self.atoms[x])
             else:
                 # TODO Later use not duplicated connectors
-                connector_x = self.create_connector(LST_OP[x])
-                connector_x.add_operands([stack.pop(), stack.pop()])
+                pop0 = stack.pop()
+                pop1 = stack.pop()
+                if isinstance(pop0, ConnectorNode) and pop0.type is LST_OP[x]:
+                    pop0.add_operand(pop1)
+                    new_node = pop0
+                elif isinstance(pop1, ConnectorNode) and pop1.type is LST_OP[x]:
+                    pop1.add_operand(pop0)
+                    new_node = pop1
+                else:
+                    connector_x = self.create_connector(LST_OP[x])
+                    connector_x.add_operands([pop0, pop1])
+                    new_node = connector_x
+                    # TODO Check if infinite recursion can happen (if A child of B and B child of A)
 
-                # TODO Check if infinite recursion can happen (if A child of B and B child of A)
-                # Try with nested connectors
-                try:
-                    i = self.connectors.index(connector_x)
-                    connector_x = self.connectors[i]
-                except:
-                    self.connectors.append(connector_x)
-                stack.append(connector_x)
+                    # Try with nested connectors
+                    # try:
+                    #     i = self.connectors.index(connector_x)
+                    #     connector_x = self.connectors[i]
+                    # except:
+                    #     self.connectors.append(connector_x)
+
+                stack.append(new_node)
 
         return stack.pop()

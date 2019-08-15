@@ -203,7 +203,7 @@ class Node:
                 #     for child in op_res
 
 
-
+                # IF NOT FOUND< WILL CHECK FOR ANY COMBINAISON OF OPERANDS SEPARATELY AND WITH THEIR CHILD TOO
 
 
 

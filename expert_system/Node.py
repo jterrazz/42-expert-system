@@ -47,7 +47,7 @@ class Node:
         self.children = []
         self.parents = []
         self.parsed = False
-        self.status = None
+        self.status = False
         self.tree = tree
         self.negative = NegativeNode(self)
 
@@ -214,6 +214,7 @@ A connector can be one of | & ^ -> <->
 class ConnectorNode(Node):
     def __init__(self, connector_type, tree):
         super(ConnectorNode, self).__init__(tree)
+        self.status = None
         self.type = connector_type
         self.operands = []
 
@@ -304,8 +305,8 @@ class AtomNode(Node):
         super(AtomNode, self).__init__(tree)
         self.name = name
 
-    # def __eq__(self, other):
-    #     return self.name == other.name
+    def __eq__(self, other):
+        return self.name == other.name
 
     def __repr__(self):
         return repr_node_status(f'({self.name})', self.status)

@@ -15,4 +15,4 @@ if __name__ == "__main__":
         tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
 
         for query in parser.queries:
-            print(f"Resolve {query}", tree.resolve_atom(query))
+            print(f"Resolve {query}", tree.resolve_query(query))

@@ -101,62 +101,40 @@ class NPITree(Tree):
             self.set_atom_state(atom, None)
 
     def set_atoms_relations(self, rules):
-        print(self.atoms)
-
+        """
+        Rules are formatted using the NPI notation.
+        """
         if self.atoms.__len__() is 0:
             raise BaseException("The tree is empty")
 
         for rule in rules:
-            stack = []
-
-            # TODO Do same function for left and right
-            # Handle only one and node
-            for x in rule.npi_left:
-                if x not in OPERATORS:
-                    stack.append(self.atoms[x])
-                else:
-                    # TODO Later use not duplicated connectors
-                    connector_x = self.create_connector(LST_OP[x])
-                    # TODO Check if pop return not None
-                    connector_x.add_operands([stack.pop(), stack.pop()])
-
-                    # Put in right too
-                    # TODO Check if infinite recursion can happen (if A child of B and B child of A)
-                    # Try with nested connectors
-                    try:
-                        i = self.connectors.index(connector_x)
-                        connector_x = self.connectors[i]
-                    except:
-                        self.connectors.append(connector_x)
-
-                    stack.append(connector_x)
-                    #handle !
-
-            left_start = stack.pop()
-            stack = []
-            for x in rule.npi_right:
-                if x not in OPERATORS:
-                    stack.append(self.atoms[x])
-                    if self.atoms[x].state is False:
-                        self.atoms[x].state = None
-                else:
-                    # TODO Later use not duplicated connectors
-                    connector_x = self.create_connector(LST_OP[x])
-                    # TODO Check if pop return not None
-                    connector_x.add_operands([stack.pop(), stack.pop()])
-
-                    # Put in right too
-                    # TODO Check if infinite recursion can happen (if A child of B and B child of A)
-                    try:
-                        i = self.connectors.index(connector_x)
-                        connector_x = self.connectors[i]
-                    except:
-                        self.connectors.append(connector_x)
-
-                    stack.append(connector_x)
-            right_start = stack.pop()
+            left = self.set_atom_relations_from_npi(rule.npi_left)
+            right = self.set_atom_relations_from_npi(rule.npi_right)
 
             # TODO Handle EQUAL
             connector_imply = self.create_connector(ConnectorType.IMPLY)
-            right_start.add_child(connector_imply)
-            connector_imply.add_operand(left_start)
+            right.add_child(connector_imply)
+            connector_imply.add_operand(left)
+
+    def set_atom_relations_from_npi(self, npi_rule):
+        stack = []
+
+        for x in npi_rule:
+            # TODO If operator == !, then use the negative version
+            if x not in OPERATORS:
+                stack.append(self.atoms[x])
+            else:
+                # TODO Later use not duplicated connectors
+                connector_x = self.create_connector(LST_OP[x])
+                connector_x.add_operands([stack.pop(), stack.pop()])
+
+                # TODO Check if infinite recursion can happen (if A child of B and B child of A)
+                # Try with nested connectors
+                try:
+                    i = self.connectors.index(connector_x)
+                    connector_x = self.connectors[i]
+                except:
+                    self.connectors.append(connector_x)
+                stack.append(connector_x)
+
+        return stack.pop()

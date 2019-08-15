@@ -50,12 +50,11 @@ class OperandState:
         return self.name == other.name
 
 
+# Need to keep in memory the replaced subsets (lets say we have A + B True and B + C True)
 class ConnectorSimplifier:
     def __init__(self, type, operands):
         self.type = type
-        self.operands = []
-        for op in operands:
-            self.operands.append(OperandState(op.name, op.state))
+        self.operands = [OperandState(op.name, op.state) for op in operands]
 
     def replace(self, operands, value):
         name = ""
@@ -68,7 +67,9 @@ class ConnectorSimplifier:
     def get_result(self):
         res = None
         for op in self.operands:
-            if res is None:
+            if op.state is None:
+                return None
+            elif res is None:
                 res = op.state
                 continue
             elif self.type is ConnectorType.AND:
@@ -208,6 +209,9 @@ class Node:
                 res = None
                 found_none = False
 
+
+
+                ### THIS WILL GO TO THE NEXT FUNCTION
                 for op_res in operands_res:
                     # If none stop
 
@@ -231,6 +235,10 @@ class Node:
                     elif node.type is ConnectorType.XOR:
                         res ^= op_res
 
+
+
+
+
                 # IF NOT FOUND< WILL CHECK FOR
                 # - ANY COMBINAISON OF OPERANDS SEPARATELY : (A + B + C) checks for (A + B) (B + C) (A + C) (A + B + C)
                 # - WITH ANY OF THEIR CHILD for each case
@@ -239,24 +247,26 @@ class Node:
                 # We can remove the child from connectors
 
                 print("We try to complete the whole", node.operands)
+                simplifier = ConnectorSimplifier(node.type, node.operands)
                 for l in range(1, len(node.operands) + 1):
                     for subset in itertools.combinations(node.operands, l):
+
+
+
+
+
+                        # IN the END INDIVIDUAL NODES SHOULD RESOLVE HERE
                         print("Will search the set:", subset)
-                        # 1st - Convert node.operands to Simplifier format
+                        simulated_connector = ConnectorNode(node.type, None)
+                        simulated_connector.add_operands(subset)
+                        if simulated_connector in node.tree.connectors:
+                            simplifier.replace([OperandState(x.name, None) for x in subset], True)
+                            result = simplifier.get_result()
+                            if result is not None:
+                                return node.set_status(result)
 
-                        simplifier = ConnectorSimplifier(node.type, node.operands)
-                        simplifier.replace([OperandState("B", None), OperandState("C", None)], True)
-                        result = simplifier.get_result()
-                        if result is not None:
-                            return node.set_status(result)
-                        # We try to resolve the main equation using the subset
 
-                        # If you find the set, set it's value and check for the rest of the list
 
-                if any(op.state is None for op in node.operands):
-                    print("Could not deduce from sets of combinations")
-                else:
-                    print(node.operands)
 
 
 

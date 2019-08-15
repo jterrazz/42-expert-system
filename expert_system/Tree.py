@@ -4,8 +4,7 @@ from .Node import AtomNode, ConnectorNode, ConnectorType
 from .parsers.NPIParser import OPERATORS
 
 LST_OP = {'+': ConnectorType.AND, '|': ConnectorType.OR, '^': ConnectorType.XOR}
-
-# TODO Rename atom status to state
+REGEX_OP = r'\+|\^|\||!'
 
 
 class Tree:
@@ -29,7 +28,7 @@ class Tree:
 
     def __repr__(self):
         return "🌲🌲🌲 \033[92mTree representation\033[0m 🌲🌲🌲\n" \
-            + self.root_node.parse(self.repr_node_handler, self.repr_result_handler)
+            + self.root_node.__full_repr__()
 
     def create_atom(self, atom_name):
         """
@@ -52,7 +51,7 @@ class Tree:
         atom = self.atoms.get(atom_name)
         if atom is None:
             raise BaseException("The fact doesn't match any known atom")
-        atom.status = value
+        atom.state = value
 
     def resolve_query(self, query):
         # if log
@@ -62,30 +61,6 @@ class Tree:
         if atom is None:
             raise BaseException("The query doesn't match any known atom")
         return atom.resolve()
-
-
-
-
-
-    # TODO MOVE THIS
-
-    @staticmethod
-    def repr_node_handler(node, negative, level):
-        str = ' ' * level
-        return str + node.__repr__() + "\n"
-
-    @staticmethod
-    def repr_result_handler(node, node_result, operand_results, children_results):
-        str = node_result
-        for res in operand_results:
-            if res:
-                str += res
-        for res in children_results:
-            if res:
-                str += res
-        return str
-
-REGEX_CONNECTORS = r'\+|\^|\||!'
 
 
 class NPITree(Tree):
@@ -106,8 +81,8 @@ class NPITree(Tree):
 
     def create_atom_lst(self, npi_rules):
         for rule in npi_rules:
-            atoms = list(re.sub(REGEX_CONNECTORS, '', rule.npi_left))
-            atoms += list(re.sub(REGEX_CONNECTORS, '', rule.npi_right))
+            atoms = list(re.sub(REGEX_OP, '', rule.npi_left))
+            atoms += list(re.sub(REGEX_OP, '', rule.npi_right))
             self.atoms.update(dict((atom_str, self.create_atom(atom_str)) for atom_str in atoms))
 
     def set_atoms_state(self, npi_rules, facts, queries):
@@ -119,7 +94,7 @@ class NPITree(Tree):
 
         atoms_in_conclusion = []
         for rule in npi_rules:
-            atoms_in_conclusion += list(re.sub(REGEX_CONNECTORS, '', rule.npi_right))
+            atoms_in_conclusion += list(re.sub(REGEX_OP, '', rule.npi_right))
         for fact in facts:
             self.set_atom_state(fact, True)
         for atom in atoms_in_conclusion:
@@ -161,8 +136,8 @@ class NPITree(Tree):
             for x in rule.npi_right:
                 if x not in OPERATORS:
                     stack.append(self.atoms[x])
-                    if self.atoms[x].status is False:
-                        self.atoms[x].status = None
+                    if self.atoms[x].state is False:
+                        self.atoms[x].state = None
                 else:
                     # TODO Later use not duplicated connectors
                     connector_x = self.create_connector(LST_OP[x])

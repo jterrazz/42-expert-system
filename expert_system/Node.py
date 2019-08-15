@@ -1,5 +1,4 @@
 from enum import Enum
-from expert_system.helpers.Error import TreeError
 
 
 class ConnectorType(Enum):
@@ -41,13 +40,14 @@ class NegativeNode:
         # return self.parse_handler(node_handler, result_handler, True, level, force_node)
 
 
+# TODO Rename atom status to state
 # Rename parent to operand_parent (find the Real name maybe connector)
 class Node:
     def __init__(self, tree):
         self.children = []
         self.parents = []
         self.parsed = False
-        self.status = False
+        self.state = False
         self.tree = tree
         self.negative = NegativeNode(self)
 
@@ -56,9 +56,34 @@ class Node:
             self.children.append(child)
 
     def set_status(self, status):
-        self.status = status
+        self.state = status
         print(f'{ self.__repr__() } set to', status)
         return status
+
+
+
+    ## REDO REPR ##
+
+    def __full_repr__(self):
+        self.parse(self.repr_node_handler, self.repr_result_handler)
+
+    @staticmethod
+    def repr_node_handler(node, negative, level):
+        str = ' ' * level
+        return str + node.__repr__() + "\n"
+
+    @staticmethod
+    def repr_result_handler(node, node_result, operand_results, children_results):
+        str = node_result
+        for res in operand_results:
+            if res:
+                str += res
+        for res in children_results:
+            if res:
+                str += res
+        return str
+
+    ## REDO REPR ##
 
     '''
     Recursive parser, used for
@@ -88,7 +113,7 @@ class Node:
         child_results = []
         operand_results = []
 
-        if self.status is None:
+        if self.state is None:
             self.parsed = True
             if isinstance(self, ConnectorNode):
                 for child in self.operands:
@@ -110,12 +135,12 @@ class Node:
 
     @staticmethod
     def resolve_node(node, negative, level):
-        print(f'Node { node.__repr__() } is', node.status)
-        return node.status
+        print(f'Node { node.__repr__() } is', node.state)
+        return node.state
 
     @staticmethod
     def resolve_results(node, node_res, operands_res, children_res):
-        # print("Resolving children", node.status)
+        # print("Resolving children", node.state)
 
         if node_res is not None:
             return node_res
@@ -194,7 +219,7 @@ class Node:
 
 
             # Next try if a parent node
-            # if node.status is None and tested_parents is False:  # Find better way to check condition
+            # if node.state is None and tested_parents is False:  # Find better way to check condition
             #     print("WILL CHECK FOR NODE PAERENTS")
             #     restart = False
             #     tested_parents = True
@@ -204,7 +229,7 @@ class Node:
             #         if parent.parsed is False and parent.type is not ConnectorType.IMPLY:
             #             parent.resolve()
 
-        return node.status
+        return node.state
 
 '''
 A connector can be one of | & ^ -> <->
@@ -214,7 +239,7 @@ A connector can be one of | & ^ -> <->
 class ConnectorNode(Node):
     def __init__(self, connector_type, tree):
         super(ConnectorNode, self).__init__(tree)
-        self.status = None
+        self.state = None
         self.type = connector_type
         self.operands = []
 
@@ -223,7 +248,7 @@ class ConnectorNode(Node):
         return tuple(self.operands) == tuple(other.operands) and self.type is other.type
 
     def __repr__(self):
-        return repr_node_status(f'({self.type.value})', self.status)
+        return repr_node_status(f'({self.type.value})', self.state)
 
     def append_child(self, child):
         if self.type is ConnectorType.IMPLY:
@@ -259,23 +284,23 @@ class ConnectorNode(Node):
         if self.type is ConnectorType.AND:
             if status is True:
                 for op in self.operands:
-                    # if op.status is not self.status:
+                    # if op.state is not self.state:
                         # raise ConfictError("XX was XXX and XXXX asked to be set to XXXXX")
-                    op.status = self.status
+                    op.state = self.state
         elif self.type is ConnectorType.OR:
             # Check for conflicts here too
             for i, op in enumerate(self.operands):
-                if op.status is None:
+                if op.state is None:
                     none_index = i
                     none_number += 1
                     continue
 
                 if total is None:
-                    total = op.status
+                    total = op.state
                 else:
-                    total |= op.status
+                    total |= op.state
             # Only if one is None then we can deduct
-            if none_number is 1 and self.status is True and total is False:
+            if none_number is 1 and self.state is True and total is False:
                 self.operands[none_index].set_status(True)
 
 
@@ -283,18 +308,18 @@ class ConnectorNode(Node):
         elif self.type is ConnectorType.XOR:
             # Check for conflicts here too
             for i, op in enumerate(self.operands):
-                if op.status is None:
+                if op.state is None:
                     none_index = i
                     none_number += 1
                     continue
 
                 if total is None:
-                    total = op.status
-                elif op.status is not None:
-                    total ^= op.status
+                    total = op.state
+                elif op.state is not None:
+                    total ^= op.state
             # Only if one is None then we can deduct
             if none_number is 1:
-                self.operands[none_index].set_status(total ^ self.status)
+                self.operands[none_index].set_status(total ^ self.state)
 
 
             # Need OR and XOR cases
@@ -309,7 +334,7 @@ class AtomNode(Node):
         return self.name == other.name
 
     def __repr__(self):
-        return repr_node_status(f'({self.name})', self.status)
+        return repr_node_status(f'({self.name})', self.state)
 
 
 # Put in class

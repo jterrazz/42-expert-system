@@ -73,7 +73,6 @@ class NPITree(Tree):
         Rules must use the NPI notation (ex: AB+C|)
         Facts and queries must be represented as arrays of single characters (ex: Facts = ["A", "B"])
         """
-
         super(NPITree, self).__init__()
         self.create_atom_lst(npi_rules)
         self.set_atoms_state(npi_rules, facts, queries)

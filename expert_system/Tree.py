@@ -2,12 +2,13 @@ from .Node import AtomNode, ConnectorNode, ConnectorType
 import re
 from .parsers.NPIParser import OPERATORS
 
-
 LST_OP = {'+': ConnectorType.AND, '|': ConnectorType.OR, '^': ConnectorType.XOR}
 
 # TODO Check for no duplicated also in the Conenctors
-# TODO Do methods for create Atom in tree
+
+
 class Tree:
+    """ A tree stores the state of the expert system based on rules, facts and queries """
     def __init__(self):
         self.atoms = []
         self.root_node = ConnectorNode(ConnectorType.AND, self)
@@ -82,21 +83,20 @@ class Tree:
         return str
 
 
-"""
-Build a tree from NPI notation.
-- npi_rules formatted as "AB+"
-- facts formatted as ["A", "B"]
-"""
-
-
 class NPITree(Tree):
     def __init__(self, npi_rules, facts, queries):
+        """
+        Build a tree from NPI notation.
+        - npi_rules formatted as "AB+"
+        - facts formatted as ["A", "B"]
+        """
         super(NPITree, self).__init__()
         self.good_atoms = {}
         self.good_connectors = []
         self.set_atoms(npi_rules)
         self.set_facts(facts, queries)
         self.set_node_relations(npi_rules)
+
 
     def set_atoms(self, npi_rules):
         for rule in npi_rules:

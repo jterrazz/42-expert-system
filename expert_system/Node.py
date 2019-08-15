@@ -50,6 +50,7 @@ class Node:
 
     def __init__(self, tree):
         """ Children and parents must be unique """
+
         self.children = []
         self.parents = []
         self.visited = False
@@ -57,19 +58,15 @@ class Node:
         self.tree = tree
         self.negative = NegativeNode(self)
 
-    def add_child(self, child):
-        if child not in self.children:
-            self.children.append(child)
+    def __repr_color__(self, str):
+        if self.state is True:
+            return f'\033[92m{str}\033[0m'
+        elif self.state is False:
+            return f'\033[91m{str}\033[0m'
+        else:
+            return f'\033[90m{str}\033[0m'
 
-    def set_status(self, status):
-        self.state = status
-        print(f'{ self.__repr__() } set to', status)
-        return status
-
-
-
-    ## REDO REPR ##
-
+    # REDO REPR ################################
     def __full_repr__(self):
         self.parse(self.repr_node_handler, self.repr_result_handler)
 
@@ -88,8 +85,16 @@ class Node:
             if res:
                 str += res
         return str
+    # ##########################################
 
-    ## REDO REPR ##
+    def add_child(self, child):
+        if child not in self.children:
+            self.children.append(child)
+
+    def set_status(self, status):
+        self.state = status
+        print(f'{ self.__repr__() } set to', status)
+        return status
 
     def parse(self, node_handler, results_handler):
         """
@@ -242,11 +247,11 @@ class ConnectorNode(Node):
         self.operands = []
         self.state = None
 
+    def __repr__(self):
+        return self.__repr_color__(f'({self.type.value})')
+
     def __eq__(self, other):
         return tuple(self.operands) == tuple(other.operands) and self.type is other.type
-
-    def __repr__(self):
-        return repr_node_status(f'({self.type.value})', self.state)
 
     def add_child(self, child):
         if self.type is ConnectorType.IMPLY:
@@ -257,14 +262,11 @@ class ConnectorNode(Node):
         if self.type is ConnectorType.IMPLY and self.operands.__len__() > 0:
             raise BaseException("An imply connection must only have one operand")
         self.operands.append(operand)
-
-        # PROBABLY ADD NO CONDITION FOR IMPLICATION
-        if self not in operand.parents:
+        if self.type is not ConnectorType.IMPLY and self not in operand.parents:
             operand.parents.append(self)
 
     def add_operands(self, operands):
-        for op in operands:
-            self.add_operand(op)
+        [self.add_operand(op) for op in operands]
 
     def set_status(self, status):
         super(ConnectorNode, self).set_status(status)
@@ -323,23 +325,14 @@ class ConnectorNode(Node):
             # Need OR and XOR cases
         return status
 
+
 class AtomNode(Node):
     def __init__(self, name, tree):
         super(AtomNode, self).__init__(tree)
         self.name = name
 
+    def __repr__(self):
+        return self.__repr_color__(f'({self.name})')
+
     def __eq__(self, other):
         return self.name == other.name
-
-    def __repr__(self):
-        return repr_node_status(f'({self.name})', self.state)
-
-
-# Put in class
-def repr_node_status(str, value):
-    if value is True:
-        return f'\033[92m{ str }\033[0m'
-    elif value is False:
-        return f'\033[91m{ str }\033[0m'
-    else:
-        return f'\033[90m{ str }\033[0m'

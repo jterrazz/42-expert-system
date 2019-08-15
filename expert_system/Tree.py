@@ -14,9 +14,8 @@ class Tree:
 
     def __init__(self):
         """
-        Atoms and connectors store the list of UNIQUE elements. It means that the same instance of the Atom "A"
-        will be used for all the equations. It also means the same for connectors (A connector is considered equal
-        if its operands are the same: (A & B) is the same as (B & A))
+        Atoms store the list of UNIQUE elements. It means that the same instance of the Atom "A"
+        will be used for all the equations.
 
         The root_node allows to connect all the nodes. It creates a unique tree for all the rules.
         """
@@ -123,28 +122,21 @@ class NPITree(Tree):
             if x not in OPERATORS:
                 stack.append(self.atoms[x])
             else:
-                # TODO Later use not duplicated connectors
                 pop0 = stack.pop()
                 pop1 = stack.pop()
                 if isinstance(pop0, ConnectorNode) and pop0.type is LST_OP[x]:
                     pop0.add_operand(pop1)
-                    new_node = pop0
+                    new_connector = pop0
+                    self.connectors.pop()
                 elif isinstance(pop1, ConnectorNode) and pop1.type is LST_OP[x]:
                     pop1.add_operand(pop0)
-                    new_node = pop1
+                    new_connector = pop1
+                    self.connectors.pop()
                 else:
                     connector_x = self.create_connector(LST_OP[x])
                     connector_x.add_operands([pop0, pop1])
-                    new_node = connector_x
-                    # TODO Check if infinite recursion can happen (if A child of B and B child of A)
-
-                    # Try with nested connectors
-                    # try:
-                    #     i = self.connectors.index(connector_x)
-                    #     connector_x = self.connectors[i]
-                    # except:
-                    #     self.connectors.append(connector_x)
-
-                stack.append(new_node)
+                    new_connector = connector_x
+                self.connectors.append(new_connector)
+                stack.append(new_connector)
 
         return stack.pop()

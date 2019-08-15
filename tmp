@@ -1,0 +1,3459 @@
+[95mQUERY: Get the value of E [0m
+Node [90m(E)[0m is None
+Node [90m(<=)[0m is None
+Node [90m(&)[0m is None
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Will search the set: ([90m(C)[0m,)
+Will search the set: ([90m(D)[0m, [90m(C)[0m)
+Node [90m(|)[0m is None
+Node [90m(D)[0m is None
+Node [90m(C)[0m is None
+We try to complete the whole [[90m(D)[0m, [90m(C)[0m]
+Will search the set: ([90m(D)[0m,)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+Will search the set: ([90m(A)[0m,)
+Will search the set: ([90m(B)[0m, [90m(A)[0m)
+Node [90m(|)[0m is None
+Node [90m(B)[0m is None
+Node [90m(A)[0m is None
+We try to complete the whole [[90m(B)[0m, [90m(A)[0m]
+Will search the set: ([90m(B)[0m,)
+We try to complete the whole [[90m(|)[0m, [90m(|)[0m]

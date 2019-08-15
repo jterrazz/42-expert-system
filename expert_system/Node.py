@@ -254,19 +254,22 @@ class Node:
 
 
 
-
                         # IN the END INDIVIDUAL NODES SHOULD RESOLVE HERE
                         print("Will search the set:", subset)
                         simulated_connector = ConnectorNode(node.type, None)
                         simulated_connector.add_operands(subset)
                         try:
                             found_index = node.tree.connectors.index(simulated_connector)
-                            node_state = node.tree.connectors[found_index].resolve()
-                            if node_state:
-                                simplifier.replace([OperandState(x.name, None) for x in subset], True)
-                                result = simplifier.get_result()
-                                if result is not None:
-                                    return node.set_status(result)
+                            connector = node.tree.connectors[found_index]
+                            if connector.visited is False:
+                                connector.visited = True
+                                node_state = connector.resolve()
+                                if node_state:
+                                    simplifier.replace([OperandState(x.name, None) for x in subset], True)
+                                    result = simplifier.get_result()
+                                    if result is not None:
+                                        return node.set_status(result)
+                                connector.visited = False
                         except:
                             pass
 

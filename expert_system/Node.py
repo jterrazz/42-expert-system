@@ -40,13 +40,20 @@ class NegativeNode:
         # return self.parse_handler(node_handler, result_handler, True, level, force_node)
 
 
-# TODO Rename atom status to state
 # Rename parent to operand_parent (find the Real name maybe connector)
+# Find example of a Connector that must be resolved thanks to its parent
 class Node:
+    """
+    A Node is the main element stored in the tree. Each node is connected to each other in a parent/child relation.
+    If we know the value of the child, we can deduct the value of the parent.
+    For example, for the rule A => B, (A) is child of (=>) child of (B). By knowing A, we can deduct the parents values.
+    """
+
     def __init__(self, tree):
+        """ Children and parents must be unique """
         self.children = []
         self.parents = []
-        self.parsed = False
+        self.visited = False
         self.state = False
         self.tree = tree
         self.negative = NegativeNode(self)
@@ -100,12 +107,12 @@ class Node:
     # Node handler could be a self class
     # Rename to node_res, operands_res, children_res
     def parse_handler(self, node_handler, result_handler, negative, level, force_node):
-        if self.parsed and not force_node:
+        if self.visited and not force_node:
             return ""
 
         node_result = node_handler(self, negative, level)
 
-        if self.parsed:
+        if self.visited:
             return node_result
 
         # Stop here if node is found
@@ -114,7 +121,7 @@ class Node:
         operand_results = []
 
         if self.state is None:
-            self.parsed = True
+            self.visited = True
             if isinstance(self, ConnectorNode):
                 for child in self.operands:
                     operand_results.append(child.parse_handler(node_handler, result_handler, False, level + (4 if isinstance(child, ConnectorNode) else 0), True))
@@ -122,7 +129,7 @@ class Node:
                 child_results.append(child.parse_handler(node_handler, result_handler, False, level + 4, False))
             if self.negative.children.__len__():
                 child_results.append(self.negative.parse_handler(node_handler, result_handler, True, level, False))  # Need to handle result better
-            self.parsed = False
+            self.visited = False
 
         return result_handler(self, node_result, operand_results, child_results)
 
@@ -224,9 +231,9 @@ class Node:
             #     restart = False
             #     tested_parents = True
             #     for parent in node.parents:
-            #         print("PARENT", parent.__repr__(), " Parsed ", parent.parsed)
+            #         print("PARENT", parent.__repr__(), " Parsed ", parent.visited)
             #         # Need to handle negatives
-            #         if parent.parsed is False and parent.type is not ConnectorType.IMPLY:
+            #         if parent.visited is False and parent.type is not ConnectorType.IMPLY:
             #             parent.resolve()
 
         return node.state

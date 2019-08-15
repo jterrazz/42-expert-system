@@ -1,6 +1,12 @@
 A | B | C => D 
 X => B | C
 
+
+# (A | B) + (C | D) => E
+# X => (A | B) + (C | D)
+
+
+
 # A | B | C => D
 # X => B | C | E
 

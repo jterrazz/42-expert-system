@@ -1,4 +1,5 @@
 from enum import Enum
+import itertools
 
 
 class ConnectorType(Enum):
@@ -6,6 +7,7 @@ class ConnectorType(Enum):
     AND = '&'
     XOR = '^'
     IMPLY = '<='
+
 
 
 # Not need anymore
@@ -37,6 +39,45 @@ class NegativeNode:
         str += self.node.parse_handler(node_handler, result_handler, False, level, False)
         return str
         # return self.parse_handler(node_handler, result_handler, True, level, force_node)
+
+
+class OperandState:
+    def __init__(self, name, state):
+        self.state = state
+        self.name = name
+
+    def __eq__(self, other):
+        return self.name == other.name
+
+
+class ConnectorSimplifier:
+    def __init__(self, type, operands):
+        self.type = type
+        self.operands = []
+        for op in operands:
+            self.operands.append(OperandState(op.name, op.state))
+
+    def replace(self, operands, value):
+        name = ""
+        # If value not found raise
+        for op in operands:
+            name += op.name
+            self.operands.remove(op)
+        self.operands.append(OperandState(name, value))
+
+    def get_result(self):
+        res = None
+        for op in self.operands:
+            if res is None:
+                res = op.state
+                continue
+            elif self.type is ConnectorType.AND:
+                res &= op.state
+            elif self.type is ConnectorType.OR:
+                res |= op.state
+            elif self.type is ConnectorType.XOR:
+                res ^= op.state
+        return res
 
 
 # Rename parent to operand_parent (find the Real name maybe connector)
@@ -194,12 +235,32 @@ class Node:
                 # - ANY COMBINAISON OF OPERANDS SEPARATELY : (A + B + C) checks for (A + B) (B + C) (A + C) (A + B + C)
                 # - WITH ANY OF THEIR CHILD for each case
 
-                # We remove the child from the connectors
-                # We parse the list of connectors
-                # A connector is compatible if
-                #  1- It possess the same operands (or a subset) with the same type.
-                # 2- But the same operands can also be children
-                # 3- But we have to avoid recursion
+                # We have to parse the list of connectors and set their state to visited
+                # We can remove the child from connectors
+
+                print("We try to complete the whole", node.operands)
+                for l in range(1, len(node.operands) + 1):
+                    for subset in itertools.combinations(node.operands, l):
+                        print("Will search the set:", subset)
+                        # 1st - Convert node.operands to Simplifier format
+
+                        simplifier = ConnectorSimplifier(node.type, node.operands)
+                        simplifier.replace([OperandState("B", None), OperandState("C", None)], True)
+                        result = simplifier.get_result()
+                        if result is not None:
+                            return node.set_status(result)
+                        # We try to resolve the main equation using the subset
+
+                        # If you find the set, set it's value and check for the rest of the list
+
+                if any(op.state is None for op in node.operands):
+                    print("Could not deduce from sets of combinations")
+                else:
+                    print(node.operands)
+
+
+
+
 
                 # It even if one node still remains none, we could potentially deduct it  // Or maybe not
                 if found_none:

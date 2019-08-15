@@ -122,6 +122,7 @@ class NPITree(Tree):
 
                     # Put in right too
                     # TODO Check if infinite recursion can happen (if A child of B and B child of A)
+                    # Try with nested connectors
                     try:
                         i = self.connectors.index(connector_x)
                         connector_x = self.connectors[i]

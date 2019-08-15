@@ -109,6 +109,9 @@ class Node:
         return self.parse_handler(node_handler, results_handler, False, 0, True)
 
     def parse_handler(self, node_handler, result_handler, negative, level, force_node):
+        children_res = []
+        operands_res = []
+
         if self.visited and not force_node:
             return ""
 
@@ -117,10 +120,7 @@ class Node:
         if self.visited:
             return node_res
 
-        # Stop here if node is found
-
-        children_res = []
-        operands_res = []
+        # Stop here if node is found but still do if printer
 
         if self.state is None:
             self.visited = True
@@ -129,8 +129,8 @@ class Node:
                     operands_res.append(child.parse_handler(node_handler, result_handler, False, level + (4 if isinstance(child, ConnectorNode) else 0), True))
             for child in self.children:
                 children_res.append(child.parse_handler(node_handler, result_handler, False, level + 4, False))
-            if self.negative.children.__len__():
-                children_res.append(self.negative.parse_handler(node_handler, result_handler, True, level, False))  # Need to handle result better
+            # if self.negative.children.__len__():
+            #     children_res.append(self.negative.parse_handler(node_handler, result_handler, True, level, False))  # Need to handle result better
             self.visited = False
 
         return result_handler(self, node_res, operands_res, children_res)
@@ -251,7 +251,15 @@ class ConnectorNode(Node):
         return self.__repr_color__(f'({self.type.value})')
 
     def __eq__(self, other):
-        return tuple(self.operands) == tuple(other.operands) and self.type is other.type
+        if not isinstance(other, ConnectorNode):
+            return False
+        t = list(other.operands)  # make a mutable copy
+        try:
+            for elem in self.operands:
+                t.remove(elem)
+        except ValueError:
+            return False
+        return not t
 
     def add_child(self, child):
         if self.type is ConnectorType.IMPLY:
@@ -335,4 +343,4 @@ class AtomNode(Node):
         return self.__repr_color__(f'({self.name})')
 
     def __eq__(self, other):
-        return self.name == other.name
+        return isinstance(other, AtomNode) and self.name == other.name

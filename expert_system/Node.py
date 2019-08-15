@@ -246,32 +246,36 @@ class Node:
                 # We have to parse the list of connectors and set their state to visited
                 # We can remove the child from connectors
 
-                print("We try to complete the whole", node.operands)
+                # If connectors as operands (maybe we need to handle that anyway)
+                if any([isinstance(x, ConnectorNode) for x in node.operands]):
+                    return node.set_status(True) # TODO NEED TO BE HANDLED RECURSIVLY BY THE ConnectorSimplifierss
+
+
+
                 simplifier = ConnectorSimplifier(node.type, node.operands)
                 for l in range(1, len(node.operands) + 1):
                     for subset in itertools.combinations(node.operands, l):
-
-
-
 
                         # IN the END INDIVIDUAL NODES SHOULD RESOLVE HERE
                         print("Will search the set:", subset)
                         simulated_connector = ConnectorNode(node.type, None)
                         simulated_connector.add_operands(subset)
                         try:
-                            found_index = node.tree.connectors.index(simulated_connector)
-                            connector = node.tree.connectors[found_index]
-                            if connector.visited is False:
-                                print("FOUND CONNECTOR ", connector, connector.operands)
-                                connector.visited = True
-                                node_state = connector.resolve()
-                                if node_state:
-                                    print("WILL REPLACE PART OF EQUATION")
-                                    simplifier.replace([OperandState(x.name, None) for x in subset], True)
-                                    result = simplifier.get_result()
-                                    if result is not None:
-                                        return node.set_status(result)
-                                connector.visited = False
+                            connectors = filter(lambda x: x == simulated_connector, node.tree.connectors)
+                            for connector in connectors:
+                                if connector.visited is False and connector is not node:
+                                    print("FOUND CONNECTOR ", connector, connector.operands, connector.children)
+                                    # connector.visited = True
+                                    node_state = connector.resolve()
+                                    print("FOUND STATE ", node_state)
+                                    # connector.visited = False
+                                    if node_state:
+                                        print("WILL REPLACE PART OF EQUATION")
+                                        simplifier.replace([OperandState(x.name, None) for x in subset], True)
+                                        result = simplifier.get_result()
+                                        print("EQUATION RETURNED", result)
+                                        if result is not None:
+                                            return node.set_status(result)
                         except:
                             pass
 

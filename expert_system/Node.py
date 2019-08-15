@@ -262,9 +262,11 @@ class Node:
                             found_index = node.tree.connectors.index(simulated_connector)
                             connector = node.tree.connectors[found_index]
                             if connector.visited is False:
+                                print("FOUND CONNECTOR ", connector, connector.operands)
                                 connector.visited = True
                                 node_state = connector.resolve()
                                 if node_state:
+                                    print("WILL REPLACE PART OF EQUATION")
                                     simplifier.replace([OperandState(x.name, None) for x in subset], True)
                                     result = simplifier.get_result()
                                     if result is not None:
@@ -273,7 +275,14 @@ class Node:
                         except:
                             pass
 
+                # 2 remaining problems:
+                # (A | B) + (C | D) => E
+                # X => (C | D)
+                # X => (A | B)
+                # #X => (A | B) + (C | D)
 
+                # => C | D Not working
+                # => The global + raise error=
 
 
 

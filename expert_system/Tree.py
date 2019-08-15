@@ -10,7 +10,7 @@ LST_OP = {'+': ConnectorType.AND, '|': ConnectorType.OR, '^': ConnectorType.XOR}
 class Tree:
     def __init__(self):
         self.atoms = []
-        self.root_node = ConnectorNode(ConnectorType.AND)
+        self.root_node = ConnectorNode(ConnectorType.AND, self)
         self.root_node.parsed = True
 
     def __repr__(self):
@@ -33,12 +33,12 @@ class Tree:
     """
 
     def create_atom(self, name):
-        atom = AtomNode(name)
+        atom = AtomNode(name, self)
         self.add_atom(atom)
         return atom
 
     def create_connector(self, type):
-        connector = ConnectorNode(type)
+        connector = ConnectorNode(type, self)
         # TODO Probably need to save connectors in list
         return connector
 
@@ -106,59 +106,10 @@ class NPITree(Tree):
 
     def set_node_relations(self, rules):
         print(self.good_atoms)
-        ########################################
-        # TMP Example for: !((A + B + C) | D) => !E
-
-        # atom_a = self.create_atom("A")
-        # atom_b = self.create_atom("B")
-        # atom_c = self.create_atom("C")
-        # atom_d = self.create_atom("D")
-        # atom_e = self.create_atom("E")
-        #
-        # connector_and_abc = self.create_connector(ConnectorType.AND)
-        # connector_and_abc.append_operands([atom_a, atom_b, atom_c])
-        # Or
-        # connector_and_abc.append_operand(atom_a)
-        # connector_and_abc.append_operand(atom_b)
-        # connector_and_abc.append_operand(atom_c)
-
-        # connector_or = self.create_connector(ConnectorType.OR)
-        # connector_or.append_operands([connector_and_abc, atom_d])
-
-        # Each imply connector must be unique
-        # connector[_imply = self.create_connector(ConnectorType.IMPLY)
-        # atom_e.append_child(connector_imply)
-        # connector_imply.append_operand(connector_or)
-
-        ########################################
-        ########################################
-        ########################################
-
-        # tmp = 'A'
-        # connector_and_ab = self.create_connector(ConnectorType.AND)
-        # connector_and_ab.append_operands([self.good_atoms[tmp], self.good_atoms['B']])
-        # connector_imply_ab = self.create_connector(ConnectorType.IMPLY)
-        # self.good_atoms['C'].append_child(connector_imply_ab)
-        # connector_imply_ab.append_operand(connector_and_ab)
-        #
-        # connector_and_de = self.create_connector(ConnectorType.AND)
-        # connector_and_de.append_operands([self.good_atoms['D'], self.good_atoms['E']])
-        # connector_imply_de = self.create_connector(ConnectorType.IMPLY)
-        # self.good_atoms['F'].append_child(connector_imply_de)
-        # connector_imply_de.append_operand(connector_and_de)
 
         if self.atoms.__len__() is 0:
             raise BaseException("The tree is empty")
 
-        """
-        A ^ B = > C  # A and B are True, so C is False
-        D ^ E = > F  # Only D is True, so F is True
-        G ^ H = > I  # Only H is True, so I is True
-        J ^ K = > L  # J and K are False, so J is False
-
-        =ABDH
-        ?CFIL
-        """
         for rule in rules:
             stack = []
 
@@ -184,15 +135,6 @@ class NPITree(Tree):
                     stack.append(connector_x)
                     #handle !
 
-
-            """
-            A => E
-            D => A | B
-            
-            =D
-            ?E
-            
-            """
             left_start = stack.pop()
             stack = []
             for x in rule.npi_right:

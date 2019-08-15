@@ -43,11 +43,12 @@ class NegativeNode:
 
 # Rename parent to operand_parent (find the Real name maybe connector)
 class Node:
-    def __init__(self):
+    def __init__(self, tree):
         self.children = []
         self.parents = []
         self.parsed = False
         self.status = None
+        self.tree = tree
         self.negative = NegativeNode(self)
 
     def append_child(self, child):
@@ -181,6 +182,17 @@ class Node:
                 if res is not None:
                     return node.set_status(res)
 
+                # Check for similar connectors based on operand children
+                # # If it's NPI tree
+                # Maybe delete tree reference from Node Class
+                # if node.type is not ConnectorType.IMPLY:
+                    # for connector in node.tree.good_connectors:
+                    #     for child in node.children:
+                    #         if
+                    # for op in node.operands:
+
+
+
             # Next try if a parent node
             # if node.status is None and tested_parents is False:  # Find better way to check condition
             #     print("WILL CHECK FOR NODE PAERENTS")
@@ -200,14 +212,14 @@ A connector can be one of | & ^ -> <->
 
 
 class ConnectorNode(Node):
-    def __init__(self, connector_type):
-        super(ConnectorNode, self).__init__()
+    def __init__(self, connector_type, tree):
+        super(ConnectorNode, self).__init__(tree)
         self.type = connector_type
         self.operands = []
 
     def __eq__(self, other):
         # TODO Maybe check if both classes are operands
-        return set(self.operands) == set(other.operands) and self.type is other.type
+        return tuple(self.operands) == tuple(other.operands) and self.type is other.type
 
     def __repr__(self):
         return repr_node_status(f'({self.type.value})', self.status)
@@ -288,8 +300,8 @@ class ConnectorNode(Node):
         return status
 
 class AtomNode(Node):
-    def __init__(self, name):
-        super(AtomNode, self).__init__()
+    def __init__(self, name, tree):
+        super(AtomNode, self).__init__(tree)
         self.name = name
 
     # def __eq__(self, other):

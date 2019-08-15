@@ -1,0 +1,10 @@
+# this is a comment$
+# all the required rules and symbols, along with the bonus ones, will be
+# shown here. spacing is not important
+
+=ABG			# Initial facts : A, B and G are true. All others are false.
+
+				# If no facts are initially true, then a simple "=" followed
+				# by a newline is used
+
+?GVX			# Queries : What are G, V and X ?

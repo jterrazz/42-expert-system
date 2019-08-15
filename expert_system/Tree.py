@@ -53,7 +53,7 @@ class Tree:
     """
 
     def resolve_atom(self, atom_name):
-        print("WILL RESOLVE ATOM", atom_name)
+        print("\033[95mQUERY: Get the value of the fact", atom_name, "\033[0m")
         for atom in self.atoms:
             if isinstance(atom, AtomNode) and atom.name is atom_name:
                 return atom.resolve()
@@ -198,6 +198,8 @@ class NPITree(Tree):
             for x in rule.npi_right:
                 if x not in OPERATORS:
                     stack.append(self.good_atoms[x])
+                    if self.good_atoms[x].status is False:
+                        self.good_atoms[x].status = None
                 else:
                     # TODO Later use not duplicated connectors
                     connector_x = self.create_connector(LST_OP[x])

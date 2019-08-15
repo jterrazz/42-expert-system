@@ -56,7 +56,7 @@ class Node:
 
     def set_status(self, status):
         self.status = status
-        print(f'{ self.__repr__() } is now', status)
+        print(f'{ self.__repr__() } set to', status)
         return status
 
     '''
@@ -109,7 +109,7 @@ class Node:
 
     @staticmethod
     def resolve_node(node, negative, level):
-        print(f'Current node { node.__repr__() } is', node.status)
+        print(f'Node { node.__repr__() } is', node.status)
         return node.status
 
     @staticmethod
@@ -125,7 +125,6 @@ class Node:
         tested_parents = False
 
         while restart:
-            print("Resolving the node ", node.__repr__())
             restart = False
             # First try child results
             for child_res in children_res:
@@ -144,7 +143,8 @@ class Node:
 
                     # NEED TO CHECK ALL CHILDS ????? OR SIMPLY DON"T ALLOW MANY OPERANDS FOR THIS OP
                     if node.type is ConnectorType.IMPLY:
-                        return node.set_status(True if (op_res is True) else None)
+                        return node.set_status(op_res)
+                        # return node.set_status(True if (op_res is True) else None)
 
                     if op_res is None:
                         found_none = True
@@ -168,19 +168,29 @@ class Node:
                     elif (node.type is ConnectorType.AND and res is True) or (node.type is ConnectorType.XOR):
                         return node.set_status(None)
 
+
+                # Will check here  for similar Connectors nodes based on childs
+                # for op in node.operands:
+                #     for child in op_res
+
+
+
+
+
+
                 if res is not None:
                     return node.set_status(res)
 
             # Next try if a parent node
-            if node.status is None and tested_parents is False:  # Find better way to check condition
-                print("WILL CHECK FOR NODE PAERENTS")
-                restart = False
-                tested_parents = True
-                for parent in node.parents:
-                    print("PARENT", parent.__repr__(), " Parsed ", parent.parsed)
-                    # Need to handle negatives
-                    if parent.parsed is False and parent.type is not ConnectorType.IMPLY:
-                        parent.resolve()
+            # if node.status is None and tested_parents is False:  # Find better way to check condition
+            #     print("WILL CHECK FOR NODE PAERENTS")
+            #     restart = False
+            #     tested_parents = True
+            #     for parent in node.parents:
+            #         print("PARENT", parent.__repr__(), " Parsed ", parent.parsed)
+            #         # Need to handle negatives
+            #         if parent.parsed is False and parent.type is not ConnectorType.IMPLY:
+            #             parent.resolve()
 
         return node.status
 
@@ -234,7 +244,6 @@ class ConnectorNode(Node):
 
         # Pass result to children
         if self.type is ConnectorType.AND:
-            print("WILL DEDUCT FOR AND RELATION")
             if status is True:
                 for op in self.operands:
                     # if op.status is not self.status:
@@ -242,7 +251,6 @@ class ConnectorNode(Node):
                     op.status = self.status
         elif self.type is ConnectorType.OR:
             # Check for conflicts here too
-            print("WILL DEDUCT FOR OR RELATION")
             for i, op in enumerate(self.operands):
                 if op.status is None:
                     none_index = i
@@ -261,7 +269,6 @@ class ConnectorNode(Node):
         # Try finding  common ft with OR
         elif self.type is ConnectorType.XOR:
             # Check for conflicts here too
-            print("WILL DEDUCT FOR XOR RELATION")
             for i, op in enumerate(self.operands):
                 if op.status is None:
                     none_index = i

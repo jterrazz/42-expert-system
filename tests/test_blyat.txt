@@ -2,6 +2,9 @@ A | B | C => D
 X => B | C
 
 # A | B | C => D
+# X => B | C | E
+
+# A | B | C => D
 # N => B
 # M => C
 # X => N | M

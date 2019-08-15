@@ -190,21 +190,24 @@ class Node:
                     elif node.type is ConnectorType.XOR:
                         res ^= op_res
 
+                # IF NOT FOUND< WILL CHECK FOR
+                # - ANY COMBINAISON OF OPERANDS SEPARATELY : (A + B + C) checks for (A + B) (B + C) (A + C) (A + B + C)
+                # - WITH ANY OF THEIR CHILD for each case
+
+                # We remove the child from the connectors
+                # We parse the list of connectors
+                # A connector is compatible if
+                #  1- It possess the same operands (or a subset) with the same type.
+                # 2- But the same operands can also be children
+                # 3- But we have to avoid recursion
+
+                # It even if one node still remains none, we could potentially deduct it  // Or maybe not
                 if found_none:
                     if node.type is ConnectorType.OR:
                         if res is False:
                             return node.set_status(None)
                     elif (node.type is ConnectorType.AND and res is True) or (node.type is ConnectorType.XOR):
                         return node.set_status(None)
-
-
-                # Will check here  for similar Connectors nodes based on childs
-                # for op in node.operands:
-                #     for child in op_res
-
-
-                # IF NOT FOUND< WILL CHECK FOR ANY COMBINAISON OF OPERANDS SEPARATELY AND WITH THEIR CHILD TOO
-
 
 
                 if res is not None:

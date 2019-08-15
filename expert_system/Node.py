@@ -21,13 +21,12 @@ class NegativeNode:
         self.children = []
         self.parents = []
 
-    def append_child(self, child):
+    def add_child(self, child):
         if child not in self.children:
             self.children.append(child)
         if self not in child.parents:
             child.parents.append(self)
 
-    # Add the negative state here
     def parse_handler(self, node_handler, result_handler, negative, level, force_node):
         if not self.children.__len__():
             return ' ' * level + f'-{ self.node.__repr__()}\n'
@@ -58,7 +57,7 @@ class Node:
         self.tree = tree
         self.negative = NegativeNode(self)
 
-    def append_child(self, child):
+    def add_child(self, child):
         if child not in self.children:
             self.children.append(child)
 
@@ -92,52 +91,47 @@ class Node:
 
     ## REDO REPR ##
 
-    '''
-    Recursive parser, used for
-    - Printing the node children
-    - Resolving node values
-    
-    node_handler() is executed for each node, and the children result is passed to the results_handler()
-    The level parameter represents the depth of the node.
-    '''
-
     def parse(self, node_handler, results_handler):
+        """
+            Because the nodes are interconnected in no particular order, we need a unique algorithm
+            to parse the node children.
+
+            This function is used mainly to
+            - Print the node children
+            - Resolve node values
+        """
+
         return self.parse_handler(node_handler, results_handler, False, 0, True)
 
-    # Node handler could be a self class
-    # Rename to node_res, operands_res, children_res
     def parse_handler(self, node_handler, result_handler, negative, level, force_node):
         if self.visited and not force_node:
             return ""
 
-        node_result = node_handler(self, negative, level)
+        node_res = node_handler(self, negative, level)
 
         if self.visited:
-            return node_result
+            return node_res
 
         # Stop here if node is found
 
-        child_results = []
-        operand_results = []
+        children_res = []
+        operands_res = []
 
         if self.state is None:
             self.visited = True
             if isinstance(self, ConnectorNode):
                 for child in self.operands:
-                    operand_results.append(child.parse_handler(node_handler, result_handler, False, level + (4 if isinstance(child, ConnectorNode) else 0), True))
+                    operands_res.append(child.parse_handler(node_handler, result_handler, False, level + (4 if isinstance(child, ConnectorNode) else 0), True))
             for child in self.children:
-                child_results.append(child.parse_handler(node_handler, result_handler, False, level + 4, False))
+                children_res.append(child.parse_handler(node_handler, result_handler, False, level + 4, False))
             if self.negative.children.__len__():
-                child_results.append(self.negative.parse_handler(node_handler, result_handler, True, level, False))  # Need to handle result better
+                children_res.append(self.negative.parse_handler(node_handler, result_handler, True, level, False))  # Need to handle result better
             self.visited = False
 
-        return result_handler(self, node_result, operand_results, child_results)
-
-    '''
-    The function uses the parse method ... etc
-    '''
+        return result_handler(self, node_res, operands_res, children_res)
 
     def resolve(self):
+        """ Returns and sets the current node state """
         return self.parse(self.resolve_node, self.resolve_results)
 
     @staticmethod
@@ -147,12 +141,9 @@ class Node:
 
     @staticmethod
     def resolve_results(node, node_res, operands_res, children_res):
-        # print("Resolving children", node.state)
-
         if node_res is not None:
             return node_res
 
-        # Better tests
         # RESTART CANT HAPPEND HERE
         restart = True
         tested_parents = False
@@ -238,31 +229,31 @@ class Node:
 
         return node.state
 
-'''
-A connector can be one of | & ^ -> <->
-'''
-
 
 class ConnectorNode(Node):
+    """
+    A connector node represents a relation in the set: AND, OR, XOR, IMPLY.
+    You must differentiate the node operands from children.
+    """
+
     def __init__(self, connector_type, tree):
         super(ConnectorNode, self).__init__(tree)
-        self.state = None
         self.type = connector_type
         self.operands = []
+        self.state = None
 
     def __eq__(self, other):
-        # TODO Maybe check if both classes are operands
         return tuple(self.operands) == tuple(other.operands) and self.type is other.type
 
     def __repr__(self):
         return repr_node_status(f'({self.type.value})', self.state)
 
-    def append_child(self, child):
+    def add_child(self, child):
         if self.type is ConnectorType.IMPLY:
-            raise BaseException("Implications child must set as an operand")
-        super(ConnectorNode, self).append_child(child)
+            raise BaseException("IMPLY Connectors can only have operands")
+        super(ConnectorNode, self).add_child(child)
 
-    def append_operand(self, operand):
+    def add_operand(self, operand):
         if self.type is ConnectorType.IMPLY and self.operands.__len__() > 0:
             raise BaseException("An imply connection must only have one operand")
         self.operands.append(operand)
@@ -271,9 +262,9 @@ class ConnectorNode(Node):
         if self not in operand.parents:
             operand.parents.append(self)
 
-    def append_operands(self, operands):
+    def add_operands(self, operands):
         for op in operands:
-            self.append_operand(op)
+            self.add_operand(op)
 
     def set_status(self, status):
         super(ConnectorNode, self).set_status(status)

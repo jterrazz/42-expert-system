@@ -39,7 +39,7 @@ class Tree:
         if atom is None:
             atom = AtomNode(atom_name, self)
             self.atoms[atom_name] = atom
-            self.root_node.append_operand(atom)
+            self.root_node.add_operand(atom)
         return atom
 
     def create_connector(self, type):
@@ -118,7 +118,7 @@ class NPITree(Tree):
                     # TODO Later use not duplicated connectors
                     connector_x = self.create_connector(LST_OP[x])
                     # TODO Check if pop return not None
-                    connector_x.append_operands([stack.pop(), stack.pop()])
+                    connector_x.add_operands([stack.pop(), stack.pop()])
 
                     # Put in right too
                     # TODO Check if infinite recursion can happen (if A child of B and B child of A)
@@ -142,7 +142,7 @@ class NPITree(Tree):
                     # TODO Later use not duplicated connectors
                     connector_x = self.create_connector(LST_OP[x])
                     # TODO Check if pop return not None
-                    connector_x.append_operands([stack.pop(), stack.pop()])
+                    connector_x.add_operands([stack.pop(), stack.pop()])
 
                     # Put in right too
                     # TODO Check if infinite recursion can happen (if A child of B and B child of A)
@@ -157,5 +157,5 @@ class NPITree(Tree):
 
             # TODO Handle EQUAL
             connector_imply = self.create_connector(ConnectorType.IMPLY)
-            right_start.append_child(connector_imply)
-            connector_imply.append_operand(left_start)
+            right_start.add_child(connector_imply)
+            connector_imply.add_operand(left_start)

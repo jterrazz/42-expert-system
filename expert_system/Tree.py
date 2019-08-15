@@ -1,7 +1,7 @@
 import re
 
 from .Node import AtomNode, ConnectorNode, ConnectorType
-from .parsers.NPIParser import OPERATORS
+from .parser.Rule import OPERATORS
 
 LST_OP = {'+': ConnectorType.AND, '|': ConnectorType.OR, '^': ConnectorType.XOR}
 REGEX_OP = r'\+|\^|\||!'

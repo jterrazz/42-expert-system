@@ -1,26 +1,5 @@
 import re
-from .NPIParser import NPIParser
-from enum import Enum
-
-
-class ImplicationType(Enum):
-    IMPLY = "=>"
-    EQUAL = "<=>"
-
-
-class ImplicationRule(NPIParser):
-    def __init__(self, rule_str):
-        splitted = re.split(r'=>|<=>', rule_str)
-        self.type = (ImplicationType.IMPLY if "=>" in rule_str else ImplicationType.EQUAL)
-
-        left = list(splitted[0].replace(' ', ''))
-        right = list(splitted[1].replace(' ', ''))
-
-        self.npi_left = self.infix_to_postfix(left)
-        self.npi_right = self.infix_to_postfix(right)
-
-    def __repr__(self):
-        return f'<ImplicationRule> left: { self.npi_left }, right: { self.npi_right }, type: { self.type }'
+from .Rule import ExpertRule
 
 
 class ExpertParser:
@@ -31,12 +10,12 @@ class ExpertParser:
         self.facts = []
         self.queries = []
 
-        self.ft_parser() # set self.raw_rules
+        self.ft_parser()  # set self.raw_rules
         self.set_structured_rules()
 
     def set_structured_rules(self):
         for raw_rule in self.raw_rules:
-            self.structured_rules.append(ImplicationRule(raw_rule))
+            self.structured_rules.append(ExpertRule(raw_rule))
 
     @staticmethod
     def ft_split_operators(formula):
@@ -44,7 +23,7 @@ class ExpertParser:
 
     @staticmethod
     def ft_check_parentheses(rule):
-       return rule.count("(") == rule.count(")")
+        return rule.count("(") == rule.count(")")
 
     @staticmethod
     def ft_all_atoms(rules):

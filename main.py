@@ -1,6 +1,6 @@
 import sys
 
-from expert_system.parsers.ExpertParser import ExpertParser
+from expert_system.parser.Parser import ExpertParser
 from expert_system.Tree import NPITree
 
 if __name__ == "__main__":

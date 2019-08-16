@@ -3,7 +3,7 @@ L + E + Z + W <=> F # F, L and E are true
 Y <=> F
 
 =ABF
-?FCDU
+?FCDUL
 
 # assertions
 # =ABFCDLEZWUY

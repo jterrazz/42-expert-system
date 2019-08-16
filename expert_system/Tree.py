@@ -97,10 +97,10 @@ class NPITree(Tree):
             if rule.type is ImplicationType.EQUAL:
                 atoms_in_conclusion += list(re.sub(REGEX_OP, '', rule.npi_left))
 
-        for fact in facts:
-            self.set_atom_state(fact, True)
         for atom in atoms_in_conclusion:
             self.set_atom_state(atom, None)
+        for fact in facts:
+            self.set_atom_state(fact, True)
 
     def set_atoms_relations(self, rules):
         """
@@ -117,6 +117,10 @@ class NPITree(Tree):
             connector_imply = self.create_connector(ConnectorType.IMPLY)
             right.add_child(connector_imply)
             connector_imply.add_operand(left)
+            if rule.type is ImplicationType.EQUAL:
+                connector_imply_1 = self.create_connector(ConnectorType.IMPLY)
+                left.add_child(connector_imply_1)
+                connector_imply_1.add_operand(right)
 
     def set_atom_relations_from_npi(self, npi_rule):
         stack = []

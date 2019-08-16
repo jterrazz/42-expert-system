@@ -1,0 +1,23 @@
+#B => A
+#D + E => B
+#G + H => F
+#I + J => G
+#G => H
+#L + M => K
+#O + P => L + N
+#X + Y | Z => M
+#N => X + Y | Z
+
+#=DEIJP
+
+#?AFKP
+
+
+
+
+
+!(N | M) | Z => E
+X => !((N | M) + B)
+
+=X
+?E

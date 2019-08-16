@@ -98,6 +98,7 @@ class Node:
     def __init__(self, tree):
         """ Children and parents must be unique """
 
+        self.children = []
         self.parents = []
         self.visited = False
         self.state = False
@@ -115,6 +116,10 @@ class Node:
     def __full_repr__(self):
         # TODO
         return "Not implemented yet"
+
+    def add_child(self, child):
+        if child not in self.children:
+            self.children.append(child)
 
     def set_status(self, status):
         self.state = status
@@ -199,7 +204,6 @@ class ConnectorNode(Node):
 class AtomNode(Node):
     def __init__(self, name, tree):
         super(AtomNode, self).__init__(tree)
-        self.children = []
         self.name = name
 
     def __repr__(self):
@@ -207,10 +211,6 @@ class AtomNode(Node):
 
     def __eq__(self, other):
         return isinstance(other, AtomNode) and self.name == other.name
-
-    def add_child(self, child):
-        if child not in self.children:
-            self.children.append(child)
 
     def solve(self):
         if self.visited:

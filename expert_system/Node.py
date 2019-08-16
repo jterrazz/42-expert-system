@@ -158,7 +158,13 @@ class ConnectorNode(Node):
     def add_operands(self, operands):
         [self.add_operand(op) for op in operands]
 
-    # def solve(self):
+    def solve(self):
+        print("Will resolve", self)
+
+        for op in self.operands:
+            if self.type is ConnectorType.IMPLY:
+                return op.solve()
+        return False
     #     for l in range(1, len(node.operands) + 1):
     #         for subset in itertools.combinations(node.operands, l):
 
@@ -180,4 +186,17 @@ class AtomNode(Node):
             self.children.append(child)
 
     def solve(self):
-        return True
+        if self.state is not None:
+            return self.state
+
+        ret = None
+        self.visited = True
+        full_children_ret = [child.solve() for child in self.children]
+        resolved_children = [x for x in full_children_ret if x is not None]
+        if resolved_children.__len__() is not 0:
+            if all(x == resolved_children[0] for x in resolved_children):
+                ret = resolved_children[0]
+            else:
+                raise BaseException("Resolution from children gave different results")
+        self.visited = False
+        return ret

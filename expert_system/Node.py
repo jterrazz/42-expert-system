@@ -148,7 +148,7 @@ class Node:
                 raise BaseException("Resolution from children gave different results")
         self.visited = False
 
-        if ret:
+        if ret is not None:
             return self.set_status(ret)
         return self.deduct_from_parents()
 
@@ -246,7 +246,7 @@ class ConnectorNode(Node):
                     (self.type is ConnectorType.XOR)):
             return None
 
-        if res:
+        if res is not None:
             return self.set_status(res)
 
         return super(ConnectorNode, self).solve()

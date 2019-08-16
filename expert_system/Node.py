@@ -169,6 +169,7 @@ class ConnectorNode(Node):
         self.type = connector_type
         self.operands = []
         self.state = None
+        self.is_root = False
 
     def __repr__(self):
         return self.__repr_color__(f'({self.type.value})')
@@ -197,7 +198,7 @@ class ConnectorNode(Node):
         if self.type is ConnectorType.IMPLY and self.operands.__len__() > 0:
             raise BaseException("An imply connection must only have one operand")
         self.operands.append(operand)
-        if self.type is not ConnectorType.IMPLY and self not in operand.operand_parents:
+        if self.is_root is False and self.type is not ConnectorType.IMPLY and self not in operand.operand_parents:
             operand.operand_parents.append(self)
 
     def add_operands(self, operands):
@@ -234,7 +235,7 @@ class ConnectorNode(Node):
         if found_none and ((self.type is ConnectorType.OR and res is False) or\
                     (self.type is ConnectorType.AND and res is True) or\
                     (self.type is ConnectorType.XOR)):
-                return None
+            return None
 
         if res:
             return self.set_status(res)

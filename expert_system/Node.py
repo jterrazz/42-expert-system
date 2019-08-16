@@ -153,9 +153,17 @@ class Node:
 
     def deduct_from_parents(self):
         self.visited = True
-        for parent_op in self.operand_parents:
-             print("YOOO", parent_op.solve())
+        all_parents_ret = [parent.solve() for parent in self.operand_parents]
+        resolved_parents = [x for x in all_parents_ret if x is not None]
+        if resolved_parents.__len__() is not 0:
+            if all(x == resolved_parents[0] for x in resolved_parents):
+                ret = resolved_parents[0]
+            else:
+                raise BaseException("Resolution from children gave different results")
+        else:
+            ret = None
         self.visited = False
+        return ret
 
 
 class ConnectorNode(Node):

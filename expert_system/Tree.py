@@ -1,7 +1,7 @@
 import re
 
 from .Node import AtomNode, ConnectorNode, ConnectorType
-from .parser.Rule import OPERATORS
+from .parser.Rule import OPERATORS, ImplicationType
 
 LST_OP = {'+': ConnectorType.AND, '|': ConnectorType.OR, '^': ConnectorType.XOR}
 REGEX_OP = r'\+|\^|\||!'
@@ -94,6 +94,9 @@ class NPITree(Tree):
         atoms_in_conclusion = []
         for rule in npi_rules:
             atoms_in_conclusion += list(re.sub(REGEX_OP, '', rule.npi_right))
+            if rule.type is ImplicationType.EQUAL:
+                atoms_in_conclusion += list(re.sub(REGEX_OP, '', rule.npi_left))
+
         for fact in facts:
             self.set_atom_state(fact, True)
         for atom in atoms_in_conclusion:

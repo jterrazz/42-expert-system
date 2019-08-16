@@ -43,7 +43,7 @@ class NPIParser:
 class ExpertRule(NPIParser):
     def __init__(self, rule_str):
         splitted = re.split(r'=>|<=>', rule_str)
-        self.type = (ImplicationType.IMPLY if "=>" in rule_str else ImplicationType.EQUAL)
+        self.type = (ImplicationType.EQUAL if "<=>" in rule_str else ImplicationType.IMPLY)
 
         left = list(splitted[0].replace(' ', ''))
         right = list(splitted[1].replace(' ', ''))

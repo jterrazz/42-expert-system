@@ -85,6 +85,9 @@ class ConnectorType(Enum):
 #         print("Simplifier returns", res)
 #         return res
 
+# A => E
+# X => A + C
+
 
 # Rename parent to operand_parent (find the Real name maybe connector)
 # Find example of a Connector that must be resolved thanks to its parent
@@ -99,7 +102,7 @@ class Node:
         """ Children and parents must be unique """
 
         self.children = []
-        self.parents = []
+        self.operand_parents = []
         self.visited = False
         self.state = False
         self.tree = tree
@@ -125,6 +128,34 @@ class Node:
         self.state = status
         print(f'{ self.__repr__() } set to', status)
         return status
+
+    def solve(self):
+        if self.visited:
+            return None
+        if self.state is not None:
+            return self.state
+        print("Will solve atom", self)
+
+        ret = None
+        self.visited = True
+        full_children_ret = [child.solve() for child in self.children]
+        resolved_children = [x for x in full_children_ret if x is not None]
+        if resolved_children.__len__() is not 0:
+            if all(x == resolved_children[0] for x in resolved_children):
+                ret = resolved_children[0]
+            else:
+                raise BaseException("Resolution from children gave different results")
+        self.visited = False
+
+        if ret:
+            return self.set_status(ret)
+        return self.deduct_from_parents()
+
+    def deduct_from_parents(self):
+        self.visited = True
+        for parent_op in self.operand_parents:
+             print("YOOO", parent_op.solve())
+        self.visited = False
 
 
 class ConnectorNode(Node):
@@ -153,12 +184,21 @@ class ConnectorNode(Node):
     #         return False
     #     return not t
 
+    def set_status(self, status):
+        super(ConnectorNode, self).set_status(status)
+
+        # Here we'll set the operands deducted values
+        if self.type is ConnectorType.AND:
+            for op in self.operands:
+                op.set_status(status)
+        return status
+
     def add_operand(self, operand):
         if self.type is ConnectorType.IMPLY and self.operands.__len__() > 0:
             raise BaseException("An imply connection must only have one operand")
         self.operands.append(operand)
-        if self.type is not ConnectorType.IMPLY and self not in operand.parents:
-            operand.parents.append(self)
+        if self.type is not ConnectorType.IMPLY and self not in operand.operand_parents:
+            operand.operand_parents.append(self)
 
     def add_operands(self, operands):
         [self.add_operand(op) for op in operands]
@@ -166,8 +206,9 @@ class ConnectorNode(Node):
     def solve(self):
         if self.visited:
             return None
-        print("Will resolve connector", self, "ops:", self.operands)
+        print("Will resolve connector operands", self, "ops:", self.operands)
 
+        self.visited = True
         if self.type is ConnectorType.IMPLY:
             return self.operands[0].solve()
 
@@ -176,7 +217,7 @@ class ConnectorNode(Node):
 
         for op in self.operands:
             op_res = op.solve()
-            if (op_res is None):
+            if op_res is None:
                 found_none = True
                 continue
             elif res is None:
@@ -188,12 +229,19 @@ class ConnectorNode(Node):
             elif self.type is ConnectorType.XOR:
                 res ^= op_res
 
+        self.visited = False
+
         if found_none and ((self.type is ConnectorType.OR and res is False) or\
                     (self.type is ConnectorType.AND and res is True) or\
                     (self.type is ConnectorType.XOR)):
                 return None
 
-        return self.set_status(res)
+        if res:
+            return self.set_status(res)
+
+        return super(ConnectorNode, self).solve()
+
+
 
 
     # USE THIS IF OR IN CONCLUSION
@@ -211,23 +259,3 @@ class AtomNode(Node):
 
     def __eq__(self, other):
         return isinstance(other, AtomNode) and self.name == other.name
-
-    def solve(self):
-        if self.visited:
-            return None
-        if self.state is not None:
-            return self.state
-        print("Will solve atom", self)
-
-        ret = None
-        self.visited = True
-        full_children_ret = [child.solve() for child in self.children]
-        resolved_children = [x for x in full_children_ret if x is not None]
-        if resolved_children.__len__() is not 0:
-            if all(x == resolved_children[0] for x in resolved_children):
-                ret = resolved_children[0]
-            else:
-                raise BaseException("Resolution from children gave different results")
-        self.visited = False
-
-        return self.set_status(ret)

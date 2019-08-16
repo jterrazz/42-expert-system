@@ -5,8 +5,9 @@ from expert_system.Tree import NPITree
 
 if __name__ == "__main__":
     try:
-        with open(sys.argv[1]) as f:
+        with open(sys.argv[1]) as f: # protect argv
             content = f.readlines(1000)
+
     except Exception as e:
         print("{}".format(e))
         sys.exit(1)

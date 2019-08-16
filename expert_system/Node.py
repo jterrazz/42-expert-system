@@ -49,6 +49,9 @@ class OperandState:
     def __eq__(self, other):
         return self.name == other.name
 
+    def __repr__(self):
+        return f"name: { self.name }, state: { self.state }"
+
 
 # Need to keep in memory the replaced subsets (lets say we have A + B True and B + C True)
 class ConnectorSimplifier:
@@ -62,13 +65,17 @@ class ConnectorSimplifier:
         for op in operands:
             name += op.name
             self.operands.remove(op)
+        print("Will simplify the subset", name, " with value", value)
         self.operands.append(OperandState(name, value))
 
     def get_result(self):
+        found_none = False
         res = None
+
         for op in self.operands:
             if op.state is None:
-                return None
+                found_none = True
+                continue
             elif res is None:
                 res = op.state
                 continue
@@ -78,6 +85,11 @@ class ConnectorSimplifier:
                 res |= op.state
             elif self.type is ConnectorType.XOR:
                 res ^= op.state
+
+        if found_none:
+            if (self.type is ConnectorType.OR and res is False) or (self.type is ConnectorType.AND and res is True) or (self.type is ConnectorType.XOR):
+                return None
+        print("Simplifier returns", res)
         return res
 
 
@@ -247,8 +259,8 @@ class Node:
                 # We can remove the child from connectors
 
                 # If connectors as operands (maybe we need to handle that anyway)
-                if any([isinstance(x, ConnectorNode) for x in node.operands]):
-                    return node.set_status(True) # TODO NEED TO BE HANDLED RECURSIVLY BY THE ConnectorSimplifierss
+                # if any([isinstance(x, ConnectorNode) for x in node.operands]):
+                #     return node.set_status(True) # TODO NEED TO BE HANDLED RECURSIVLY BY THE ConnectorSimplifierss
 
 
 
@@ -256,7 +268,11 @@ class Node:
                 for l in range(1, len(node.operands) + 1):
                     for subset in itertools.combinations(node.operands, l):
 
-                        # IN the END INDIVIDUAL NODES SHOULD RESOLVE HERE
+                        # IN the END INDIVIDUAL NODES SHOULD RESOLVE HERE (for subsetof len 1, don't check the &)
+
+
+
+
                         print("Will search the set:", subset)
                         simulated_connector = ConnectorNode(node.type, None)
                         simulated_connector.add_operands(subset)
@@ -270,10 +286,8 @@ class Node:
                                     print("FOUND STATE ", node_state)
                                     # connector.visited = False
                                     if node_state:
-                                        print("WILL REPLACE PART OF EQUATION")
-                                        simplifier.replace([OperandState(x.name, None) for x in subset], True)
+                                        simplifier.replace([OperandState(x.name, None) for x in subset], node_state)
                                         result = simplifier.get_result()
-                                        print("EQUATION RETURNED", result)
                                         if result is not None:
                                             return node.set_status(result)
                         except:
@@ -293,6 +307,7 @@ class Node:
 
 
                 # It even if one node still remains none, we could potentially deduct it  // Or maybe not
+                # TODO IS PROBABLY NOW IN SIMPLIFIER
                 if found_none:
                     if node.type is ConnectorType.OR:
                         if res is False:

@@ -133,7 +133,7 @@ class Node:
         if self.visited:
             return None
         if self.state is not None:
-            print(self, "returned", self.state)
+            print(self, "is", self.state)
             return self.state
         print(self, "search")
 

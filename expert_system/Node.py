@@ -133,8 +133,9 @@ class Node:
         if self.visited:
             return None
         if self.state is not None:
+            print(self, "returned", self.state)
             return self.state
-        print("Will solve atom", self)
+        print(self, "search")
 
         ret = None
         self.visited = True
@@ -215,7 +216,7 @@ class ConnectorNode(Node):
     def solve(self):
         if self.visited:
             return None
-        print("Will resolve connector operands", self, "ops:", self.operands)
+        print(self, "resolving from operands:", self.operands)
 
         self.visited = True
         if self.type is ConnectorType.IMPLY:

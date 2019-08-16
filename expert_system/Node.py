@@ -159,12 +159,39 @@ class ConnectorNode(Node):
         [self.add_operand(op) for op in operands]
 
     def solve(self):
+        if self.visited:
+            return None
         print("Will resolve", self)
 
+        if self.type is ConnectorType.IMPLY:
+            return self.operands[0].solve()
+
+        res = None
+        found_none = False
+
         for op in self.operands:
-            if self.type is ConnectorType.IMPLY:
-                return op.solve()
-        return False
+            op_res = op.solve()
+            if (op_res is None):
+                found_none = True
+                continue
+            elif res is None:
+                res = op_res
+            elif self.type is ConnectorType.AND:
+                res &= op_res
+            elif self.type is ConnectorType.OR:
+                res |= op_res
+            elif self.type is ConnectorType.XOR:
+                res ^= op_res
+
+        if found_none and ((self.type is ConnectorType.OR and res is False) or\
+                    (self.type is ConnectorType.AND and res is True) or\
+                    (self.type is ConnectorType.XOR)):
+                return None
+
+        return res
+
+
+    # USE THIS IF OR IN CONCLUSION
     #     for l in range(1, len(node.operands) + 1):
     #         for subset in itertools.combinations(node.operands, l):
 
@@ -186,6 +213,8 @@ class AtomNode(Node):
             self.children.append(child)
 
     def solve(self):
+        if self.visited:
+            return None
         if self.state is not None:
             return self.state
 

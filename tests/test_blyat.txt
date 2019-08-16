@@ -1,10 +1,10 @@
-#A | B | C => E
-#X => B | C
+A | B | C => E
+X => B
 
 
-(A | B) + (C | D) => E
-X => (C | D)
-X => (A | B)
+#(A | B) + (C | D) => E
+#X => (C | D)
+#X => (A | B)
 #X => (A ^ B) + (C | D)
 
 # AUSSI

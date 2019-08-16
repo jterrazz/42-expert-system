@@ -166,7 +166,7 @@ class ConnectorNode(Node):
     def solve(self):
         if self.visited:
             return None
-        print("Will resolve", self)
+        print("Will resolve connector", self, "ops:", self.operands)
 
         if self.type is ConnectorType.IMPLY:
             return self.operands[0].solve()
@@ -193,7 +193,7 @@ class ConnectorNode(Node):
                     (self.type is ConnectorType.XOR)):
                 return None
 
-        return res
+        return self.set_status(res)
 
 
     # USE THIS IF OR IN CONCLUSION
@@ -217,6 +217,7 @@ class AtomNode(Node):
             return None
         if self.state is not None:
             return self.state
+        print("Will solve atom", self)
 
         ret = None
         self.visited = True
@@ -228,4 +229,5 @@ class AtomNode(Node):
             else:
                 raise BaseException("Resolution from children gave different results")
         self.visited = False
-        return ret
+
+        return self.set_status(ret)

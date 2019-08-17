@@ -87,20 +87,25 @@ class Node:
 class NegativeNode(Node):
     def __init__(self, child):
         super(NegativeNode, self).__init__(None)
-        self.negative = True
+        self.state = None
+        self.add_child(child)
         # TODO Add a only one must be set assert
         # TODO Example: X =>  !A + B
 
     def __repr__(self):
-        return f"!{ self.children }"
+        return self.__repr_color__(f"!{ self.children[0] }")
 
     def solve(self):
         # TODO Maybe add visited condition
-        value = super(NegativeNode, self).solve()
-        return not value if value is not None else None
+        self.visited = True
+        res = self.children[0].solve()
+        self.visited = False
+        return self.set_status(not res if res is not None else None)
 
-    def set_status(self, value):
-        super(NegativeNode, self).set_status(not value if value is not None else None)
+    def set_status(self, status):
+        res = super(NegativeNode, self).set_status(status)
+        # not value if value is not None else None
+        return res
 
 
 class ConnectorNode(Node):

@@ -8,26 +8,6 @@ class ConnectorType(Enum):
     IMPLY = '<='
 
 
-class NegativeNode:
-    def __init__(self, child):
-        # TODO Add a only one must be set assert
-        self.child = child
-        # TODO Example: X =>  !A + B
-        self.operand_parents = []
-
-    def __repr__(self):
-        return f"!{ self.child }"
-
-    def solve(self):
-        # TODO Maybe add visited condition
-        r = self.child.solve()
-        return not r if r is not None else None
-
-    def set_status(self, value):
-        v = not value if value is not None else None
-        self.child.set_status(v)
-
-
 class Node:
     """
     A Node is the main element stored in the tree. Each node is connected to each other in a parent/child relation.
@@ -102,6 +82,25 @@ class Node:
             ret = None
         self.visited = False
         return ret
+
+
+class NegativeNode(Node):
+    def __init__(self, child):
+        super(NegativeNode, self).__init__(None)
+        self.negative = True
+        # TODO Add a only one must be set assert
+        # TODO Example: X =>  !A + B
+
+    def __repr__(self):
+        return f"!{ self.children }"
+
+    def solve(self):
+        # TODO Maybe add visited condition
+        value = super(NegativeNode, self).solve()
+        return not value if value is not None else None
+
+    def set_status(self, value):
+        super(NegativeNode, self).set_status(not value if value is not None else None)
 
 
 class ConnectorNode(Node):

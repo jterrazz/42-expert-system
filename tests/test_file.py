@@ -96,6 +96,71 @@ def test_multiple_initial_facts():
     assert tree.resolve_query("E") is True
     assert tree.resolve_query("F") is False
 
+def test_multiple_initial_facts2():
+    try:
+        with open('./tests/examples/good_files/multiple_initial_facts2.txt') as f:
+            content = f.readlines()
+    except:
+        print('Error opening file for reading')
+        raise
+
+    parser = ExpertParser(content)
+    tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
+    assert tree.resolve_query("E") is False
+    assert tree.resolve_query("F") is False
+
+def test_multiple_initial_facts3():
+    try:
+        with open('./tests/examples/good_files/multiple_initial_facts3.txt') as f:
+            content = f.readlines()
+    except:
+        print('Error opening file for reading')
+        raise
+
+    parser = ExpertParser(content)
+    tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
+    assert tree.resolve_query("E") is False
+    assert tree.resolve_query("F") is False
+
+def test_multiple_initial_facts4():
+    try:
+        with open('./tests/examples/good_files/multiple_initial_facts4.txt') as f:
+            content = f.readlines()
+    except:
+        print('Error opening file for reading')
+        raise
+
+    parser = ExpertParser(content)
+    tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
+    assert tree.resolve_query("E") is False
+    assert tree.resolve_query("F") is True
+
+def test_multiple_initial_facts5():
+    try:
+        with open('./tests/examples/good_files/multiple_initial_facts5.txt') as f:
+            content = f.readlines()
+    except:
+        print('Error opening file for reading')
+        raise
+
+    parser = ExpertParser(content)
+    tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
+    assert tree.resolve_query("E") is False
+    assert tree.resolve_query("F") is False
+
+def test_multiple_initial_facts6():
+    try:
+        with open('./tests/examples/good_files/multiple_initial_facts6.txt') as f:
+            content = f.readlines()
+    except:
+        print('Error opening file for reading')
+        raise
+
+    parser = ExpertParser(content)
+    tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
+    assert tree.resolve_query("E") is True
+    assert tree.resolve_query("F") is True
+
 def test_multiple_no_initial_facts1():
     try:
         with open('./tests/examples/good_files/no_initial_facts1.txt') as f:

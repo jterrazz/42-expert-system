@@ -13,6 +13,9 @@ good_results = [
     ("and.txt", [True, False]),
     ("and_in_conclusions.txt", [True, True, True, True, True]),
     ("comments.txt", [True, True, True]),
+
+    # >>> Add the others
+    ("test_intranet1", [None, None]),
 ]
 
 @pytest.mark.parametrize('input, expected', good_results)

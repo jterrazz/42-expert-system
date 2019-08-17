@@ -86,15 +86,13 @@ class Node:
     def deduct_from_parents(self):
         self.visited = True
 
-        print("Will now try to deduct result from parent (operands):", self.operand_parents)
-        print("Parent is visited:", self.operand_parents[0].visited)
         all_parents_ret = [parent.solve() for parent in self.operand_parents]
         resolved_parents = [x for x in all_parents_ret if x is not None]
         if resolved_parents.__len__() is not 0:
             if all(x == resolved_parents[0] for x in resolved_parents):
                 ret = resolved_parents[0]
             else:
-                raise BaseException("Resolution from children gave different results")
+                raise BaseException("Resolution from parents gave different results")
         else:
             ret = None
         self.visited = False

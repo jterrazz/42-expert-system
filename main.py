@@ -7,12 +7,15 @@ if __name__ == "__main__":
     try:
         with open(sys.argv[1]) as f: # protect argv
             content = f.readlines(1000)
+        parser = ExpertParser(content)
+        tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
+        for query in parser.queries:
+            print(f"Resolve {query}", tree.resolve_query(query))
 
     except Exception as e:
         print("{}".format(e))
         sys.exit(1)
 
-    parser = ExpertParser(content)
-    tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
-    for query in parser.queries:
-        print(f"Resolve {query}", tree.resolve_query(query))
+    except BaseException as e:
+        print("{}".format(e))
+        sys.exit(1)

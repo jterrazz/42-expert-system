@@ -184,7 +184,7 @@ class ConnectorNode(Node):
         if self.type is ConnectorType.IMPLY:
             ret = self.operands[0].solve()
             self.state_fixed = self.operands[0].state_fixed
-            visited = False
+            self.visited = False
             return ret
 
         res = None

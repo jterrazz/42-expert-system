@@ -45,7 +45,7 @@ class Node:
         # TODO Add check if value was already set
         self.state = status
         self.state_fixed = is_fixed
-        print(f'{ self.__repr__() } set to', status)
+        print(f'{ self.__repr__() } set to', status, f"(result is {is_fixed})")
         return status
 
     def solve(self):
@@ -58,14 +58,24 @@ class Node:
 
         ret = None
         self.visited = True
-        # Need has_not_fixed_children differnet from fixed ones
-        full_children_ret = [child.solve() for child in self.children]
-        resolved_children = [x for x in full_children_ret if x is not None]
-        if resolved_children.__len__() is not 0:
-            if all(x == resolved_children[0] for x in resolved_children):
-                ret = resolved_children[0]
+
+        fixed_res = []
+        unfixed_res = []
+
+        for child in self.children:
+            r = child.solve()
+            if r is not None and child.state_fixed:
+                fixed_res.append(r)
+            elif r is not None:
+                unfixed_res.append(r)
+
+        res = fixed_res if fixed_res.__len__() is not 0 else unfixed_res
+        if res.__len__() is not 0:
+            if all(x == res[0] for x in res):
+                ret = res[0]
             else:
                 raise BaseException("Resolution from children gave different results")
+
         self.visited = False
 
         if ret is not None:
@@ -74,6 +84,7 @@ class Node:
 
     def deduct_from_parents(self):
         self.visited = True
+
         all_parents_ret = [parent.solve() for parent in self.operand_parents]
         resolved_parents = [x for x in all_parents_ret if x is not None]
         if resolved_parents.__len__() is not 0:
@@ -171,7 +182,8 @@ class ConnectorNode(Node):
         self.visited = True
         if self.type is ConnectorType.IMPLY:
             ret = self.operands[0].solve()
-            self.visited = False
+            self.state_fixed = self.operands[0].state_fixed
+            visited = False
             return ret
 
         res = None
@@ -195,7 +207,6 @@ class ConnectorNode(Node):
                 res ^= op_res
 
         self.visited = False
-
         if found_none and ((self.type is ConnectorType.OR and res is False) or\
                     (self.type is ConnectorType.AND and res is True) or\
                     (self.type is ConnectorType.XOR)):
@@ -213,7 +224,7 @@ class AtomNode(Node):
         self.name = name
 
     def __repr__(self):
-        return self.__repr_color__(f'({self.name})')
+        return self.__repr_color__(f'({self.name}, fixed:{self.state_fixed})')
 
     def __eq__(self, other):
         return isinstance(other, AtomNode) and self.name == other.name

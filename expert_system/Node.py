@@ -41,9 +41,10 @@ class Node:
         if child not in self.children:
             self.children.append(child)
 
-    def set_status(self, status):
+    def set_status(self, status, is_fixed):
         # TODO Add check if value was already set
         self.state = status
+        self.state_fixed = is_fixed
         print(f'{ self.__repr__() } set to', status)
         return status
 
@@ -57,6 +58,7 @@ class Node:
 
         ret = None
         self.visited = True
+        # Need has_not_fixed_children differnet from fixed ones
         full_children_ret = [child.solve() for child in self.children]
         resolved_children = [x for x in full_children_ret if x is not None]
         if resolved_children.__len__() is not 0:
@@ -67,7 +69,7 @@ class Node:
         self.visited = False
 
         if ret is not None:
-            return self.set_status(ret)
+            return self.set_status(ret, True)
         return self.deduct_from_parents()
 
     def deduct_from_parents(self):
@@ -104,13 +106,14 @@ class NegativeNode(Node):
         # TODO Maybe add visited condition
         self.visited = True
         res = self.children[0].solve()
+        res = not res if res is not None else None
         self.visited = False
-        return self.set_status(not res if res is not None else None)
+        return self.set_status(res, self.children[0].state_fixed)
 
-    def set_status(self, status):
-        res = super(NegativeNode, self).set_status(status)
+    def set_status(self, status, is_fixed):
+        res = super(NegativeNode, self).set_status(status, is_fixed)
         # not value if value is not None else None
-        self.children[0].set_status(not res if res is not None else None)
+        self.children[0].set_status(not res if res is not None else None, is_fixed)
         return res
 
 
@@ -141,13 +144,13 @@ class ConnectorNode(Node):
     #         return False
     #     return not t
 
-    def set_status(self, status):
-        super(ConnectorNode, self).set_status(status)
+    def set_status(self, status, is_fixed):
+        """ When a connector (&, |, ^) gets a value, we can sometimes deduct the value of its operands. """
+        super(ConnectorNode, self).set_status(status, is_fixed)
 
-        # Here we'll set the operands deducted values
         if self.type is ConnectorType.AND and status is True:
             for op in self.operands:
-                op.set_status(status)
+                op.set_status(status, is_fixed)
         return status
 
     def add_operand(self, operand):
@@ -173,9 +176,12 @@ class ConnectorNode(Node):
 
         res = None
         found_none = False
+        has_not_fixed_operands = False
 
         for op in self.operands:
             op_res = op.solve()
+            if op.state_fixed is False:
+                has_not_fixed_operands = True
             if op_res is None:
                 found_none = True
                 continue
@@ -196,16 +202,9 @@ class ConnectorNode(Node):
             return None
 
         if res is not None:
-            return self.set_status(res)
+            return self.set_status(res, not has_not_fixed_operands)
 
         return super(ConnectorNode, self).solve()
-
-
-
-
-    # USE THIS IF OR IN CONCLUSION
-    #     for l in range(1, len(node.operands) + 1):
-    #         for subset in itertools.combinations(node.operands, l):
 
 
 class AtomNode(Node):

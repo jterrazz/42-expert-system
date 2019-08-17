@@ -1,9 +1,0 @@
-B + C => A # A is false
-D ^ E => B # B is false
-B => C # C is false
-=DE
-?A
-
-
-# assertions
-# =DE

@@ -1,8 +1,0 @@
-A | B + C => E # E is true
-(F | G) + H => E # E is true
-=A
-?E
-
-
-# assertions
-# =AE

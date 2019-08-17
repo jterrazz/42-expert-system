@@ -623,7 +623,7 @@ def test_test_slack2():
 
 def test_test_slack3():
     try:
-        with open('./tests/examples/good_files/test_slack3') as f:
+        with open('./tests/_examples/good_files/test_slack3') as f:
             content = f.readlines()
     except:
         print('Error opening file for reading')
@@ -635,7 +635,7 @@ def test_test_slack3():
 
 def test_test_slack4():
     try:
-        with open('./tests/examples/good_files/test_slack4') as f:
+        with open('./tests/_examples/good_files/test_slack4') as f:
             content = f.readlines()
     except:
         print('Error opening file for reading')

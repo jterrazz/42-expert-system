@@ -620,3 +620,27 @@ def test_test_slack2():
     parser = ExpertParser(content)
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
     assert tree.resolve_query("A") is True
+
+def test_test_slack3():
+    try:
+        with open('./tests/examples/good_files/test_slack3') as f:
+            content = f.readlines()
+    except:
+        print('Error opening file for reading')
+        raise
+
+    parser = ExpertParser(content)
+    tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
+    assert tree.resolve_query("C") is False
+
+def test_test_slack4():
+    try:
+        with open('./tests/examples/good_files/test_slack4') as f:
+            content = f.readlines()
+    except:
+        print('Error opening file for reading')
+        raise
+
+    parser = ExpertParser(content)
+    tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
+    assert tree.resolve_query("C") is False

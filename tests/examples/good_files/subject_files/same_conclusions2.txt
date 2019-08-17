@@ -1,8 +1,0 @@
-B => A # A is true
-C => A # A is true
-=B
-?A
-
-
-# assertions
-# =BA

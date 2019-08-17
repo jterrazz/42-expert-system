@@ -86,9 +86,13 @@ class Node:
 
 class NegativeNode(Node):
     def __init__(self, child):
+        if child is None:
+            raise BaseException("A negative node should have one child")
+
         super(NegativeNode, self).__init__(None)
         self.state = None
         self.add_child(child)
+
         # TODO Add a only one must be set assert
         # TODO Example: X =>  !A + B
 
@@ -105,6 +109,7 @@ class NegativeNode(Node):
     def set_status(self, status):
         res = super(NegativeNode, self).set_status(status)
         # not value if value is not None else None
+        self.children[0].set_status(not res if res is not None else None)
         return res
 
 

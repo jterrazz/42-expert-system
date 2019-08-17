@@ -15,7 +15,14 @@ good_results = [
     ("comments.txt", [True, True, True]),
 
     # >>> Add the others
-    ("test_intranet1", [None, None]),
+    # ("test_intranet1", [None, None]),
+
+
+    ("test_slack1", [False]),
+    ("test_slack2", [False]),
+    ("test_slack3", [False]),
+    ("test_slack4", [False]),
+    ("xor.txt", [False, True, True, False]),
 ]
 
 @pytest.mark.parametrize('input, expected', good_results)

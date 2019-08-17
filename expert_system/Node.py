@@ -49,8 +49,9 @@ class Node:
         return status
 
     def solve(self):
-        if self.visited:
+        if self.visited is True:
             return None
+
         if self.state is not None:
             print(self, "is", self.state)
             return self.state
@@ -85,6 +86,8 @@ class Node:
     def deduct_from_parents(self):
         self.visited = True
 
+        print("Will now try to deduct result from parent (operands):", self.operand_parents)
+        print("Parent is visited:", self.operand_parents[0].visited)
         all_parents_ret = [parent.solve() for parent in self.operand_parents]
         resolved_parents = [x for x in all_parents_ret if x is not None]
         if resolved_parents.__len__() is not 0:
@@ -113,13 +116,20 @@ class NegativeNode(Node):
     def __repr__(self):
         return self.__repr_color__(f"!{ self.children[0] }")
 
+    def add_child(self, child):
+        super(NegativeNode, self).add_child(child)
+        child.operand_parents.append(self)
+
     def solve(self):
         # TODO Maybe add visited condition
-        self.visited = True
-        res = self.children[0].solve()
-        res = not res if res is not None else None
-        self.visited = False
-        return self.set_status(res, self.children[0].state_fixed)
+        # self.visited = True
+        # for child in self.children:
+        #     res = self.children[0].solve()
+        #     res = not res if res is not None else None
+        # self.visited = False
+        # return self.set_status(res, self.children[0].state_fixed)
+        res = super(NegativeNode, self).solve()
+        return not res if res is not None else None
 
     def set_status(self, status, is_fixed):
         res = super(NegativeNode, self).set_status(status, is_fixed)

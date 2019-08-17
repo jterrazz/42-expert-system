@@ -245,7 +245,7 @@ def test_xor():
 
 def test_test_and1():
     try:
-        with open('./tests/correction/test_and1.txt') as f:
+        with open('./tests/correction/test_and1') as f:
             content = f.readlines()
     except:
         print('Error opening file for reading')

@@ -207,11 +207,14 @@ class ConnectorNode(Node):
             elif self.type is ConnectorType.XOR:
                 res ^= op_res
 
+
         self.visited = False
         if found_none and ((self.type is ConnectorType.OR and res is False) or\
                     (self.type is ConnectorType.AND and res is True) or\
                     (self.type is ConnectorType.XOR)):
             return None
+
+        print("YOOOOO")
 
         if res is not None:
             return self.set_status(res, has_fixed_operands)

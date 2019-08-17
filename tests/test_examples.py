@@ -10,7 +10,9 @@ def get_all_files(path):
 
 # Without the folder path
 good_results = [
-    ("and.txt", [True, False])
+    ("and.txt", [True, False]),
+    ("and_in_conclusions.txt", [True, True, True, True, True]),
+    ("comments.txt", [True, True, True]),
 ]
 
 @pytest.mark.parametrize('input, expected', good_results)

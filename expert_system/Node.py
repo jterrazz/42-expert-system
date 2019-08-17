@@ -121,13 +121,6 @@ class NegativeNode(Node):
         child.operand_parents.append(self)
 
     def solve(self):
-        # TODO Maybe add visited condition
-        # self.visited = True
-        # for child in self.children:
-        #     res = self.children[0].solve()
-        #     res = not res if res is not None else None
-        # self.visited = False
-        # return self.set_status(res, self.children[0].state_fixed)
         res = super(NegativeNode, self).solve()
         return not res if res is not None else None
 

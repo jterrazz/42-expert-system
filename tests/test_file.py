@@ -595,4 +595,4 @@ def test_test_neg5():
 
     parser = ExpertParser(content)
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
-    assert tree.resolve_query("A") is True
+    assert tree.resolve_query("A") is False

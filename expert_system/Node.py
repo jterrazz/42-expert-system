@@ -19,6 +19,7 @@ class NegativeNode:
         return f"-{ self.child }"
 
     def solve(self):
+        # TODO Maybe add visited condition
         r = self.child.solve()
         return not r if r is not None else None
 
@@ -70,7 +71,7 @@ class Node:
         if self.state is not None:
             print(self, "is", self.state)
             return self.state
-        print(self, "search")
+        print(self, "search, with children:", self.children)
 
         ret = None
         self.visited = True
@@ -155,7 +156,9 @@ class ConnectorNode(Node):
 
         self.visited = True
         if self.type is ConnectorType.IMPLY:
-            return self.operands[0].solve()
+            ret = self.operands[0].solve()
+            self.visited = False
+            return ret
 
         res = None
         found_none = False

@@ -3,7 +3,7 @@ import cmd
 from expert_system.parser.Parser import ExpertParser
 from expert_system.Tree import NPITree
 
-class ExpertSystem(cmd.Cmd):
+class ExpertPrompt(cmd.Cmd):
     # cmd.Cmd.prompt = colored("ExpertSystem>> ", "cyan")
 
     # Function help general

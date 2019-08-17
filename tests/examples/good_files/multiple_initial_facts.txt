@@ -1,7 +1,7 @@
-A + B => E # E is True
-C + D => F # F is True
+A + B => E #
+C + D => F #
 
-=
+=AB
 ?EF
 
 # assertions

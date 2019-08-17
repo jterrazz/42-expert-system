@@ -1,6 +1,6 @@
 import re
 
-from .Node import AtomNode, ConnectorNode, ConnectorType
+from .Node import AtomNode, ConnectorNode, ConnectorType, NegativeNode
 from .parser.Rule import OPERATORS, ImplicationType
 
 LST_OP = {'+': ConnectorType.AND, '|': ConnectorType.OR, '^': ConnectorType.XOR}
@@ -113,7 +113,6 @@ class NPITree(Tree):
             left = self.set_atom_relations_from_npi(rule.npi_left)
             right = self.set_atom_relations_from_npi(rule.npi_right)
 
-            # TODO Handle EQUAL
             connector_imply = self.create_connector(ConnectorType.IMPLY)
             right.add_child(connector_imply)
             connector_imply.add_operand(left)
@@ -129,6 +128,9 @@ class NPITree(Tree):
             # TODO If operator == !, then use the negative version
             if x not in OPERATORS:
                 stack.append(self.atoms[x])
+            elif x == '!':
+                connector_not = NegativeNode(stack.pop())
+                stack.append(connector_not)
             else:
                 pop0 = stack.pop()
                 pop1 = stack.pop()

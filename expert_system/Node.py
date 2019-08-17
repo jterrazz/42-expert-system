@@ -9,14 +9,14 @@ class ConnectorType(Enum):
 
 
 class NegativeNode:
-    def __init__(self, child, parent):
+    def __init__(self, child):
         # TODO Add a only one must be set assert
         self.child = child
         # TODO Example: X =>  !A + B
-        self.operand_parent = parent
+        # self.operand_parent = parent
 
     def __repr__(self):
-        return f"-{ self.child }"
+        return f"!{ self.child }"
 
     def solve(self):
         # TODO Maybe add visited condition

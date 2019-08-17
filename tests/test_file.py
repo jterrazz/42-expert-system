@@ -94,7 +94,7 @@ def test_multiple_initial_facts():
     parser = ExpertParser(content)
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
     assert tree.resolve_query("E") is True
-    assert tree.resolve_query("F") is True
+    assert tree.resolve_query("F") is False
 
 def test_multiple_no_initial_facts1():
     try:
@@ -205,7 +205,7 @@ def test_test_and2():
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
     assert tree.resolve_query("A") is True
     assert tree.resolve_query("G") is True
-    assert tree.resolve_query("K") is True
+    assert tree.resolve_query("K") is False
     assert tree.resolve_query("P") is True
 
 def test_test_or1():
@@ -218,7 +218,7 @@ def test_test_or1():
 
     parser = ExpertParser(content)
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
-    assert tree.resolve_query("A") is None
+    assert tree.resolve_query("A") is False
 
 def test_test_or2():
     try:

@@ -1,6 +1,6 @@
 import sys
 
-from expert_system.prompt import ExpertSystem
+# from expert_system.Prompt import ExpertPrompt
 from expert_system.parser.Parser import ExpertParser
 from expert_system.Tree import NPITree
 

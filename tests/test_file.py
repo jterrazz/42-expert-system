@@ -471,3 +471,63 @@ def test_test_xor4():
     parser = ExpertParser(content)
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
     assert tree.resolve_query("A") is False
+
+def test_test_neg1():
+    try:
+        with open('./tests/correction/test_neg1') as f:
+            content = f.readlines()
+    except:
+        print('Error opening file for reading')
+        raise
+
+    parser = ExpertParser(content)
+    tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
+    assert tree.resolve_query("A") is False
+
+def test_test_neg2():
+    try:
+        with open('./tests/correction/test_neg2') as f:
+            content = f.readlines()
+    except:
+        print('Error opening file for reading')
+        raise
+
+    parser = ExpertParser(content)
+    tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
+    assert tree.resolve_query("A") is True
+
+def test_test_neg3():
+    try:
+        with open('./tests/correction/test_neg3') as f:
+            content = f.readlines()
+    except:
+        print('Error opening file for reading')
+        raise
+
+    parser = ExpertParser(content)
+    tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
+    assert tree.resolve_query("A") is False
+
+def test_test_neg4():
+    try:
+        with open('./tests/correction/test_neg4') as f:
+            content = f.readlines()
+    except:
+        print('Error opening file for reading')
+        raise
+
+    parser = ExpertParser(content)
+    tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
+    assert tree.resolve_query("A") is False
+
+def test_test_neg5():
+    try:
+        with open('./tests/correction/test_neg5') as f:
+            content = f.readlines()
+    except:
+        print('Error opening file for reading')
+        raise
+
+    parser = ExpertParser(content)
+    tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
+    assert tree.resolve_query("A") is True

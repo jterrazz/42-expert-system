@@ -180,7 +180,7 @@ def test_xor():
 
 def test_test_and1():
     try:
-        with open('./tests/examples/correction/test_and1.txt') as f:
+        with open('./tests/correction/test_and1.txt') as f:
             content = f.readlines()
     except:
         print('Error opening file for reading')
@@ -195,7 +195,7 @@ def test_test_and1():
 
 def test_test_and2():
     try:
-        with open('./tests/examples/correction/test_and2') as f:
+        with open('./tests/correction/test_and2') as f:
             content = f.readlines()
     except:
         print('Error opening file for reading')
@@ -210,7 +210,7 @@ def test_test_and2():
 
 def test_test_or1():
     try:
-        with open('./tests/examples/correction/test_or1') as f:
+        with open('./tests/correction/test_or1') as f:
             content = f.readlines()
     except:
         print('Error opening file for reading')
@@ -222,7 +222,7 @@ def test_test_or1():
 
 def test_test_or2():
     try:
-        with open('./tests/examples/correction/test_or2') as f:
+        with open('./tests/correction/test_or2') as f:
             content = f.readlines()
     except:
         print('Error opening file for reading')
@@ -234,7 +234,7 @@ def test_test_or2():
 
 def test_test_or3():
     try:
-        with open('./tests/examples/correction/test_or3') as f:
+        with open('./tests/correction/test_or3') as f:
             content = f.readlines()
     except:
         print('Error opening file for reading')
@@ -246,7 +246,7 @@ def test_test_or3():
 
 def test_test_or4():
     try:
-        with open('./tests/examples/correction/test_or4') as f:
+        with open('./tests/correction/test_or4') as f:
             content = f.readlines()
     except:
         print('Error opening file for reading')
@@ -258,7 +258,7 @@ def test_test_or4():
 
 def test_test_paran1():
     try:
-        with open('./tests/examples/correction/test_paran1') as f:
+        with open('./tests/correction/test_paran1') as f:
             content = f.readlines()
     except:
         print('Error opening file for reading')
@@ -270,7 +270,7 @@ def test_test_paran1():
 
 def test_test_paran2():
     try:
-        with open('./tests/examples/correction/test_paran2') as f:
+        with open('./tests/correction/test_paran2') as f:
             content = f.readlines()
     except:
         print('Error opening file for reading')
@@ -279,3 +279,255 @@ def test_test_paran2():
     parser = ExpertParser(content)
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
     assert tree.resolve_query("E") is True
+
+def test_test_paran3():
+    try:
+        with open('./tests/correction/test_paran3') as f:
+            content = f.readlines()
+    except:
+        print('Error opening file for reading')
+        raise
+
+    parser = ExpertParser(content)
+    tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
+    assert tree.resolve_query("E") is False
+
+def test_test_paran4():
+    try:
+        with open('./tests/correction/test_paran4') as f:
+            content = f.readlines()
+    except:
+        print('Error opening file for reading')
+        raise
+
+    parser = ExpertParser(content)
+    tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
+    assert tree.resolve_query("E") is True
+
+def test_test_paran5():
+    try:
+        with open('./tests/correction/test_paran5') as f:
+            content = f.readlines()
+    except:
+        print('Error opening file for reading')
+        raise
+
+    parser = ExpertParser(content)
+    tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
+    assert tree.resolve_query("E") is True
+
+def test_test_paran6():
+    try:
+        with open('./tests/correction/test_paran6') as f:
+            content = f.readlines()
+    except:
+        print('Error opening file for reading')
+        raise
+
+    parser = ExpertParser(content)
+    tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
+    assert tree.resolve_query("E") is True
+
+def test_test_paran7():
+    try:
+        with open('./tests/correction/test_paran7') as f:
+            content = f.readlines()
+    except:
+        print('Error opening file for reading')
+        raise
+
+    parser = ExpertParser(content)
+    tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
+    assert tree.resolve_query("E") is False
+
+def test_test_paran8():
+    try:
+        with open('./tests/correction/test_paran8') as f:
+            content = f.readlines()
+    except:
+        print('Error opening file for reading')
+        raise
+
+    parser = ExpertParser(content)
+    tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
+    assert tree.resolve_query("E") is False
+
+def test_test_paran9():
+    try:
+        with open('./tests/correction/test_paran9') as f:
+            content = f.readlines()
+    except:
+        print('Error opening file for reading')
+        raise
+
+    parser = ExpertParser(content)
+    tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
+    assert tree.resolve_query("E") is True
+
+def test_test_paran10():
+    try:
+        with open('./tests/correction/test_paran10') as f:
+            content = f.readlines()
+    except:
+        print('Error opening file for reading')
+        raise
+
+    parser = ExpertParser(content)
+    tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
+    assert tree.resolve_query("E") is True
+
+def test_test_same1():
+    try:
+        with open('./tests/correction/test_same1') as f:
+            content = f.readlines()
+    except:
+        print('Error opening file for reading')
+        raise
+
+    parser = ExpertParser(content)
+    tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
+    assert tree.resolve_query("A") is False
+
+def test_test_same2():
+    try:
+        with open('./tests/correction/test_same2') as f:
+            content = f.readlines()
+    except:
+        print('Error opening file for reading')
+        raise
+
+    parser = ExpertParser(content)
+    tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
+    assert tree.resolve_query("A") is True
+
+def test_test_same3():
+    try:
+        with open('./tests/correction/test_same3') as f:
+            content = f.readlines()
+    except:
+        print('Error opening file for reading')
+        raise
+
+    parser = ExpertParser(content)
+    tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
+    assert tree.resolve_query("A") is True
+
+def test_test_same4():
+    try:
+        with open('./tests/correction/test_same4') as f:
+            content = f.readlines()
+    except:
+        print('Error opening file for reading')
+        raise
+
+    parser = ExpertParser(content)
+    tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
+    assert tree.resolve_query("A") is True
+
+def test_test_xor1():
+    try:
+        with open('./tests/correction/test_xor1') as f:
+            content = f.readlines()
+    except:
+        print('Error opening file for reading')
+        raise
+
+    parser = ExpertParser(content)
+    tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
+    assert tree.resolve_query("A") is False
+
+def test_test_xor2():
+    try:
+        with open('./tests/correction/test_xor2') as f:
+            content = f.readlines()
+    except:
+        print('Error opening file for reading')
+        raise
+
+    parser = ExpertParser(content)
+    tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
+    assert tree.resolve_query("A") is True
+
+def test_test_xor3():
+    try:
+        with open('./tests/correction/test_xor3') as f:
+            content = f.readlines()
+    except:
+        print('Error opening file for reading')
+        raise
+
+    parser = ExpertParser(content)
+    tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
+    assert tree.resolve_query("A") is True
+
+def test_test_xor4():
+    try:
+        with open('./tests/correction/test_xor4') as f:
+            content = f.readlines()
+    except:
+        print('Error opening file for reading')
+        raise
+
+    parser = ExpertParser(content)
+    tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
+    assert tree.resolve_query("A") is False
+
+def test_test_neg1():
+    try:
+        with open('./tests/correction/test_neg1') as f:
+            content = f.readlines()
+    except:
+        print('Error opening file for reading')
+        raise
+
+    parser = ExpertParser(content)
+    tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
+    assert tree.resolve_query("A") is False
+
+def test_test_neg2():
+    try:
+        with open('./tests/correction/test_neg2') as f:
+            content = f.readlines()
+    except:
+        print('Error opening file for reading')
+        raise
+
+    parser = ExpertParser(content)
+    tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
+    assert tree.resolve_query("A") is True
+
+def test_test_neg3():
+    try:
+        with open('./tests/correction/test_neg3') as f:
+            content = f.readlines()
+    except:
+        print('Error opening file for reading')
+        raise
+
+    parser = ExpertParser(content)
+    tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
+    assert tree.resolve_query("A") is False
+
+def test_test_neg4():
+    try:
+        with open('./tests/correction/test_neg4') as f:
+            content = f.readlines()
+    except:
+        print('Error opening file for reading')
+        raise
+
+    parser = ExpertParser(content)
+    tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
+    assert tree.resolve_query("A") is False
+
+def test_test_neg5():
+    try:
+        with open('./tests/correction/test_neg5') as f:
+            content = f.readlines()
+    except:
+        print('Error opening file for reading')
+        raise
+
+    parser = ExpertParser(content)
+    tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
+    assert tree.resolve_query("A") is True

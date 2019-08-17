@@ -620,7 +620,6 @@ def test_test_slack2():
     parser = ExpertParser(content)
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
     assert tree.resolve_query("A") is True
-<<<<<<< HEAD
 
 def test_test_slack3():
     try:
@@ -645,5 +644,3 @@ def test_test_slack4():
     parser = ExpertParser(content)
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
     assert tree.resolve_query("C") is False
-=======
->>>>>>> f55769ed4f79647ec7825b02f5f221686cb616b4

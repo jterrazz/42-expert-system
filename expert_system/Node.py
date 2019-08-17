@@ -13,7 +13,7 @@ class NegativeNode:
         # TODO Add a only one must be set assert
         self.child = child
         # TODO Example: X =>  !A + B
-        # self.operand_parent = parent
+        self.operand_parents = []
 
     def __repr__(self):
         return f"!{ self.child }"
@@ -23,9 +23,9 @@ class NegativeNode:
         r = self.child.solve()
         return not r if r is not None else None
 
-    def set_value(self, value):
+    def set_status(self, value):
         v = not value if value is not None else None
-        self.child.set_value(v)
+        self.child.set_status(v)
 
 
 class Node:

@@ -367,7 +367,7 @@ def test_test_paran4():
 
     parser = ExpertParser(content)
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
-    assert tree.resolve_query("E") is True
+    assert tree.resolve_query("E") is False
 
 def test_test_paran5():
     try:
@@ -427,7 +427,7 @@ def test_test_paran9():
 
     parser = ExpertParser(content)
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
-    assert tree.resolve_query("E") is True
+    assert tree.resolve_query("E") is False
 
 def test_test_paran10():
     try:

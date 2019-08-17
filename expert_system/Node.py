@@ -189,12 +189,12 @@ class ConnectorNode(Node):
 
         res = None
         found_none = False
-        has_not_fixed_operands = False
+        has_fixed_operands = False
 
         for op in self.operands:
             op_res = op.solve()
-            if op.state_fixed is False:
-                has_not_fixed_operands = True
+            if op.state_fixed is True:
+                has_fixed_operands = True
             if op_res is None:
                 found_none = True
                 continue
@@ -214,7 +214,7 @@ class ConnectorNode(Node):
             return None
 
         if res is not None:
-            return self.set_status(res, not has_not_fixed_operands)
+            return self.set_status(res, has_fixed_operands)
 
         return super(ConnectorNode, self).solve()
 

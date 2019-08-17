@@ -245,7 +245,7 @@ def test_xor():
 
 def test_test_and1():
     try:
-        with open('./tests/correction/test_and1.txt') as f:
+        with open('./tests/correction/test_and1') as f:
             content = f.readlines()
     except:
         print('Error opening file for reading')
@@ -620,6 +620,7 @@ def test_test_slack2():
     parser = ExpertParser(content)
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
     assert tree.resolve_query("A") is True
+<<<<<<< HEAD
 
 def test_test_slack3():
     try:
@@ -644,3 +645,5 @@ def test_test_slack4():
     parser = ExpertParser(content)
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
     assert tree.resolve_query("C") is False
+=======
+>>>>>>> f55769ed4f79647ec7825b02f5f221686cb616b4

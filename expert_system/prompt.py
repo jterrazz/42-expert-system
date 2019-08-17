@@ -1,10 +1,10 @@
 import cmd
-from termcolor import colored
+# from termcolor import colored
 from expert_system.parser.Parser import ExpertParser
 from expert_system.Tree import NPITree
 
 class ExpertSystem(cmd.Cmd):
-    cmd.Cmd.prompt = colored("ExpertSystem>> ", "cyan")
+    # cmd.Cmd.prompt = colored("ExpertSystem>> ", "cyan")
 
     # Function help general
     def do_help_all(self, line):

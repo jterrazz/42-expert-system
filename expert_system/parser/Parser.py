@@ -98,7 +98,7 @@ class ExpertParser:
                     raise BaseException(f'Error at line : {elem} - Rules must be defined before queries')
                 if regex_rule.match(elem) is None:
                     raise BaseException(f'Error at line : {elem} - Rule is badly formatted')
-                if ExpertParser.ft_check_parentheses(elem):
+                if not ExpertParser.ft_check_parentheses(elem):
                     raise BaseException(f'Error at line : {elem} - Rule has badly formatted parentheses')
                 else:
                     rules += elem

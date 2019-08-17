@@ -13,10 +13,26 @@ good_results = [
     ("and.txt", [True, False]),
     ("and_in_conclusions.txt", [True, True, True, True, True]),
     ("comments.txt", [True, True, True]),
+    ("double_implies.txt", [True, True, True]),
+    ("mix.txt", [True, False, False, True, True, False]),
+    ("mix2.txt", [True]),
+    ("multiple_initial_facts.txt", [True, False]),
+    ("multiple_initial_facts2.txt", [False, False]),
+    ("multiple_initial_facts3.txt", [False, False]),
+    ("multiple_initial_facts4.txt", [False, True]),
+    ("multiple_initial_facts5.txt", [False, False]),
+    ("multiple_initial_facts6.txt", [True, True]),
+    ("no_initial_facts1.txt", [False]),
+    ("no_initial_facts2.txt", [False]),
+    ("not.txt", [False, True]),
+    ("or.txt", [True, True]),
+    ("parenthesis.txt", [True, False, False, True, True, True]),
 
     # >>> Add the others
     # ("test_intranet1", [None, None]),
-
+    # ("test_intranet2", [None, None]),
+    # ("test_intranet3", [None, None]),
+    # ("test_intranet4", [None, None]),
 
     ("test_slack1", [False]),
     ("test_slack2", [False]),

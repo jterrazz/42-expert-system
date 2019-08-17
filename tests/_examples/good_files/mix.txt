@@ -4,7 +4,7 @@ X | (A | K ^ Z) => N # N is True
 !L => M # M is True
 
   =AD
-?GTX
+?GTXMNP
 
 # assertions
 # =ADFNGM

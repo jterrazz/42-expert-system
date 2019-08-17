@@ -22,6 +22,7 @@ class Node:
         self.operand_parents = []
         self.visited = False
         self.state = False
+        self.state_fixed = False
         self.tree = tree
 
     def __repr_color__(self, str):

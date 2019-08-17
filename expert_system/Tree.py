@@ -52,6 +52,7 @@ class Tree:
         if atom is None:
             raise BaseException("The fact doesn't match any known atom")
         atom.state = value
+        atom.state_fixed = True
 
     def resolve_query(self, query):
         # if log

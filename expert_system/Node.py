@@ -61,6 +61,7 @@ class Node:
             self.children.append(child)
 
     def set_status(self, status):
+        # TODO Add check if value was already set
         self.state = status
         print(f'{ self.__repr__() } set to', status)
         return status
@@ -134,7 +135,7 @@ class ConnectorNode(Node):
         super(ConnectorNode, self).set_status(status)
 
         # Here we'll set the operands deducted values
-        if self.type is ConnectorType.AND:
+        if self.type is ConnectorType.AND and status is True:
             for op in self.operands:
                 op.set_status(status)
         return status

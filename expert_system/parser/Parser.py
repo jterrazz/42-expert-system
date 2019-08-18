@@ -34,7 +34,7 @@ class ExpertParser:
 
     @staticmethod
     def ft_check_facts_in_list_atoms(atoms, facts):
-        fact = list(filter(None, re.split('=', facts)))
+        fact = list(filter(None, re.split(r'=|\s', facts)))
         if fact:
             fact = list(fact[0])
         for elem in fact:
@@ -44,7 +44,7 @@ class ExpertParser:
 
     @staticmethod
     def ft_check_queries_in_list_atoms(atoms, queries):
-        querie = list(filter(None, re.split('\?', queries)))
+        querie = list(filter(None, re.split(r'\?|\s', queries)))
         if querie:
             querie = list(querie[0])
         else:
@@ -59,8 +59,8 @@ class ExpertParser:
         content_file = list(filter(None, input_lines))
 
         regex_rule = re.compile(r"(^((\()*(!){0,2})*[A-Z](\))*((\s*[(+|^\|)]\s*((\()*(!){0,2})*[A-Z](\))*)*)?\s*(=>|<=>)\s*((\()*(!){0,2})*[A-Z](\))*((\s*[(+|^\|)]\s*((\()*(!){0,2})*[A-Z](\))*)*)?\s*$)")
-        regex_fact = re.compile(r"(^=[A-Z]*$)")
-        regex_queries = re.compile(r"(^\?[A-Z]*$)")
+        regex_fact = re.compile(r"(^=[A-Z]*(\s)*$)")
+        regex_queries = re.compile(r"(^\?[A-Z]*(\s)*$)")
 
         fact = 1
         queries = 1
@@ -107,8 +107,8 @@ class ExpertParser:
                 self.raw_rules.append(elem)
             else:
                 if elem[0] == '=':
-                    self.facts = list(elem.replace('=', ''))
+                    self.facts = list(elem.replace('=', '').replace(' ', ''))
                 else:
-                    self.queries = list(elem.replace('?', ''))
+                    self.queries = list(elem.replace('?', '').replace(' ', ''))
         if fact > 0 or queries > 0 or rule > 0:
             raise BaseException("Missing one of facts, queries or rules")

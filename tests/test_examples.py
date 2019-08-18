@@ -23,8 +23,8 @@ good_results = [
     ("hard_imply_2.txt", [True]),
     ("HARDDDDDER_.txt", [True, True, True, True]),
     ("imply_and.txt", [True]),
-    # ("just_a_test.txt", [False]),
-    # ("just_a_test2.txt", [False]),
+    ("just_a_test.txt", [False]),
+    ("just_a_test2.txt", [False]),
     ("mix.txt", [True, False, False, True, True, False]),
     ("mix2.txt", [True]),
     ("multiple_initial_facts.txt", [True, False]),
@@ -72,7 +72,7 @@ def test_good_files(input, expected):
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
     i = 0
     for query in parser.queries:
-        assert expected[i] == tree.resolve_query(query)
+        assert tree.resolve_query(query) == expected[i]
         i += 1
 
 

@@ -45,8 +45,8 @@ class ExpertRule(NPIParser):
         splitted = re.split(r'=>|<=>', rule_str)
         self.type = (ImplicationType.EQUAL if "<=>" in rule_str else ImplicationType.IMPLY)
 
-        left = list(splitted[0].replace(' ', ''))
-        right = list(splitted[1].replace(' ', ''))
+        left = list(splitted[0].replace(' ', '').replace("\t", ""))
+        right = list(splitted[1].replace(' ', '').replace("\t", ""))
 
         self.npi_left = self.infix_to_postfix(left)
         self.npi_right = self.infix_to_postfix(right)

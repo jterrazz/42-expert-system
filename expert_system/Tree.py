@@ -50,7 +50,7 @@ class Tree:
     def set_atom_state(self, atom_name, value):
         atom = self.atoms.get(atom_name)
         if atom is None:
-            raise BaseException("The fact doesn't match any known atom")
+            raise BaseException("The fact", atom_name, " doesn't match any known atom")
         atom.state = value
         if value is True:
             atom.state_fixed = True
@@ -131,7 +131,9 @@ class NPITree(Tree):
             if x not in OPERATORS:
                 stack.append(self.atoms[x])
             elif x == '!':
-                connector_not = NegativeNode(stack.pop())
+                child = stack.pop()
+                connector_not = NegativeNode(child)
+                child.operand_parents.append(connector_not)
                 stack.append(connector_not)
             else:
                 pop0 = stack.pop()

@@ -57,17 +57,19 @@ class Node:
             return self.state
         print(self, "search, with children:", self.children)
 
-        ret, is_fixed = self.solve_grouped_nodes(self.children)
+        ret, is_fixed = self.solve_grouped_nodes(self.children, False)
         if ret is not None:
             return self.set_status(ret, is_fixed)
         # Try if parents returns fixed result and children unfixed
 
-        ret, is_fixed = self.solve_grouped_nodes(self.operand_parents)
+        print("Checking for parents", self.operand_parents)
+
+        ret, is_fixed = self.solve_grouped_nodes(self.operand_parents, True)
         if ret is not None:
             return self.set_status(ret, is_fixed)
         return None
 
-    def solve_grouped_nodes(self, nodes):
+    def solve_grouped_nodes(self, nodes, checking_parents):
         """
         Returns the result and the priority associated
         """
@@ -76,8 +78,9 @@ class Node:
         ret = None
         fixed_res = []
         unfixed_res = []
-
         for child in nodes:
+            if checking_parents and isinstance(child, ConnectorNode) and child.type is not ConnectorType.AND:
+                continue
             r = child.solve()
             if r is not None and child.state_fixed:
                 fixed_res.append(r)

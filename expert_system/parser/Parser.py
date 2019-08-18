@@ -107,8 +107,8 @@ class ExpertParser:
                 self.raw_rules.append(elem)
             else:
                 if elem[0] == '=':
-                    self.facts = list(elem.replace('=', '').replace(' ', ''))
+                    self.facts = list(elem.replace('=', '').replace(' ', '').replace("\t", ""))
                 else:
-                    self.queries = list(elem.replace('?', '').replace(' ', ''))
+                    self.queries = list(elem.replace('?', '').replace(' ', '').replace("\t", ""))
         if fact > 0 or queries > 0 or rule > 0:
             raise BaseException("Missing one of facts, queries or rules")

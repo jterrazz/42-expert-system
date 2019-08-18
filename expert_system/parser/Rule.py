@@ -51,5 +51,17 @@ class ExpertRule(NPIParser):
         self.npi_left = self.infix_to_postfix(left)
         self.npi_right = self.infix_to_postfix(right)
 
+        # check if ! in conclusion exp: => !(A + B)
+        if '+!' in self.npi_right:
+            raise BaseException(f'Error at line : {rule_str} - Rule is badly formatted')
+
+        # check if '|' in right exp: B | D <=> A
+        if self.type == ImplicationType.EQUAL and '|' in self.npi_left:
+            raise BaseException(f'Error at line : {rule_str} - Rule is badly formatted')
+
+        # check if ! in conclusion or left, exp: D + C <=> !(A + B) OR !(A + B) <=> D + C
+        if self.type == ImplicationType.EQUAL and ('+!' in self.npi_right or '+!' in self.npi_left):
+            raise BaseException(f'Error at line : {rule_str} - Rule is badly formatted')
+
     def __repr__(self):
         return f'<ImplicationRule> left: { self.npi_left }, right: { self.npi_right }, type: { self.type }'

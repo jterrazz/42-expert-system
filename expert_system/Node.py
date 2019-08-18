@@ -80,7 +80,7 @@ class Node:
         self.visited = False
 
         if ret is not None:
-            return self.set_status(ret, True)
+            return self.set_status(ret, self.state)
         return self.deduct_from_parents()
 
     def deduct_from_parents(self):
@@ -143,7 +143,7 @@ class ConnectorNode(Node):
         self.is_root = False
 
     def __repr__(self):
-        return self.__repr_color__(f'({self.type.value})')
+        return self.__repr_color__(f'({self.type.value}) - fixed: { self.state_fixed }')
 
     # def __eq__(self, other):
     #     if not isinstance(other, ConnectorNode):

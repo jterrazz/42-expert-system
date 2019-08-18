@@ -19,3 +19,6 @@ E + F => !V		# E and F implies not V
 				# by a newline is used
 
 ?GVX			# Queries : What are G, V and X ?
+# G is False
+# V is True
+# X is Conflict [True, False, False]

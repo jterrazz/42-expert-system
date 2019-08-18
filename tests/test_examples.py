@@ -33,7 +33,7 @@ good_results = [
     ("multiple_initial_facts4.txt", [False, True]),
     ("multiple_initial_facts5.txt", [False, False]),
     ("multiple_initial_facts6.txt", [True, True]),
-    # ("NEGATION_SIMPLE_1", [False]), # TODO
+    # ("NEGATION_SIMPLE_1", [True]), # TODO Should raise error
     # ("NEGATION_SIMPLE_2", [False]),
     # ("NEGATION_SIMPLE_3", [False]),
     # ("NEGATION_SIMPLE_4", [False]),

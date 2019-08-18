@@ -99,10 +99,10 @@ class Node:
         res = fixed_res if fixed_res.__len__() is not 0 else unfixed_res
         if res.__len__() is not 0:
             # TODO Reactivate
-            # if all(x == res[0] for x in res):
-            ret = res[0]
-        # else:
-        #     raise BaseException("Resolution from children gave different results")
+            if all(x == res[0] for x in res):
+                ret = res[0]
+            else:
+                raise BaseException("Resolution from children gave different results")
 
         self.visited = False
         return ret, True if fixed_res.__len__() is not 0 else False

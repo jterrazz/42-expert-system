@@ -43,6 +43,11 @@ class Node:
 
     def set_status(self, status, is_fixed):
         # TODO Add check if value was already set
+        # if self.state_fixed is True and is_fixed is False:
+        #     print("Not modified because state with fixed state already set")
+        #     return self.state
+        # if is_fixed and self.state is not None and self.state is not status:
+        #     raise BaseException("Changed an already set state")
         self.state = status
         self.state_fixed = is_fixed
         print(f'{ self.__repr__() } set to', status, f"(result is {is_fixed})")
@@ -59,6 +64,8 @@ class Node:
 
         ret, is_fixed = self.solve_grouped_nodes(self.children, False)
         if ret is not None:
+            if isinstance(self, NegativeNode):
+                ret = not ret if ret is not None else None
             return self.set_status(ret, is_fixed)
         # Try if parents returns fixed result and children unfixed
 
@@ -66,6 +73,8 @@ class Node:
 
         ret, is_fixed = self.solve_grouped_nodes(self.operand_parents, True)
         if ret is not None:
+            if isinstance(self, NegativeNode):
+                ret = not ret if ret is not None else None
             return self.set_status(ret, is_fixed)
         return None
 
@@ -86,6 +95,7 @@ class Node:
                 fixed_res.append(r)
             elif r is not None:
                 unfixed_res.append(r)
+        print("RESOLVED CHILD WITH: ", fixed_res, unfixed_res)
         res = fixed_res if fixed_res.__len__() is not 0 else unfixed_res
         if res.__len__() is not 0:
             # TODO Reactivate
@@ -116,10 +126,6 @@ class NegativeNode(Node):
         super(NegativeNode, self).add_child(child)
         child.operand_parents.append(self)
 
-    def solve(self):
-        res = super(NegativeNode, self).solve()
-        return not res if res is not None else None
-
     def set_status(self, status, is_fixed):
         res = super(NegativeNode, self).set_status(status, is_fixed)
         # not value if value is not None else None
@@ -141,7 +147,7 @@ class ConnectorNode(Node):
         self.is_root = False
 
     def __repr__(self):
-        return self.__repr_color__(f'({self.type.value}) - fixed: { self.state_fixed }')
+        return self.__repr_color__(f'({self.type.value}) - fixed: { self.state_fixed } - op: { self.operands }')
 
     # def __eq__(self, other):
     #     if not isinstance(other, ConnectorNode):
@@ -181,7 +187,7 @@ class ConnectorNode(Node):
         self.visited = True
         if self.type is ConnectorType.IMPLY:
             ret = self.operands[0].solve()
-            self.state_fixed = self.operands[0].state_fixed
+            self.set_status(ret, self.operands[0].state_fixed)
             self.visited = False
             return ret
 
@@ -205,14 +211,11 @@ class ConnectorNode(Node):
             elif self.type is ConnectorType.XOR:
                 res ^= op_res
 
-
         self.visited = False
         if found_none and ((self.type is ConnectorType.OR and res is False) or\
                     (self.type is ConnectorType.AND and res is True) or\
                     (self.type is ConnectorType.XOR)):
             return None
-
-        print("YOOOOO")
 
         if res is not None:
             return self.set_status(res, has_fixed_operands)

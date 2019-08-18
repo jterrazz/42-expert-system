@@ -18,7 +18,7 @@ good_results = [
     ("comments.txt", [True, True, True]),
     ("double_implies.txt", [True, True, True]),
     ("easy_test.txt", [True, True, False]),
-    # ("empty_init_test.txt", [False, True, False]), # TODO nnn
+    # ("empty_init_test.txt", [True, True, True]), # TODO nnn
     ("HAfffff_.txt", [True, True, False, True]),
     ("hard_imply_2.txt", [True]),
     ("HARDDDDDER_.txt", [True, True, True, True]),
@@ -41,7 +41,7 @@ good_results = [
     ("no_initial_facts2.txt", [False]),
     ("not.txt", [False, True]),
     ("or.txt", [True, True]),
-    # ("parentheses_test.txt", [True, True, True]),  # TODO Issue with xor in parent
+    ("parentheses_test.txt", [True, True, True, True]),
     ("parenthesis.txt", [True, False, False, True, True, True]),
     # ("raise_me_daddy.txt", [True]), # TODO
     ("test_blyat.txt", [True]),

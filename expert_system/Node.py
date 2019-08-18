@@ -60,22 +60,36 @@ class Node:
         if self.state is not None:
             print(self, "is", self.state)
             return self.state
-        print(self, "search, with children:", self.children)
 
-        ret, is_fixed = self.solve_grouped_nodes(self.children, False)
-        if ret is not None:
-            if isinstance(self, NegativeNode):
-                ret = not ret if ret is not None else None
-            return self.set_status(ret, is_fixed)
-        # Try if parents returns fixed result and children unfixed
+        # TODO Add this to operands
+        fixed_ret = []
+        unfixed_ret = []
+
+        print("Checking for children:", self.children)
+        f, u = self.solve_grouped_nodes(self.children, False)
+        fixed_ret.extend(f)
+        unfixed_ret.extend(u)
 
         print("Checking for parents", self.operand_parents)
+        f, u = self.solve_grouped_nodes(self.operand_parents, True)
+        fixed_ret.extend(f)
+        unfixed_ret.extend(u)
 
-        ret, is_fixed = self.solve_grouped_nodes(self.operand_parents, True)
-        if ret is not None:
+        res = None
+
+        ret = fixed_ret if fixed_ret.__len__() is not 0 else unfixed_ret
+        if ret.__len__() is not 0:
+            if all(x == ret[0] for x in ret):
+                res = ret[0]
+            else:
+                raise BaseException("Resolution from children and parents gave different results")
+
+        is_fixed = True if fixed_ret.__len__() is not 0 else False
+
+        if res is not None:
             if isinstance(self, NegativeNode):
-                ret = not ret if ret is not None else None
-            return self.set_status(ret, is_fixed)
+                res = not res if res is not None else None
+            return self.set_status(res, is_fixed)
         return None
 
     def solve_grouped_nodes(self, nodes, checking_parents):
@@ -84,7 +98,6 @@ class Node:
         """
         self.visited = True
 
-        ret = None
         fixed_res = []
         unfixed_res = []
         for child in nodes:
@@ -95,17 +108,9 @@ class Node:
                 fixed_res.append(r)
             elif r is not None:
                 unfixed_res.append(r)
-        print("RESOLVED CHILD WITH: ", fixed_res, unfixed_res)
-        res = fixed_res if fixed_res.__len__() is not 0 else unfixed_res
-        if res.__len__() is not 0:
-            # TODO Reactivate
-            if all(x == res[0] for x in res):
-                ret = res[0]
-            else:
-                raise BaseException("Resolution from children gave different results")
 
         self.visited = False
-        return ret, True if fixed_res.__len__() is not 0 else False
+        return fixed_res, unfixed_res
 
 class NegativeNode(Node):
     def __init__(self, child):

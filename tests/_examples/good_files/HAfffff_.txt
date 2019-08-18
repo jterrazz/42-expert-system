@@ -1,16 +1,16 @@
-#B => A
-#D + E => B
-#G + H => F
-#I + J => G
-#G => H
-#L + M => K
-#O + P => L + N
-#X + Y | Z => M
-#N => X + Y | Z
+B => A
+D + E => B
+G + H => F
+I + J => G
+G => H
+L + M => K
+O + P => L + N
+N => M
 
-#=DEIJP
+=DEIJP
 
-#?AFKP
+?AFKP
+# A true, F True, K False , P True
 
 
 

@@ -18,11 +18,7 @@ if __name__ == "__main__":
             file_lines = f.readlines(1000) # TODO Maybe we should actually do more than 1000
         resolve_lines(file_lines)
 
-    except Exception as e:
-        print("{}".format(e))
-        sys.exit(1)
-
-    except BaseException as e:
+    except (Exception, BaseException) as e:
         print("{}".format(e))
         sys.exit(1)
 

@@ -41,19 +41,17 @@ good_results = [
     ("no_initial_facts2.txt", [False]),
     ("not.txt", [False, True]),
     ("or.txt", [True, True]),
-    # ("parentheses_test.txt", [True, False, False, True, True, True]),
+    # ("parentheses_test.txt", [True, True, True]),  # TODO Issue with xor in parent
     ("parenthesis.txt", [True, False, False, True, True, True]),
-    # ("raise_me_daddy.txt", [True]),
-    # ("test.txt", [True, False, False, True, True, True]),
+    # ("raise_me_daddy.txt", [True]), # TODO
     ("test_blyat.txt", [True]),
     ("test_blyat1.txt", [True]),
-    # ("test_harrrrrd.txt", [True]),
 
     # >>> Add the others
-    # ("test_intranet1", [None, None]),
-    # ("test_intranet2", [None, None]),
-    # ("test_intranet3", [None, None]),
-    # ("test_intranet4", [None, None]),
+    # ("test_intranet1", [None, None]), # Don't have to do because it's like a or in conclusions
+    # ("test_intranet2", [None, None]), # Don't have to do because it's like a or in conclusions
+    # ("test_intranet3", [None, None]), # Don't have to do because it's like a or in conclusions
+    # ("test_intranet4", [None, None]), # Don't have to do because it's like a or in conclusions
 
     ("test_parents_priority.txt", [True]),
     ("test_parents_priority2.txt", [True]),

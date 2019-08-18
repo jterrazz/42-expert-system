@@ -11,8 +11,6 @@ C | !G => H		# C or not G implies H
 (C | A) + B => Y + Z	# A and B implies Y and Z
 C | D => X 	# C or D implies X or V
 E + F => !V		# E and F implies not V
-A + B => C		# A and B if and only if C
-A + B => !C	# A and B if and only if not C
 
 =ABG			# Initial facts : A, B and G are true. All others are false.
 

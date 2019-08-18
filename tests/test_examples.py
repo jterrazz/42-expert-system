@@ -51,6 +51,8 @@ good_results = [
     # ("test_intranet3", [None, None]),
     # ("test_intranet4", [None, None]),
 
+    ("test_parents_priority.txt", [True]),
+    ("test_parents_priority2.txt", [True]),
     ("test_not", [False]),
     ("test_slack1", [False]),
     ("test_slack2", [False]),

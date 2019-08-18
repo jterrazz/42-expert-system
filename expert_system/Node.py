@@ -80,7 +80,7 @@ class Node:
         self.visited = False
 
         if ret is not None:
-            return self.set_status(ret, self.state)
+            return self.set_status(ret, True if fixed_res.__len__() is not 0 else False)
         return self.deduct_from_parents()
 
     def deduct_from_parents(self):

@@ -48,13 +48,6 @@ good_results = [
     ("raise_me_daddy.txt", ["ERROR"]),
     ("test_blyat.txt", [True]),
     ("test_blyat1.txt", [True]),
-
-    # >>> Add the others
-    # ("test_intranet1", [None, None]), # Don't have to do because it's like a or in conclusions
-    # ("test_intranet2", [None, None]), # Don't have to do because it's like a or in conclusions
-    # ("test_intranet3", [None, None]), # Don't have to do because it's like a or in conclusions
-    # ("test_intranet4", [None, None]), # Don't have to do because it's like a or in conclusions
-
     ("test_neg_3333.txt", [False]),
     ("test_parents_priority.txt", [True]),
     ("test_parents_priority2.txt", [True]),

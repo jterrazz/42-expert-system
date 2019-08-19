@@ -16,7 +16,7 @@ class ESPrompt(cmd.Cmd):
         self.set_lines(lines)
 
     def set_lines(self, lines):
-        self.lines = [f for f in filter(None, [l.replace("\n", "") for l in lines])]
+        self.lines = [f for f in filter(None, [l.replace("\n", "").replace(" ", "").replace("\s", "") for l in lines])]
 
     # TODO Check all are implemented
 
@@ -144,22 +144,42 @@ class ESPrompt(cmd.Cmd):
     def help_add_query():
         print('add_query <X> - With X being a single uppercase letter')
 
+    # Delete functions
 
+    def do_del_rule(self, rule_id):
+        try:
+            id = int(rule_id)
+            if self.lines[id][0] != "=" and self.lines[id][0] != "!":
+                self.lines.pop(id)
+            else:
+                print("Index is not valid")
 
-    def do_del_facts(self, facts):
-        print("hi,", facts)
+        except Exception as e:
+            print("Index is not valid")
 
-    def help_del_facts(self):
-        print('\n'.join(['del_facts [facts]',
-                           'del facts, ex: del_facts DB',
-                           ]))
+    def do_del_fact(self, fact):
+        if fact and fact.isupper():
+            for i, line in enumerate(self.lines):
+                if line[0] == "=":
+                    self.lines[i] = line.replace(fact, "")
 
-    # Function add queries
+    @staticmethod
+    def help_del_fact():
+        print('del_fact <X> - With X being a single uppercase letter')
+
+    def do_del_query(self, query):
+        if query and query.isupper():
+            for i, line in enumerate(self.lines):
+                if line[0] == "?":
+                    self.lines[i] = line.replace(query, "")
+
+    @staticmethod
+    def help_del_query():
+        print('del_query <X> - With X being a single uppercase letter')
 
 
     # Function del queries
-    def do_del_queries(self, queries):
-        print("hi,", queries)
+
 
     def help_del_queries(self):
         print('\n'.join(['del_queries [queries]',

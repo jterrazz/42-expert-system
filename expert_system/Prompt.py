@@ -1,4 +1,7 @@
 import cmd
+
+from .util.Color import Color
+
 # from termcolor import colored
 from expert_system.parser.Parser import ESParser
 from expert_system.Tree import NPITree
@@ -10,25 +13,25 @@ class ESPrompt(cmd.Cmd):
         super(ESPrompt, self).__init__()
         self.lines = lines
 
-    # cmd.Cmd.prompt = colored("ExpertSystem>> ", "cyan")
+    cmd.Cmd.prompt = f'{ Color.PURPLE }<ExpertSystem> { Color.END }'
 
-    # Function help general
-    def do_help_all(self, line):
-        if line:
-            print("Error: command without arg")
-        else:
-            print('\n'.join(['help_all       : show all help command',
-                             'solve        : resolve system',
-                             'show           : show all rules, facts and queries',
-                             'show_facts     : show all facts',
-                             'show_queries   : show all queries',
-                             'add_facts      : add facts to system',
-                             'add_queries    : add queries to system',
-                             'del_facts      : delete one, or multiple facts',
-                             'del_queries    : delete one, or multiple queries',
-                             'exit           : Exit prompt',
-                             'CTRL+D         : Quit prompt',
-                             ]))
+    # TODO Check all are implemented
+    def do_h(self, line):
+        print('\n'.join(['h                : Display help commands',
+                         'solve            : Solve the queries',
+                         'show             : Show rules, facts and queries',
+                         'show_rules       : Show facts',
+                         'show_facts       : Show facts',
+                         'show_queries     : Show queries',
+                         'add_rule         : Add a new rule',
+                         'add_fact         : Add a new fact',
+                         'add_query        : Add a new query',
+                         'del_rule <id>    : Delete a fact',
+                         'del_fact <id>    : Delete a fact',
+                         'del_query <id>   : Delete a query',
+                         'exit             : Exit',
+                         'CTRL+D           : Exit',
+                         ]))
 
     def help_help_all(self):
         print('\n'.join(['help_all',

@@ -2,6 +2,7 @@ import re
 
 from .Node import AtomNode, ConnectorNode, ConnectorType, NegativeNode
 from .parser.Rule import OPERATORS, ImplicationType
+from .Cmd import ESCmd
 
 LST_OP = {'+': ConnectorType.AND, '|': ConnectorType.OR, '^': ConnectorType.XOR}
 REGEX_OP = r'\+|\^|\||!'
@@ -21,7 +22,6 @@ class ImplicationData:
         return f"<Implication .left: { self.left } .right: { self.right }>"
 
     def validate(self):
-        print("validate")
         left = self.left.solve()
         right = self.right.solve()
         if left is True and right is False:
@@ -77,7 +77,8 @@ class Tree:
             atom.state_fixed = True
 
     def resolve_query(self, query):
-        print("\033[95mQUERY: Get the value of", query, "\033[0m")
+        if ESCmd.args.verbose:
+            print("\033[95mQUERY: Get the value of", query, "\033[0m")
 
         atom = self.atoms.get(query)
         if atom is None:
@@ -91,7 +92,8 @@ class Tree:
         return res
 
     def check_errors(self):
-        print("Checking errors")
+        if ESCmd.args.verbose:
+            print("Will perform a check on all implications")
         for i in self.implication:
             i.validate()
 

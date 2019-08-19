@@ -1,4 +1,5 @@
 from enum import Enum
+from .Cmd import ESCmd
 
 
 class ConnectorType(Enum):
@@ -41,7 +42,8 @@ class Node:
 
         self.state = status
         self.state_fixed = is_fixed
-        print(f'{ self.__repr__() } set to', status, f"(result is {is_fixed})")
+        if ESCmd.args.verbose:
+            print(f'{ self.__repr__() } set to', status, f"(result is {is_fixed})")
         return status
 
     def solve(self):
@@ -50,7 +52,8 @@ class Node:
 
         state = None
         if self.state is not None:
-            print(self, "is", self.state)
+            if ESCmd.args.verbose:
+                print(self, "is", self.state)
             state = self.state
             if self.state_fixed is True:
                 return state
@@ -58,12 +61,14 @@ class Node:
         fixed_ret = []
         unfixed_ret = []
 
-        print("Checking for children:", self.children)
+        if ESCmd.args.verbose:
+            print("Checking for children:", self.children)
         f, u = self.solve_grouped_nodes(self.children, False)
         fixed_ret.extend(f)
         unfixed_ret.extend(u)
 
-        print(self, "Checking for parents", self.operand_parents)
+        if ESCmd.args.verbose:
+            print(self, "Checking for parents", self.operand_parents)
         self.solve_grouped_nodes(self.operand_parents, True)
 
         ret = fixed_ret if fixed_ret.__len__() is not 0 else unfixed_ret
@@ -166,7 +171,8 @@ class ConnectorNode(Node):
     def solve(self):
         if self.visited:
             return self.state
-        print(self, "resolving from operands:", self.operands)
+        if ESCmd.args.verbose:
+            print(self, "resolving from operands:", self.operands)
 
         self.visited = True
         if self.type is ConnectorType.IMPLY:

@@ -1,9 +1,7 @@
-import sys
-import argparse
-
 from expert_system import Prompt, Tree, Print
 from expert_system.parser.Parser import ESParser
 from expert_system.config.Env import Env
+from expert_system.Cmd import ESCmd
 
 
 def resolve_lines(parser):
@@ -11,7 +9,7 @@ def resolve_lines(parser):
     results = {}
     for query in parser.queries:
         results[query] = tree.resolve_query(query)
-        print(f"Resolve {query}", results[query])
+        print(f"{query} resolved as", results[query])
     return results
 
 
@@ -29,14 +27,7 @@ def save_history(results):
 
 
 if __name__ == "__main__":
-    flag = argparse.ArgumentParser(description='ExpertSystem @ Paris 42 School - Made by @abbensid and @jterrazz')
-    flag.add_argument("-m", "--mode", choices=['shell', 'interactive'], default='mode_shell', help="Interface mode")
-    flag.add_argument("-g", "--graph", action='store_true', help="Displays the graph")
-    flag.add_argument("-r", "--rules", action='store_true', help="Displays the rules")
-    flag.add_argument("-i", "--image", action='store_true', help="Outputs the graph as an image")
-    flag.add_argument("-s", "--history", action='store_true', help="Keep old states in memory")
-    flag.add_argument("input", help="The file containing rules, facts and queries")
-    args = flag.parse_args()
+    args = ESCmd.args
 
     try:
         with open(args.input) as f:

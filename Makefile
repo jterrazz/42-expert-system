@@ -6,6 +6,7 @@ NAME = expert_system
 
 install:
     python3 -m pip install -r requirements.txt
+    brew install graphviz
 
 test: # install
     python3 -m pytest -v

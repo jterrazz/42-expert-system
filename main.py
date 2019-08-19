@@ -4,7 +4,7 @@ import argparse
 # from expert_system.Prompt import ExpertPrompt
 from expert_system.parser.Parser import ExpertParser
 from expert_system.Tree import NPITree
-from expert_system.ShowTree import ShowTree
+# from expert_system.ShowTree import ShowTree
 
 
 def resolve_lines(lines):

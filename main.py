@@ -17,6 +17,7 @@ def resolve_lines(parser):
 
 if __name__ == "__main__":
 
+    # Parser
     flag = argparse.ArgumentParser(description='ExpertSystem @ Paris 42 School - Made by @abbensid and @jterrazz')
     flag.add_argument("-m", choices=['shell', 'interactive'], default='mode_shell', help="Interface mode")
     flag.add_argument("-d", action='store_true', help="Displays the graph")

@@ -79,4 +79,11 @@ class ShowTree:
         print('=', ''.join(self.facts), sep='')
         print('?', ''.join(self.queries), sep='')
 
+    def create_array_rules_facts_queries(self):
+        output = []
+        for x in self.rules:
+            output.append('# ' + self.infix_to_postfix(x.npi_left) + ' ' + LST_Implication[x.type] + self.infix_to_postfix(x.npi_right))
+        output.append('# =' + ''.join(self.facts))
+        output.append('# ?' + ''.join(self.queries))
+        return output
 

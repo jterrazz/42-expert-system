@@ -4,6 +4,8 @@
 
 
 Put in requirment.txt:
+pip3 install virtualenv
+source
 > pip install -U pytest
 >
 >python3 -m pytest -v

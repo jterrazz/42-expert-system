@@ -6,12 +6,20 @@ from expert_system.parser.Parser import ExpertParser
 from expert_system.Tree import NPITree
 from expert_system.ShowTree import ShowTree
 
+args = None
+
 
 def resolve_lines(lines):
     parser = ExpertParser(lines)
 
+    if args and args.d:
+        ShowTree(parser.structured_rules, parser.facts, parser.queries).display_tree_in_shell()
+    if args and args.r:
+        ShowTree(parser.structured_rules, parser.facts, parser.queries).display_rules()
+    # ExpertPrompt().cmdloop()
+
     # create tree image
-    ShowTree(parser.structured_rules, parser.facts, parser.queries).create_image()
+    # ShowTree(parser.structured_rules, parser.facts, parser.queries).create_image()
 
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
     for query in parser.queries:
@@ -20,41 +28,20 @@ def resolve_lines(lines):
 
 if __name__ == "__main__":
 
-    # Parser
-    flag = argparse.ArgumentParser(description='ExpertSystem @ 42')
-    flag.add_argument("-m", choices=['mode_shell', 'mode_interactive'], default='mode_shell', help="show mode")
-    flag.add_argument("-d", action='store_true', help="display graph system")
-    flag.add_argument("-r", action='store_true', help="display rules system")
+    flag = argparse.ArgumentParser(description='ExpertSystem @ Paris 42 School - Made by @abbensid and @jterrazz')
+    flag.add_argument("-m", choices=['mode_shell', 'mode_interactive'], default='mode_shell', help="Interface mode")
+    flag.add_argument("-d", action='store_true', help="Displays the graph")
+    flag.add_argument("-r", action='store_true', help="Displays the rules")
     flag.add_argument("-i", action='store_true', help="create graph system")
-    flag.add_argument("-hist", action='store_true', help="display historique system")
-    flag.add_argument("input", help="input system")
-    flag.parse_args()
+    flag.add_argument("--history", action='store_true', help="Keep old states in memory")
+    flag.add_argument("input", help="The file containing rules, facts and queries")
     args = flag.parse_args()
 
     try:
-        with open(sys.argv[1]) as f: # TODO protect argv
-            file_lines = f.readlines(1000) # TODO Maybe we should actually do more than 1000
+        with open(args.input) as f:
+            file_lines = f.readlines() # TODO Maybe we should actually do more than 1000
         resolve_lines(file_lines)
 
     except (Exception, BaseException) as e:
         print("{}".format(e))
         sys.exit(1)
-
-    # flag mode
-    if args.m == 'mode_shell':
-        print('mode Shell')
-    elif args.m == 'mode_interactive':
-        print('mode interactive')
-    else:
-        print('mode Shell')
-
-    parser = ExpertParser(file_lines)
-    # flag display graph
-    if args.d:
-        ShowTree(parser.structured_rules, parser.facts, parser.queries).display_tree_in_shell()
-
-    # flag display rules
-    if args.r:
-        ShowTree(parser.structured_rules, parser.facts, parser.queries).display_rules()
-
-    # ExpertSystem().cmdloop()

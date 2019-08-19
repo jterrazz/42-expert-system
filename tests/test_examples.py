@@ -53,6 +53,7 @@ good_results = [
     # ("test_intranet3", [None, None]), # Don't have to do because it's like a or in conclusions
     # ("test_intranet4", [None, None]), # Don't have to do because it's like a or in conclusions
 
+    ("test_neg_3333.txt", [False]),
     ("test_parents_priority.txt", [True]),
     ("test_parents_priority2.txt", [True]),
     ("test_not", [False]),

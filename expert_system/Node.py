@@ -75,21 +75,25 @@ class Node:
         fixed_ret.extend(f)
         unfixed_ret.extend(u)
 
-        res = None
+        state = None
 
         ret = fixed_ret if fixed_ret.__len__() is not 0 else unfixed_ret
         if ret.__len__() is not 0:
-            if all(x == ret[0] for x in ret):
-                res = ret[0]
+            if True in ret:
+                state = True
             else:
-                raise BaseException("Resolution from children and parents gave different results")
+                state = False
+            # if all(x == ret[0] for x in ret):
+            #     state = ret[0]
+            # else:
+            #     raise BaseException("Resolution from children and parents gave different results")
 
         is_fixed = True if fixed_ret.__len__() is not 0 else False
 
-        if res is not None:
+        if state is not None:
             if isinstance(self, NegativeNode):
-                res = not res if res is not None else None
-            return self.set_status(res, is_fixed)
+                state = not state if state is not None else None
+            return self.set_status(state, is_fixed)
         return None
 
     def solve_grouped_nodes(self, nodes, checking_parents):
@@ -112,6 +116,7 @@ class Node:
         self.visited = False
         return fixed_res, unfixed_res
 
+
 class NegativeNode(Node):
     def __init__(self, child):
         if child is None:
@@ -131,9 +136,8 @@ class NegativeNode(Node):
         super(NegativeNode, self).add_child(child)
         child.operand_parents.append(self)
 
-    def set_status(self, status, is_fixed):
+    def set_status(self, status, is_fixed): # TODO Add set_by_true if it's implication
         res = super(NegativeNode, self).set_status(status, is_fixed)
-        # not value if value is not None else None
         self.children[0].set_status(not res if res is not None else None, is_fixed)
         return res
 

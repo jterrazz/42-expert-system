@@ -108,7 +108,6 @@ class ESPrinter:
         try:
             with open(Env.LOG_PATH) as f:
                 lines = f.readlines()
-                # delete '\n'
 
             lines = [x.strip() for x in lines]
             queries = {}

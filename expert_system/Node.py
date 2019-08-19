@@ -16,8 +16,6 @@ class Node:
     """
 
     def __init__(self, tree):
-        """ Children and parents must be unique """
-
         self.children = []
         self.operand_parents = []
         self.visited = False
@@ -33,16 +31,11 @@ class Node:
         else:
             return f'\033[90m{str}\033[0m'
 
-    def __full_repr__(self):
-        # TODO
-        return "Not implemented yet"
-
     def add_child(self, child):
         if child not in self.children:
             self.children.append(child)
 
     def set_status(self, status, is_fixed):
-        # TODO Add check if value was already set
         if self.state_fixed is True and is_fixed is True and self.state is not None and self.state != status:
             raise BaseException("Confict")
 
@@ -62,7 +55,6 @@ class Node:
             if self.state_fixed is True:
                 return state
 
-        # TODO Add this to operands
         fixed_ret = []
         unfixed_ret = []
 
@@ -71,18 +63,8 @@ class Node:
         fixed_ret.extend(f)
         unfixed_ret.extend(u)
 
-        # if isinstance(self, NegativeNode):
-        #     fixed_ret = [not r for r in fixed_ret]
-        #     unfixed_ret = [not r for r in unfixed_ret]
-
-        # if not (isinstance(self, ConnectorNode) and self.type is ConnectorType.IMPLY):
         print(self, "Checking for parents", self.operand_parents)
-        f, u = self.solve_grouped_nodes(self.operand_parents, True)
-        # fixed_ret.extend(f)
-        # unfixed_ret.extend(u)
-
-        print(self, "fixed", fixed_ret)
-        print(self, "unfixed", unfixed_ret)
+        self.solve_grouped_nodes(self.operand_parents, True)
 
         ret = fixed_ret if fixed_ret.__len__() is not 0 else unfixed_ret
         if ret.__len__() is not 0:
@@ -90,10 +72,6 @@ class Node:
                 state = True
             else:
                 state = False
-            # if all(x == ret[0] for x in ret):
-            #     state = ret[0]
-            # else:
-            #     raise BaseException("Resolution from children and parents gave different results")
 
         is_fixed = True if fixed_ret.__len__() is not 0 else False
 
@@ -101,7 +79,6 @@ class Node:
         if state is None:
             need_reverse = False
             state = self.state
-        print("NEW STATE", state)
 
         if state is not None:
             if isinstance(self, NegativeNode) and need_reverse:
@@ -110,21 +87,14 @@ class Node:
         return None
 
     def solve_grouped_nodes(self, nodes, checking_parents):
-        """
-        Returns the result and the priority associated
-        """
         self.visited = True
 
         fixed_res = []
         unfixed_res = []
         for child in nodes:
-            if checking_parents and (
-                    (isinstance(child, ConnectorNode) and child.type is not ConnectorType.AND)
-            ):
+            if checking_parents and isinstance(child, ConnectorNode) and child.type is not ConnectorType.AND:
                 continue
             r = child.solve()
-            # if isinstance(self, NegativeNode) and not checking_parents: # isinstance(child, NegativeNode):
-            #     r = not r if r is not None else None
             if isinstance(self, NegativeNode) and isinstance(child, ConnectorNode) and child.type is ConnectorType.IMPLY and not checking_parents:
                 r = not r if r is not None else None
             if r is not None and child.state_fixed:
@@ -144,9 +114,6 @@ class NegativeNode(Node):
         super(NegativeNode, self).__init__(None)
         self.state = None
         self.add_child(child)
-
-        # TODO Add a only one must be set assert
-        # TODO Example: X =>  !A + B
 
     def __repr__(self):
         return self.__repr_color__(f"!{ self.children[0] }")
@@ -176,17 +143,6 @@ class ConnectorNode(Node):
 
     def __repr__(self):
         return self.__repr_color__(f'({self.type.value}) - fixed: { self.state_fixed } - op: { self.operands }')
-
-    # def __eq__(self, other):
-    #     if not isinstance(other, ConnectorNode):
-    #         return False
-    #     t = list(other.operands)
-    #     try:
-    #         for elem in self.operands:
-    #             t.remove(elem)
-    #     except ValueError:
-    #         return False
-    #     return not t
 
     def set_status(self, status, is_fixed):
         """ When a connector (&, |, ^) gets a value, we can sometimes deduct the value of its operands. """

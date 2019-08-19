@@ -18,7 +18,7 @@ good_results = [
     ("comments.txt", [True, True, True]),
     ("double_implies.txt", [True, True, True]),
     ("easy_test.txt", [True, True, False]),
-    # ("empty_init_test.txt", [False, True, False]), # Must trigger error on last
+    ("empty_init_test.txt", [False, True, True]),
     # ("error_0.txt", [True]), # TODO Error
     # ("error_1.txt", [True]), # TODO Error
     ("HAfffff_.txt", [True, True, False, True]),

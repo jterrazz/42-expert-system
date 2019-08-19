@@ -4,14 +4,14 @@ import argparse
 # from expert_system.Prompt import ExpertPrompt
 from expert_system.parser.Parser import ExpertParser
 from expert_system.Tree import NPITree
-# from expert_system.ShowTree import ShowTree
+from expert_system.ShowTree import ShowTree
 
 
 def resolve_lines(lines):
     parser = ExpertParser(lines)
 
     # create tree image
-    # ShowTree(parser.structured_rules).create_full_tree()
+    # ShowTree(parser.structured_rules).create_image()
 
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
     for query in parser.queries:
@@ -21,14 +21,14 @@ def resolve_lines(lines):
 if __name__ == "__main__":
 
     # Parser
-    parser = argparse.ArgumentParser(description='ExpertSystem @ 42')
-    parser.add_argument("-m", choices=['mode_shell', 'mode_interactive'], default='mode_shell', help="show mode")
-    parser.add_argument("-d", action='store_true', help="display graph system")
-    parser.add_argument("-hist", action='store_true', help="display historique system")
-    parser.add_argument("input", help="input system")
-    parser.parse_args()
-    args = parser.parse_args()
-
+    flag = argparse.ArgumentParser(description='ExpertSystem @ 42')
+    flag.add_argument("-m", choices=['mode_shell', 'mode_interactive'], default='mode_shell', help="show mode")
+    flag.add_argument("-d", action='store_true', help="display graph system")
+    flag.add_argument("-i", action='store_true', help="create graph system")
+    flag.add_argument("-hist", action='store_true', help="display historique system")
+    flag.add_argument("input", help="input system")
+    flag.parse_args()
+    args = flag.parse_args()
 
     try:
         with open(sys.argv[1]) as f: # TODO protect argv
@@ -38,5 +38,19 @@ if __name__ == "__main__":
     except (Exception, BaseException) as e:
         print("{}".format(e))
         sys.exit(1)
+
+    # flag mode
+    if args.m == 'mode_shell':
+        print('mode Shell')
+    elif args.m == 'mode_interactive':
+        print('mode interactive')
+    else:
+        print('mode Shell')
+
+    # flag display graph
+    if args.d:
+        parser = ExpertParser(file_lines)
+        ShowTree(parser.structured_rules).display_tree_in_shell()
+
 
     # ExpertSystem().cmdloop()

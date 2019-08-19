@@ -8,6 +8,7 @@ class ShowTree:
     count = 0
     def __init__(self, rules):
         self.rules = rules
+        self.graph = self.create_full_tree()
 
     def create_part_tree(self, NPI_part, Implication):
         stack = []
@@ -38,7 +39,13 @@ class ShowTree:
             imp = Node(LST_Implication[val.type] + str(key), parent=root, display_name=LST_Implication[val.type])
             self.create_part_tree(val.npi_left, imp)
             self.create_part_tree(val.npi_right, imp)
+        return root
 
+    def create_image(self):
         # create image
-        DotExporter(root,
+        DotExporter(self.graph,
             nodeattrfunc=lambda node: 'label="{}"'.format(node.display_name)).to_picture("graph.png")
+
+    def display_tree_in_shell(self):
+        for pre, fill, node in RenderTree(self.graph):
+            print("%s%s" % (pre, node.display_name))

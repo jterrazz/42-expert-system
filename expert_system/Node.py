@@ -60,7 +60,9 @@ class Node:
         state = None
         if self.state is not None:
             print(self, "is", self.state)
-            return self.state
+            state = self.state
+            if self.state_fixed is True:
+                return state
 
         # TODO Add this to operands
         fixed_ret = []

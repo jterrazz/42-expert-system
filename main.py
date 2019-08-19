@@ -11,7 +11,7 @@ def resolve_lines(lines):
     parser = ExpertParser(lines)
 
     # create tree image
-    # ShowTree(parser.structured_rules).create_image()
+    # ShowTree(parser.structured_rules, parser.facts, parser.queries).create_image()
 
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
     for query in parser.queries:
@@ -51,10 +51,10 @@ if __name__ == "__main__":
     parser = ExpertParser(file_lines)
     # flag display graph
     if args.d:
-        ShowTree(parser.structured_rules).display_tree_in_shell()
+        ShowTree(parser.structured_rules, parser.facts, parser.queries).display_tree_in_shell()
 
     # flag display rules
     if args.r:
-        ShowTree(parser.structured_rules).display_rules()
+        ShowTree(parser.structured_rules, parser.facts, parser.queries).display_rules()
 
     # ExpertSystem().cmdloop()

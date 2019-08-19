@@ -6,8 +6,10 @@ LST_Implication = {ImplicationType.EQUAL :'<=>', ImplicationType.IMPLY :'=>'}
 
 class ShowTree:
     count = 0
-    def __init__(self, rules):
+    def __init__(self, rules, facts, queries):
         self.rules = rules
+        self.facts = facts
+        self.queries = queries
         self.graph = self.create_full_tree()
 
     def create_part_tree(self, NPI_part, Implication):
@@ -67,5 +69,7 @@ class ShowTree:
     def display_rules(self):
         for x in self.rules:
             print(self.infix_to_postfix(x.npi_left), LST_Implication[x.type], self.infix_to_postfix(x.npi_right))
+        print('=', ''.join(self.facts), sep='')
+        print('?', ''.join(self.queries), sep='')
 
 

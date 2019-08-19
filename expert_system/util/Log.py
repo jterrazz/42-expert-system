@@ -1,4 +1,5 @@
 from expert_system.Cmd import ESCmd
+from .Color import Color
 
 
 class Logger:
@@ -7,7 +8,5 @@ class Logger:
 
     def info(self, message, type=None):
         if ESCmd.args.verbose:
-            if type:
-                print(f"<{type}> {message}")
-            else:
-                print(f"<{self.type}> {message}")
+            type = type or self.type
+            print(f"{Color.BLUE}<{type}>{Color.END} {message}")

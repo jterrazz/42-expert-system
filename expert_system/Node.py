@@ -1,5 +1,6 @@
 from enum import Enum
 from expert_system.util.Log import Logger
+from .util.Color import Color
 
 logger = Logger("Node")
 
@@ -28,11 +29,13 @@ class Node:
 
     def __repr_color__(self, str):
         if self.state is True:
-            return f'\033[92m{str}\033[0m'
+            start_color = Color.GREEN
         elif self.state is False:
-            return f'\033[91m{str}\033[0m'
+            start_color = Color.FAIL
         else:
-            return f'\033[90m{str}\033[0m'
+            start_color = Color.GREY
+
+        return f'{ start_color }{str}{Color.END}'
 
     def add_child(self, child):
         if child not in self.children:

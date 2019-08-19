@@ -43,7 +43,7 @@ class Node:
 
     def set_status(self, status, is_fixed):
         if self.state_fixed is True and is_fixed is True and self.state is not None and self.state != status:
-            raise BaseException("Confict")
+            raise BaseException(f'{ Color.FAIL }[Conflict]{ Color.END } Node {self} received two different states')
 
         if self.state != status:
             logger.info(f'{self.__repr__()} set to {status}')

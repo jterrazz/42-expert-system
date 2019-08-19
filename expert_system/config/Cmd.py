@@ -15,4 +15,5 @@ class Cmd:
         parser.add_argument("input", help="The file containing rules, facts and queries")
     else:
         parser.add_argument("input", nargs='?', help="The file containing rules, facts and queries")
+
     args = parser.parse_args()

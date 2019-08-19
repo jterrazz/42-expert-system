@@ -3,6 +3,7 @@ import re
 from .Node import AtomNode, ConnectorNode, ConnectorType, NegativeNode
 from .parser.Rule import OPERATORS, ImplicationType
 from expert_system.util.Log import Logger
+from expert_system.util.Color import Color
 
 logger = Logger("Tree")
 
@@ -27,7 +28,7 @@ class ImplicationData:
         left = self.left.solve()
         right = self.right.solve()
         if left is True and right is False:
-            raise BaseException("Error: The implication", self, "returned True => False")
+            raise BaseException(f'{ Color.FAIL }[Conflict]{ Color.END } The implication { self } is invalid (True => False)')
 
 
 class Tree:

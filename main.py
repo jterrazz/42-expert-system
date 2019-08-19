@@ -1,3 +1,5 @@
+import sys
+
 from expert_system import Prompt, Tree, Print
 from expert_system.parser.Parser import ESParser
 from expert_system.config.Env import Env
@@ -14,7 +16,6 @@ def resolve_lines(parser):
 
 
 def save_history(results):
-    # Format error file
     exp_sys = Print.ESPrinter(parser.structured_rules, parser.facts, parser.queries).create_array_rules_facts_queries()
     with open(Env.LOG_PATH, 'a') as f:
         for query, val in results.items():
@@ -48,7 +49,5 @@ if __name__ == "__main__":
                 save_history(res)
 
     except (Exception, BaseException) as e:
-        # TODO Only catch our handled exception ???
-        raise
-        print("{}".format(e))
+        print(e)
         sys.exit(1)

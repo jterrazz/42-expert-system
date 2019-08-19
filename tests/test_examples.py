@@ -19,8 +19,8 @@ good_results = [
     ("double_implies.txt", [True, True, True]),
     ("easy_test.txt", [True, True, False]),
     ("empty_init_test.txt", [False, True, True]),
-    # ("error_0.txt", [True]), # TODO Error
-    # ("error_1.txt", [True]), # TODO Error
+    ("error_0.txt", ["ERROR"]),
+    ("error_1.txt", ["ERROR"]),
     ("HAfffff_.txt", [True, True, False, True]),
     ("hard_imply_2.txt", [True]),
     ("HARDDDDDER_.txt", [True, True, True, True]),
@@ -45,7 +45,7 @@ good_results = [
     ("or.txt", [True, True]),
     ("parentheses_test.txt", [True, True, True, True]),
     ("parenthesis.txt", [True, False, False, True, True, True]),
-    # ("raise_me_daddy.txt", [True]), # TODO
+    ("raise_me_daddy.txt", ["ERROR"]),
     ("test_blyat.txt", [True]),
     ("test_blyat1.txt", [True]),
 
@@ -74,7 +74,15 @@ def test_good_files(input, expected):
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
     i = 0
     for query in parser.queries:
-        assert tree.resolve_query(query) == expected[i]
+        if expected[i] == "ERROR":
+            try:
+                tree.resolve_query(query)
+            except:
+                pass
+                continue
+            assert False
+        else:
+            assert tree.resolve_query(query) == expected[i]
         i += 1
 
 

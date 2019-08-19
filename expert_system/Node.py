@@ -41,7 +41,7 @@ class Node:
         if child not in self.children:
             self.children.append(child)
 
-    def set_status(self, status, is_fixed):
+    def set_state(self, status, is_fixed):
         if self.state_fixed is True and is_fixed is True and self.state is not None and self.state != status:
             raise BaseException(f'{ Color.FAIL }[Conflict]{ Color.END } Node {self} received two different states')
 
@@ -91,7 +91,7 @@ class Node:
         if state is not None:
             if isinstance(self, NegativeNode) and need_reverse:
                 state = not state if state is not None else None
-            return self.set_status(state, is_fixed)
+            return self.set_state(state, is_fixed)
         return None
 
     def solve_grouped_nodes(self, nodes, checking_parents):
@@ -130,9 +130,9 @@ class NegativeNode(Node):
         super(NegativeNode, self).add_child(child)
         child.operand_parents.append(self)
 
-    def set_status(self, status, is_fixed):
-        res = super(NegativeNode, self).set_status(status, is_fixed)
-        self.children[0].set_status(not res if res is not None else None, is_fixed)
+    def set_state(self, status, is_fixed):
+        res = super(NegativeNode, self).set_state(status, is_fixed)
+        self.children[0].set_state(not res if res is not None else None, is_fixed)
         return res
 
 
@@ -152,13 +152,13 @@ class ConnectorNode(Node):
     def __repr__(self):
         return self.__repr_color__(f'({self.type.value}) .operands: { self.operands }')
 
-    def set_status(self, status, is_fixed):
+    def set_state(self, status, is_fixed):
         """ When a connector (&, |, ^) gets a value, we can sometimes deduct the value of its operands. """
-        super(ConnectorNode, self).set_status(status, is_fixed)
+        super(ConnectorNode, self).set_state(status, is_fixed)
 
         if self.type is ConnectorType.AND and status is True:
             for op in self.operands:
-                op.set_status(status, is_fixed)
+                op.set_state(status, is_fixed)
         return status
 
     def add_operand(self, operand):
@@ -180,7 +180,7 @@ class ConnectorNode(Node):
         self.visited = True
         if self.type is ConnectorType.IMPLY:
             ret = self.operands[0].solve()
-            self.set_status(ret, self.operands[0].state_fixed)
+            self.set_state(ret, self.operands[0].state_fixed)
             self.visited = False
             return ret
 
@@ -211,7 +211,7 @@ class ConnectorNode(Node):
             return None
 
         if res is not None:
-            return self.set_status(res, has_fixed_operands)
+            return self.set_state(res, has_fixed_operands)
 
         return super(ConnectorNode, self).solve()
 

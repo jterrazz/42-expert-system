@@ -57,9 +57,10 @@ class Node:
         if self.visited is True:
             return self.state
 
+        state = None
         if self.state is not None:
             print(self, "is", self.state)
-            return self.state
+            state = self.state
 
         # TODO Add this to operands
         fixed_ret = []
@@ -74,8 +75,6 @@ class Node:
         f, u = self.solve_grouped_nodes(self.operand_parents, True)
         fixed_ret.extend(f)
         unfixed_ret.extend(u)
-
-        state = None
 
         ret = fixed_ret if fixed_ret.__len__() is not 0 else unfixed_ret
         if ret.__len__() is not 0:
@@ -105,7 +104,10 @@ class Node:
         fixed_res = []
         unfixed_res = []
         for child in nodes:
-            if checking_parents and isinstance(child, ConnectorNode) and child.type is not ConnectorType.AND:
+            if checking_parents and (
+                    (isinstance(child, ConnectorNode) and child.type is not ConnectorType.AND)
+                    or isinstance(child, NegativeNode)
+            ):
                 continue
             r = child.solve()
             if r is not None and child.state_fixed:

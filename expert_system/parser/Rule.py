@@ -40,7 +40,7 @@ class NPIParser:
         return output
 
 
-class ExpertRule(NPIParser):
+class ESRule(NPIParser):
     def __init__(self, rule_str):
         splitted = re.split(r'=>|<=>', rule_str)
         self.type = (ImplicationType.EQUAL if "<=>" in rule_str else ImplicationType.IMPLY)

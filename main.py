@@ -1,14 +1,12 @@
 import sys
 import argparse
 
-from expert_system import Prompt, Tree, ShowTree
-from expert_system.parser.Parser import ExpertParser
-from expert_system.config.env import LOG_PATH
+from expert_system import Prompt, Tree, Print
+from expert_system.parser.Parser import ESParser
+from expert_system.config.Env import Env
 
 
 def resolve_lines(parser):
-    # create tree image
-    # ShowTree(parser.structured_rules, parser.facts, parser.queries).create_image()
     tree = Tree.NPITree(parser.structured_rules, parser.facts, parser.queries)
     results = {}
     for query in parser.queries:
@@ -19,15 +17,15 @@ def resolve_lines(parser):
 
 def save_history(results):
     # Format error file
-    exp_sys = ShowTree.ShowTree(parser.structured_rules, parser.facts, parser.queries).create_array_rules_facts_queries()
-    with open(LOG_PATH, 'a') as f:
+    exp_sys = Print.ESPrinter(parser.structured_rules, parser.facts, parser.queries).create_array_rules_facts_queries()
+    with open(Env.LOG_PATH, 'a') as f:
         for query, val in results.items():
             f.write(query + '=' + str(val) + ',')
         f.write('\n')
         for x in exp_sys:
             f.write(x + '\n')
         f.write(';' + '\n')
-        ShowTree.ShowTree(parser.structured_rules, parser.facts, parser.queries).parser_file_history()
+        Print.ESPrinter(parser.structured_rules, parser.facts, parser.queries).parser_file_history()
 
 
 if __name__ == "__main__":
@@ -45,13 +43,15 @@ if __name__ == "__main__":
             lines = f.readlines()
 
         if args.m == "interactive":
-            Prompt.ExpertPrompt(lines).cmdloop()
+            Prompt.ESPrompt(lines).cmdloop()
         else:
-            parser = ExpertParser(lines)
+            parser = ESParser(lines)
             if args and args.d:
-                ShowTree.ShowTree(parser.structured_rules, parser.facts, parser.queries).display_tree_in_shell()
+                Print.ESPrinter(parser.structured_rules, parser.facts, parser.queries).display_tree_in_shell()
             if args and args.r:
-                ShowTree.ShowTree(parser.structured_rules, parser.facts, parser.queries).display_rules()
+                Print.ESPrinter(parser.structured_rules, parser.facts, parser.queries).display_rules()
+            if args and args.i:
+                Print.ESPrinter(parser.structured_rules, parser.facts, parser.queries).create_image()
             res = resolve_lines(parser)
             if args.history:
                 save_history(res)

@@ -1,8 +1,8 @@
 import re
-from .Rule import ExpertRule
+from .Rule import ESRule
 
 
-class ExpertParser:
+class ESParser:
     def __init__(self, raw_input):
         self.raw_input = raw_input
         self.raw_rules = []
@@ -15,7 +15,7 @@ class ExpertParser:
 
     def set_structured_rules(self):
         for raw_rule in self.raw_rules:
-            self.structured_rules.append(ExpertRule(raw_rule))
+            self.structured_rules.append(ESRule(raw_rule))
 
     @staticmethod
     def ft_split_operators(formula):
@@ -72,13 +72,13 @@ class ExpertParser:
             if not elem:
                 continue
             if elem[0] == '=':
-                atoms = ExpertParser.ft_all_atoms(rules)
+                atoms = ESParser.ft_all_atoms(rules)
                 fact -= 1
                 if fact < 0:
                     raise BaseException(f'Error at line : {elem} - Facts were already defined line')
                 if queries <= 0:
                     raise BaseException(f'Error at line : {elem} - Facts must be defined before queries')
-                if not ExpertParser.ft_check_facts_in_list_atoms(atoms, elem):
+                if not ESParser.ft_check_facts_in_list_atoms(atoms, elem):
                     raise BaseException(f'Error at line : {elem} - A fact was defined but not found in the rules')
                 if regex_fact.match(elem) is None:
                     raise BaseException(f'Error at line : {elem} - Fact badly formatted')
@@ -88,7 +88,7 @@ class ExpertParser:
                     raise BaseException(f'Error at line : {elem} - Facts were not defined')
                 if regex_queries.match(elem) is None:
                     raise BaseException(f'Error at line : {elem} - Queries badly formatted')
-                if not ExpertParser.ft_check_queries_in_list_atoms(atoms, elem):
+                if not ESParser.ft_check_queries_in_list_atoms(atoms, elem):
                     raise BaseException(f'Error at line : {elem} - An atom in the queries was not defined in the rules')
             else:
                 rule -= 1
@@ -98,7 +98,7 @@ class ExpertParser:
                     raise BaseException(f'Error at line : {elem} - Rules must be defined before queries')
                 if regex_rule.match(elem) is None:
                     raise BaseException(f'Error at line : {elem} - Rule is badly formatted')
-                if not ExpertParser.ft_check_parentheses(elem):
+                if not ESParser.ft_check_parentheses(elem):
                     raise BaseException(f'Error at line : {elem} - Rule has badly formatted parentheses')
                 else:
                     rules += elem

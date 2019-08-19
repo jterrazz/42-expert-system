@@ -1,5 +1,5 @@
 from expert_system.Tree import NPITree
-from expert_system.parser.Parser import ExpertParser
+from expert_system.parser.Parser import ESParser
 
 
 def test_and():
@@ -10,7 +10,7 @@ def test_and():
         print('Error opening file for reading')
         raise
 
-    parser = ExpertParser(content)
+    parser = ESParser(content)
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
     assert tree.resolve_query("C") is True
     assert tree.resolve_query("F") is False
@@ -24,7 +24,7 @@ def test_and_in_conclusions():
         print('Error opening file for reading')
         raise
 
-    parser = ExpertParser(content)
+    parser = ESParser(content)
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
     assert tree.resolve_query("F") is True
     assert tree.resolve_query("C") is True
@@ -40,7 +40,7 @@ def test_comments():
         print('Error opening file for reading')
         raise
 
-    parser = ExpertParser(content)
+    parser = ESParser(content)
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
     assert tree.resolve_query("C") is True
     assert tree.resolve_query("D") is True
@@ -55,7 +55,7 @@ def test_double_implies():
         print('Error opening file for reading')
         raise
 
-    parser = ExpertParser(content)
+    parser = ESParser(content)
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
     assert tree.resolve_query("F") is True
     assert tree.resolve_query("C") is True
@@ -70,7 +70,7 @@ def test_mix():
         print('Error opening file for reading')
         raise
 
-    parser = ExpertParser(content)
+    parser = ESParser(content)
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
     assert tree.resolve_query("G") is True
     assert tree.resolve_query("T") is False
@@ -85,7 +85,7 @@ def test_mix2():
         print('Error opening file for reading')
         raise
 
-    parser = ExpertParser(content)
+    parser = ESParser(content)
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
     assert tree.resolve_query("C") is True
 
@@ -98,7 +98,7 @@ def test_multiple_initial_facts():
         print('Error opening file for reading')
         raise
 
-    parser = ExpertParser(content)
+    parser = ESParser(content)
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
     assert tree.resolve_query("E") is True
     assert tree.resolve_query("F") is False
@@ -112,7 +112,7 @@ def test_multiple_initial_facts2():
         print('Error opening file for reading')
         raise
 
-    parser = ExpertParser(content)
+    parser = ESParser(content)
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
     assert tree.resolve_query("E") is False
     assert tree.resolve_query("F") is False
@@ -126,7 +126,7 @@ def test_multiple_initial_facts3():
         print('Error opening file for reading')
         raise
 
-    parser = ExpertParser(content)
+    parser = ESParser(content)
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
     assert tree.resolve_query("E") is False
     assert tree.resolve_query("F") is False
@@ -140,7 +140,7 @@ def test_multiple_initial_facts4():
         print('Error opening file for reading')
         raise
 
-    parser = ExpertParser(content)
+    parser = ESParser(content)
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
     assert tree.resolve_query("E") is False
     assert tree.resolve_query("F") is True
@@ -154,7 +154,7 @@ def test_multiple_initial_facts5():
         print('Error opening file for reading')
         raise
 
-    parser = ExpertParser(content)
+    parser = ESParser(content)
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
     assert tree.resolve_query("E") is False
     assert tree.resolve_query("F") is False
@@ -168,7 +168,7 @@ def test_multiple_initial_facts6():
         print('Error opening file for reading')
         raise
 
-    parser = ExpertParser(content)
+    parser = ESParser(content)
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
     assert tree.resolve_query("E") is True
     assert tree.resolve_query("F") is True
@@ -182,7 +182,7 @@ def test_multiple_no_initial_facts1():
         print('Error opening file for reading')
         raise
 
-    parser = ExpertParser(content)
+    parser = ESParser(content)
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
     assert tree.resolve_query("C") is False
 
@@ -195,7 +195,7 @@ def test_multiple_no_initial_facts2():
         print('Error opening file for reading')
         raise
 
-    parser = ExpertParser(content)
+    parser = ESParser(content)
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
     assert tree.resolve_query("C") is False
 
@@ -208,7 +208,7 @@ def test_not():
         print('Error opening file for reading')
         raise
 
-    parser = ExpertParser(content)
+    parser = ESParser(content)
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
     assert tree.resolve_query("B") is False
     assert tree.resolve_query("D") is True
@@ -222,7 +222,7 @@ def test_or():
         print('Error opening file for reading')
         raise
 
-    parser = ExpertParser(content)
+    parser = ESParser(content)
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
     assert tree.resolve_query("C") is True
     assert tree.resolve_query("F") is True
@@ -236,7 +236,7 @@ def test_parenthesis():
         print('Error opening file for reading')
         raise
 
-    parser = ExpertParser(content)
+    parser = ESParser(content)
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
     assert tree.resolve_query("C") is True
     assert tree.resolve_query("D") is False
@@ -254,7 +254,7 @@ def test_xor():
         print('Error opening file for reading')
         raise
 
-    parser = ExpertParser(content)
+    parser = ESParser(content)
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
     assert tree.resolve_query("C") is False
     assert tree.resolve_query("F") is True
@@ -270,7 +270,7 @@ def test_test_and1():
         print('Error opening file for reading')
         raise
 
-    parser = ExpertParser(content)
+    parser = ESParser(content)
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
     assert tree.resolve_query("A") is True
     assert tree.resolve_query("G") is True
@@ -286,7 +286,7 @@ def test_test_and2():
         print('Error opening file for reading')
         raise
 
-    parser = ExpertParser(content)
+    parser = ESParser(content)
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
     assert tree.resolve_query("A") is True
     assert tree.resolve_query("G") is True
@@ -302,7 +302,7 @@ def test_test_or1():
         print('Error opening file for reading')
         raise
 
-    parser = ExpertParser(content)
+    parser = ESParser(content)
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
     assert tree.resolve_query("A") is False
 
@@ -315,7 +315,7 @@ def test_test_or2():
         print('Error opening file for reading')
         raise
 
-    parser = ExpertParser(content)
+    parser = ESParser(content)
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
     assert tree.resolve_query("A") is True
 
@@ -328,7 +328,7 @@ def test_test_or3():
         print('Error opening file for reading')
         raise
 
-    parser = ExpertParser(content)
+    parser = ESParser(content)
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
     assert tree.resolve_query("A") is True
 
@@ -341,7 +341,7 @@ def test_test_or4():
         print('Error opening file for reading')
         raise
 
-    parser = ExpertParser(content)
+    parser = ESParser(content)
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
     assert tree.resolve_query("A") is True
 
@@ -354,7 +354,7 @@ def test_test_paran1():
         print('Error opening file for reading')
         raise
 
-    parser = ExpertParser(content)
+    parser = ESParser(content)
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
     assert tree.resolve_query("E") is False
 
@@ -367,7 +367,7 @@ def test_test_paran2():
         print('Error opening file for reading')
         raise
 
-    parser = ExpertParser(content)
+    parser = ESParser(content)
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
     assert tree.resolve_query("E") is True
 
@@ -380,7 +380,7 @@ def test_test_paran3():
         print('Error opening file for reading')
         raise
 
-    parser = ExpertParser(content)
+    parser = ESParser(content)
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
     assert tree.resolve_query("E") is False
 
@@ -393,7 +393,7 @@ def test_test_paran4():
         print('Error opening file for reading')
         raise
 
-    parser = ExpertParser(content)
+    parser = ESParser(content)
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
     assert tree.resolve_query("E") is False
 
@@ -406,7 +406,7 @@ def test_test_paran5():
         print('Error opening file for reading')
         raise
 
-    parser = ExpertParser(content)
+    parser = ESParser(content)
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
     assert tree.resolve_query("E") is True
 
@@ -419,7 +419,7 @@ def test_test_paran6():
         print('Error opening file for reading')
         raise
 
-    parser = ExpertParser(content)
+    parser = ESParser(content)
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
     assert tree.resolve_query("E") is True
 
@@ -432,7 +432,7 @@ def test_test_paran7():
         print('Error opening file for reading')
         raise
 
-    parser = ExpertParser(content)
+    parser = ESParser(content)
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
     assert tree.resolve_query("E") is False
 
@@ -445,7 +445,7 @@ def test_test_paran8():
         print('Error opening file for reading')
         raise
 
-    parser = ExpertParser(content)
+    parser = ESParser(content)
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
     assert tree.resolve_query("E") is False
 
@@ -458,7 +458,7 @@ def test_test_paran9():
         print('Error opening file for reading')
         raise
 
-    parser = ExpertParser(content)
+    parser = ESParser(content)
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
     assert tree.resolve_query("E") is False
 
@@ -471,7 +471,7 @@ def test_test_paran10():
         print('Error opening file for reading')
         raise
 
-    parser = ExpertParser(content)
+    parser = ESParser(content)
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
     assert tree.resolve_query("E") is True
 
@@ -484,7 +484,7 @@ def test_test_same1():
         print('Error opening file for reading')
         raise
 
-    parser = ExpertParser(content)
+    parser = ESParser(content)
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
     assert tree.resolve_query("A") is False
 
@@ -497,7 +497,7 @@ def test_test_same2():
         print('Error opening file for reading')
         raise
 
-    parser = ExpertParser(content)
+    parser = ESParser(content)
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
     assert tree.resolve_query("A") is True
 
@@ -510,7 +510,7 @@ def test_test_same3():
         print('Error opening file for reading')
         raise
 
-    parser = ExpertParser(content)
+    parser = ESParser(content)
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
     assert tree.resolve_query("A") is True
 
@@ -523,7 +523,7 @@ def test_test_same4():
         print('Error opening file for reading')
         raise
 
-    parser = ExpertParser(content)
+    parser = ESParser(content)
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
     assert tree.resolve_query("A") is True
 
@@ -536,7 +536,7 @@ def test_test_xor1():
         print('Error opening file for reading')
         raise
 
-    parser = ExpertParser(content)
+    parser = ESParser(content)
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
     assert tree.resolve_query("A") is False
 
@@ -549,7 +549,7 @@ def test_test_xor2():
         print('Error opening file for reading')
         raise
 
-    parser = ExpertParser(content)
+    parser = ESParser(content)
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
     assert tree.resolve_query("A") is True
 
@@ -562,7 +562,7 @@ def test_test_xor3():
         print('Error opening file for reading')
         raise
 
-    parser = ExpertParser(content)
+    parser = ESParser(content)
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
     assert tree.resolve_query("A") is True
 
@@ -575,7 +575,7 @@ def test_test_xor4():
         print('Error opening file for reading')
         raise
 
-    parser = ExpertParser(content)
+    parser = ESParser(content)
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
     assert tree.resolve_query("A") is False
 
@@ -588,7 +588,7 @@ def test_test_neg1():
         print('Error opening file for reading')
         raise
 
-    parser = ExpertParser(content)
+    parser = ESParser(content)
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
     assert tree.resolve_query("A") is False
 
@@ -601,7 +601,7 @@ def test_test_neg2():
         print('Error opening file for reading')
         raise
 
-    parser = ExpertParser(content)
+    parser = ESParser(content)
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
     assert tree.resolve_query("A") is True
 
@@ -614,7 +614,7 @@ def test_test_neg3():
         print('Error opening file for reading')
         raise
 
-    parser = ExpertParser(content)
+    parser = ESParser(content)
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
     assert tree.resolve_query("A") is False
 
@@ -627,7 +627,7 @@ def test_test_neg4():
         print('Error opening file for reading')
         raise
 
-    parser = ExpertParser(content)
+    parser = ESParser(content)
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
     assert tree.resolve_query("A") is False
 
@@ -640,7 +640,7 @@ def test_test_neg5():
         print('Error opening file for reading')
         raise
 
-    parser = ExpertParser(content)
+    parser = ESParser(content)
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
     assert tree.resolve_query("A") is False
 
@@ -653,7 +653,7 @@ def test_test_slack1():
         print('Error opening file for reading')
         raise
 
-    parser = ExpertParser(content)
+    parser = ESParser(content)
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
     assert tree.resolve_query("A") is False
 
@@ -666,7 +666,7 @@ def test_test_slack2():
         print('Error opening file for reading')
         raise
 
-    parser = ExpertParser(content)
+    parser = ESParser(content)
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
     assert tree.resolve_query("A") is False
 
@@ -679,7 +679,7 @@ def test_test_slack3():
         print('Error opening file for reading')
         raise
 
-    parser = ExpertParser(content)
+    parser = ESParser(content)
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
     assert tree.resolve_query("C") is False
 
@@ -692,6 +692,6 @@ def test_test_slack4():
         print('Error opening file for reading')
         raise
 
-    parser = ExpertParser(content)
+    parser = ESParser(content)
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
     assert tree.resolve_query("C") is False

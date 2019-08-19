@@ -1,12 +1,12 @@
 from anytree import Node, RenderTree
 from anytree.exporter import DotExporter
 from .parser.Rule import OPERATORS, ImplicationType
-from .config.env import LOG_PATH
+from .config.Env import Env
 
 LST_Implication = {ImplicationType.EQUAL: '<=>', ImplicationType.IMPLY: '=>'}
 
 
-class ShowTree:
+class ESPrinter:
     count = 0
 
     def __init__(self, rules, facts, queries):
@@ -23,7 +23,7 @@ class ShowTree:
             if x == '!':
                 i += 1
                 pop = stack.pop()
-                connector_not = Node(str(ShowTree.count), display_name=x)
+                connector_not = Node(str(ESPrinter.count), display_name=x)
                 pop.parent = connector_not
                 stack.append(connector_not)
             elif x in OPERATORS:
@@ -37,12 +37,12 @@ class ShowTree:
                     pop0.parent = pop1
                     stack.append(pop1)
                 else:
-                    connector = Node(str(ShowTree.count), display_name=x)
+                    connector = Node(str(ESPrinter.count), display_name=x)
                     pop0.parent, pop1.parent = connector, connector
                     stack.append(connector)
             else:
                 stack.append(Node(x, display_name=x))
-            ShowTree.count += 1
+            ESPrinter.count += 1
         pop = stack.pop()
         pop.parent = Implication
 
@@ -106,7 +106,7 @@ class ShowTree:
 
     def parser_file_history(self):
         try:
-            with open(LOG_PATH) as f:
+            with open(Env.LOG_PATH) as f:
                 lines = f.readlines()
                 # delete '\n'
 

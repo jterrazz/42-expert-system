@@ -1,13 +1,13 @@
 import cmd
 # from termcolor import colored
-from expert_system.parser.Parser import ExpertParser
+from expert_system.parser.Parser import ESParser
 from expert_system.Tree import NPITree
 # from main import resolve_lines
 
 
-class ExpertPrompt(cmd.Cmd):
+class ESPrompt(cmd.Cmd):
     def __init__(self, lines):
-        super(ExpertPrompt, self).__init__()
+        super(ESPrompt, self).__init__()
         self.lines = lines
 
     # cmd.Cmd.prompt = colored("ExpertSystem>> ", "cyan")

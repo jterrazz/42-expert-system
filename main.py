@@ -24,6 +24,7 @@ if __name__ == "__main__":
     flag = argparse.ArgumentParser(description='ExpertSystem @ 42')
     flag.add_argument("-m", choices=['mode_shell', 'mode_interactive'], default='mode_shell', help="show mode")
     flag.add_argument("-d", action='store_true', help="display graph system")
+    flag.add_argument("-r", action='store_true', help="display rules system")
     flag.add_argument("-i", action='store_true', help="create graph system")
     flag.add_argument("-hist", action='store_true', help="display historique system")
     flag.add_argument("input", help="input system")
@@ -47,10 +48,13 @@ if __name__ == "__main__":
     else:
         print('mode Shell')
 
+    parser = ExpertParser(file_lines)
     # flag display graph
     if args.d:
-        parser = ExpertParser(file_lines)
         ShowTree(parser.structured_rules).display_tree_in_shell()
 
+    # flag display rules
+    if args.r:
+        ShowTree(parser.structured_rules).display_rules()
 
     # ExpertSystem().cmdloop()

@@ -49,3 +49,23 @@ class ShowTree:
     def display_tree_in_shell(self):
         for pre, fill, node in RenderTree(self.graph):
             print("%s%s" % (pre, node.display_name))
+
+    def infix_to_postfix(self, formula):
+        stack = []  # only pop when the coming op has priority
+        for ch in formula:
+            if ch == '!':
+                pop = stack.pop()
+                stack.append('!' + pop)
+            elif ch not in OPERATORS:
+                stack.append(ch)
+            else:
+                pop0 = stack.pop()
+                pop1 = stack.pop()
+                stack.append('(' + pop1 + ' ' + ch + ' ' + pop0 + ')')
+        return stack[0]
+
+    def display_rules(self):
+        for x in self.rules:
+            print(self.infix_to_postfix(x.npi_left), LST_Implication[x.type], self.infix_to_postfix(x.npi_right))
+
+

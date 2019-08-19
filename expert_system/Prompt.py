@@ -1,11 +1,8 @@
 import cmd
 
 from .util.Color import Color
-
-# from termcolor import colored
 from expert_system.parser.Parser import ESParser
 from expert_system import Tree
-# from main import resolve_lines
 
 
 class ESPrompt(cmd.Cmd):
@@ -157,6 +154,10 @@ class ESPrompt(cmd.Cmd):
         except Exception as e:
             print("Index is not valid")
 
+    @staticmethod
+    def help_del_rule():
+        print('del_rule <X> - With X the id of the rule (type show to list the rules)')
+
     def do_del_fact(self, fact):
         if fact and fact.isupper():
             for i, line in enumerate(self.lines):
@@ -177,32 +178,10 @@ class ESPrompt(cmd.Cmd):
     def help_del_query():
         print('del_query <X> - With X being a single uppercase letter')
 
-
-    # Function del queries
-
-
-    def help_del_queries(self):
-        print('\n'.join(['del_queries [queries]',
-                           'del queries, ex: del_queies DB',
-                           ]))
-
-    # Function Exit
-    def help_exit(self):
-        print('\n'.join(['exit',
-                           'Exit prompt',
-                           ]))
-
-    def do_exit(self, line):
+    @staticmethod
+    def do_exit(line):
         return True
 
-    # Function EOF
-    def help_EOF(self):
-        print('\n'.join(['CTRL+D',
-                           'Exit prompt',
-                           ]))
-
-    def do_EOF(self, line):
+    @staticmethod
+    def do_EOF(line):
         return True
-
-    def postloop(self):
-        print()

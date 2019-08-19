@@ -3,3 +3,5 @@
 .pytest_cache
 .DS_Store
 venv
+*tmp
+Experthistory

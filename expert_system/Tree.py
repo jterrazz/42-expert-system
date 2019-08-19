@@ -7,6 +7,24 @@ LST_OP = {'+': ConnectorType.AND, '|': ConnectorType.OR, '^': ConnectorType.XOR}
 REGEX_OP = r'\+|\^|\||!'
 
 
+class TreeRelation:
+    def __init__(self, left, right):
+        self.left = left
+        self.right = right
+
+    def __repr__(self):
+        return f"<TreeRelation> .left: {self.left}, .right: {self.right}"
+
+    def validate(self):
+        print("Validation")
+        left = self.left.solve()
+        right = self.right.solve()
+        print("Left part is", left)
+        print("Right part is", right)
+        if left is True and right is False:
+            raise BaseException("Error: There is a contradiction in the rules")
+
+
 class Tree:
     """
     A tree stores the state of the expert system based on rules, facts and queries
@@ -22,6 +40,7 @@ class Tree:
 
         self.atoms = {}
         self.connectors = []
+        self.implications = []
         self.root_node = ConnectorNode(ConnectorType.AND, self)
         self.root_node.parsed = True
         self.root_node.is_root = True
@@ -62,7 +81,13 @@ class Tree:
         atom = self.atoms.get(query)
         if atom is None:
             raise BaseException("The query doesn't match any known atom")
-        return atom.solve()
+        ret = atom.solve()
+        self.validate_tree()
+        return ret
+
+    def validate_tree(self):
+        for c in self.implications:
+            c.validate()
 
 
 class NPITree(Tree):
@@ -118,10 +143,12 @@ class NPITree(Tree):
             connector_imply = self.create_connector(ConnectorType.IMPLY)
             right.add_child(connector_imply)
             connector_imply.add_operand(left)
+            self.implications.append(TreeRelation(left, right))
             if rule.type is ImplicationType.EQUAL:
                 connector_imply_1 = self.create_connector(ConnectorType.IMPLY)
                 left.add_child(connector_imply_1)
                 connector_imply_1.add_operand(right)
+                self.implications.append(TreeRelation(right, left))
 
     def set_atom_relations_from_npi(self, npi_rule):
         stack = []

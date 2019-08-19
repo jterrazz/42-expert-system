@@ -55,7 +55,7 @@ class Node:
 
     def solve(self):
         if self.visited is True:
-            return None
+            return self.state
 
         if self.state is not None:
             print(self, "is", self.state)
@@ -190,7 +190,7 @@ class ConnectorNode(Node):
 
     def solve(self):
         if self.visited:
-            return None
+            return self.state
         print(self, "resolving from operands:", self.operands)
 
         self.visited = True

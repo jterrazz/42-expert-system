@@ -1,7 +1,7 @@
 from expert_system import Prompt, Tree, Print
 from expert_system.parser.Parser import ESParser
 from expert_system.config.Env import Env
-from expert_system.config.Cmd import ESCmd
+from expert_system.config.Cmd import Cmd
 
 
 def resolve_lines(parser):
@@ -27,7 +27,7 @@ def save_history(results):
 
 
 if __name__ == "__main__":
-    args = ESCmd.args
+    args = Cmd.args
 
     try:
         with open(args.input) as f:

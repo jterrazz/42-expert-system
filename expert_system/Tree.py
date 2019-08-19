@@ -78,7 +78,8 @@ class Tree:
         atom = self.atoms.get(query)
         if atom is None:
             raise BaseException("The query doesn't match any known atom")
-        return atom.solve()
+        res = atom.solve()
+        return res or False
 
 
 class NPITree(Tree):

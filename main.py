@@ -23,7 +23,7 @@ def resolve_lines(parser):
         f.write('\n')
         for x in exp_sys:
             f.write(x + '\n')
-        f.write(';')
+        f.write(';' + '\n')
 
 
 if __name__ == "__main__":

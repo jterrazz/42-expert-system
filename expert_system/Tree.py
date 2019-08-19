@@ -80,8 +80,11 @@ class Tree:
         if atom is None:
             raise BaseException("The query doesn't match any known atom")
         res = atom.solve()
+        if res is None:
+            atom.set_status(False, True)
+            res = False
         self.check_errors()
-        return res or False
+        return res
 
     def check_errors(self):
         print("Checking errors")

@@ -1,5 +1,7 @@
 from enum import Enum
-from .Cmd import ESCmd
+from expert_system.Log import Logger
+
+logger = Logger("Node")
 
 
 class ConnectorType(Enum):
@@ -40,10 +42,11 @@ class Node:
         if self.state_fixed is True and is_fixed is True and self.state is not None and self.state != status:
             raise BaseException("Confict")
 
+        if self.state != status:
+            logger.info(f'{self.__repr__()} set to {status}')
+
         self.state = status
         self.state_fixed = is_fixed
-        if ESCmd.args.verbose:
-            print(f'{ self.__repr__() } set to', status, f"(result is {is_fixed})")
         return status
 
     def solve(self):
@@ -52,8 +55,7 @@ class Node:
 
         state = None
         if self.state is not None:
-            if ESCmd.args.verbose:
-                print(self, "is", self.state)
+            logger.info(f"{self} returns {self.state}")
             state = self.state
             if self.state_fixed is True:
                 return state
@@ -61,14 +63,12 @@ class Node:
         fixed_ret = []
         unfixed_ret = []
 
-        if ESCmd.args.verbose:
-            print("Checking for children:", self.children)
+        logger.info(f"{self} will resolve from children {self.children}")
         f, u = self.solve_grouped_nodes(self.children, False)
         fixed_ret.extend(f)
         unfixed_ret.extend(u)
 
-        if ESCmd.args.verbose:
-            print(self, "Checking for parents", self.operand_parents)
+        logger.info(f"{self} will resolve from parents {self.operand_parents}")
         self.solve_grouped_nodes(self.operand_parents, True)
 
         ret = fixed_ret if fixed_ret.__len__() is not 0 else unfixed_ret
@@ -147,7 +147,7 @@ class ConnectorNode(Node):
         self.is_root = False
 
     def __repr__(self):
-        return self.__repr_color__(f'({self.type.value}) - fixed: { self.state_fixed } - op: { self.operands }')
+        return self.__repr_color__(f'({self.type.value}) .operands: { self.operands }')
 
     def set_status(self, status, is_fixed):
         """ When a connector (&, |, ^) gets a value, we can sometimes deduct the value of its operands. """
@@ -171,8 +171,8 @@ class ConnectorNode(Node):
     def solve(self):
         if self.visited:
             return self.state
-        if ESCmd.args.verbose:
-            print(self, "resolving from operands:", self.operands)
+
+        logger.info(f"{self} will resolve from operands: {self.operands}")
 
         self.visited = True
         if self.type is ConnectorType.IMPLY:
@@ -219,7 +219,7 @@ class AtomNode(Node):
         self.name = name
 
     def __repr__(self):
-        return self.__repr_color__(f'({self.name}, fixed:{self.state_fixed})')
+        return self.__repr_color__(f'({self.name})')
 
     def __eq__(self, other):
         return isinstance(other, AtomNode) and self.name == other.name

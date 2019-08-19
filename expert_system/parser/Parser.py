@@ -1,5 +1,8 @@
 import re
 from .Rule import ESRule
+from expert_system.Log import Logger
+
+logger = Logger("Parser")
 
 
 class ESParser:
@@ -10,8 +13,11 @@ class ESParser:
         self.facts = []
         self.queries = []
 
+        logger.info("Is checking required data")
         self.ft_parser()
+        logger.info("Is setting the atom initial states")
         self.set_structured_rules()
+        logger.info("Parser successfully initiated")
 
     def set_structured_rules(self):
         for raw_rule in self.raw_rules:

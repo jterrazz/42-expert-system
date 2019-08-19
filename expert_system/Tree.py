@@ -2,7 +2,9 @@ import re
 
 from .Node import AtomNode, ConnectorNode, ConnectorType, NegativeNode
 from .parser.Rule import OPERATORS, ImplicationType
-from .Cmd import ESCmd
+from expert_system.Log import Logger
+
+logger = Logger("Tree")
 
 LST_OP = {'+': ConnectorType.AND, '|': ConnectorType.OR, '^': ConnectorType.XOR}
 REGEX_OP = r'\+|\^|\||!'
@@ -77,8 +79,7 @@ class Tree:
             atom.state_fixed = True
 
     def resolve_query(self, query):
-        if ESCmd.args.verbose:
-            print("\033[95mQUERY: Get the value of", query, "\033[0m")
+        logger.info(f"Get the value of { query }", "Query")
 
         atom = self.atoms.get(query)
         if atom is None:
@@ -92,8 +93,7 @@ class Tree:
         return res
 
     def check_errors(self):
-        if ESCmd.args.verbose:
-            print("Will perform a check on all implications")
+        logger.info("Will perform a check on all implications")
         for i in self.implication:
             i.validate()
 

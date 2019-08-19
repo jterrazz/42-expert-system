@@ -88,7 +88,6 @@ class ShowTree:
         return output
 
     def display_file_histroy(self, rules, queries):
-        print(queries)
         for elem in rules:
             for x in elem:
                 if x in queries:
@@ -113,7 +112,6 @@ class ShowTree:
         i = 1
         for x in lines:
             if x[0] != '#' and x[0] != ';':
-                print(str(i))
                 tmp = list(filter(None, x.split(',')))
                 for elem in tmp:
                     queries[elem.split('=')[0]] = elem.split('=')[1]

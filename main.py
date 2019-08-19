@@ -1,4 +1,5 @@
 import sys
+import argparse
 
 # from expert_system.Prompt import ExpertPrompt
 from expert_system.parser.Parser import ExpertParser
@@ -18,6 +19,17 @@ def resolve_lines(lines):
 
 
 if __name__ == "__main__":
+
+    # Parser
+    parser = argparse.ArgumentParser(description='ExpertSystem @ 42')
+    parser.add_argument("-m", choices=['mode_shell', 'mode_interactive'], default='mode_shell', help="show mode")
+    parser.add_argument("-d", action='store_true', help="display graph system")
+    parser.add_argument("-hist", action='store_true', help="display historique system")
+    parser.add_argument("input", help="input system")
+    parser.parse_args()
+    args = parser.parse_args()
+
+
     try:
         with open(sys.argv[1]) as f: # TODO protect argv
             file_lines = f.readlines(1000) # TODO Maybe we should actually do more than 1000

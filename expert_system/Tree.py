@@ -2,7 +2,7 @@ import re
 
 from .Node import AtomNode, ConnectorNode, ConnectorType, NegativeNode
 from .parser.Rule import OPERATORS, ImplicationType
-from expert_system.Log import Logger
+from expert_system.util.Log import Logger
 
 logger = Logger("Tree")
 

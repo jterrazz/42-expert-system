@@ -1,5 +1,5 @@
 from enum import Enum
-from expert_system.Log import Logger
+from expert_system.util.Log import Logger
 
 logger = Logger("Node")
 

@@ -1,6 +1,6 @@
 import re
 from .Rule import ESRule
-from expert_system.Log import Logger
+from expert_system.util.Log import Logger
 
 logger = Logger("Parser")
 

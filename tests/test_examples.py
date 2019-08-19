@@ -14,7 +14,7 @@ good_results = [
     ("and_in_conclusions.txt", [True, True, True, True, True]),
     ("AND_LIST", [False]),
     ("AND_OR", [True]),
-    ("BI_IF", [True]),
+    ("BI_IF", [True, True]),
     ("comments.txt", [True, True, True]),
     ("double_implies.txt", [True, True, True]),
     ("easy_test.txt", [True, True, False]),

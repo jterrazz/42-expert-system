@@ -16,6 +16,7 @@ class ImplicationData:
         return f"<Implication .left: { self.left } .right: { self.right }>"
 
     def validate(self):
+        print("validate")
         left = self.left.solve()
         right = self.right.solve()
         if left is True and right is False:
@@ -79,7 +80,13 @@ class Tree:
         if atom is None:
             raise BaseException("The query doesn't match any known atom")
         res = atom.solve()
+        self.check_errors()
         return res or False
+
+    def check_errors(self):
+        print("Checking errors")
+        for i in self.implication:
+            i.validate()
 
 
 class NPITree(Tree):

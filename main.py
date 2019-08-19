@@ -23,6 +23,7 @@ def resolve_lines(parser):
         f.write('\n')
         for x in exp_sys:
             f.write(x + '\n')
+        f.write(';')
 
 
 if __name__ == "__main__":
@@ -50,6 +51,8 @@ if __name__ == "__main__":
             if args and args.r:
                 ShowTree(parser.structured_rules, parser.facts, parser.queries).display_rules()
             resolve_lines(parser)
+            if args.history:
+                ShowTree(parser.structured_rules, parser.facts, parser.queries).parser_file_histroy()
 
     except (Exception, BaseException) as e:
         print("{}".format(e))

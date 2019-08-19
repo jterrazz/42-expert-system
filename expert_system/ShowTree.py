@@ -87,3 +87,43 @@ class ShowTree:
         output.append('# ?' + ''.join(self.queries))
         return output
 
+    def display_file_histroy(self, rules, queries):
+        for elem in rules:
+            for x in elem:
+                if x in queries:
+                    if queries[x] == 'True':
+                        print(f'\x1b[92m{x}\x1b[0m', end='')
+                    else:
+                        print(f'\x1b[91m{x}\x1b[0m', end='')
+                else:
+                    print(x, end='')
+            print()
+        print()
+
+
+    def parser_file_histroy(self):
+        with open('Experthistory') as f:
+            lines = f.readlines()
+
+        # delete '\n'
+        lines = [x.strip() for x in lines]
+        queries = {}
+        rules = []
+        i = 1
+        for x in lines:
+            if x[0] != '#' and x[0] != ';':
+                tmp = list(filter(None, x.split(',')))
+                for elem in tmp:
+                    queries[elem.split('=')[0]] = elem.split('=')[1]
+            elif x[0] == '#':
+                rules.append(x.replace('# ', ''))
+            else:
+                print('History(', str(i), ')', sep='')
+                print('-------')
+                self.display_file_histroy(rules, queries)
+                queries = {}
+                rules = []
+                i += 1
+
+
+

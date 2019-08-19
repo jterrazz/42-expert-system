@@ -11,25 +11,29 @@ from expert_system import Tree
 class ESPrompt(cmd.Cmd):
     def __init__(self, lines):
         super(ESPrompt, self).__init__()
-        self.lines = lines
+        self.lines = []
         self.prompt = f'{ Color.PURPLE }<ExpertSystem> { Color.END }'
+        self.set_lines(lines)
+
+    def set_lines(self, lines):
+        self.lines = [f for f in filter(None, [l.replace("\n", "") for l in lines])]
 
     # TODO Check all are implemented
 
     @staticmethod
-    def do_h(self, line):
+    def do_h(line):
         print('\n'.join(['h                : Display help commands',
                          'solve <id|None>  : Solve the queries',
                          'show             : Show rules, facts and queries',
                          'show_rules       : Show facts',
                          'show_facts       : Show facts',
                          'show_queries     : Show queries',
-                         'add_rule         : Add a new rule',
-                         'add_fact         : Add a new fact',
-                         'add_query        : Add a new query',
+                         'add_rule <rule>  : Add a new rule',
+                         'add_fact <X>     : Add a new fact',
+                         'add_query <X>    : Add a new query',
                          'del_rule <id>    : Delete a fact',
-                         'del_fact <id>    : Delete a fact',
-                         'del_query <id>   : Delete a query',
+                         'del_fact <X>     : Delete a fact',
+                         'del_query <X>    : Delete a query',
                          'exit             : Exit',
                          'CTRL+D           : Exit',
                          ]))
@@ -44,44 +48,104 @@ class ESPrompt(cmd.Cmd):
                 print(f"{query} resolved as", tree.resolve_query(query))
         except (Exception, BaseException) as e:
             print(e)
-            pass
 
     def do_open(self, path):
         try:
-            with open(path) as f:  # protect argv
-                content = f.readlines(1000)
-                print(content)
-
+            with open(path) as f:
+                lines = f.readlines()
+                ESParser(lines)
+                self.set_lines(lines)
+            print(f"File { path } was successfully open")
         except Exception as e:
-            print("{}".format(e))
+            print(e)
 
-    def help_open(self):
-        print('\n'.join(['open [path]',
-                           'open file of rule, ex: open ../test_and',
-                           ]))
+    @staticmethod
+    def help_open():
+        print('\n'.join(['open <path> - The file must be formatted to the expected format (More in the README.md)']))
 
-    # Function show system
+    # Display functions
+
     def do_show(self, line):
-        if line:
-            print("Error: command without arg")
-        else:
-            print("show all")
+        for i, line in enumerate(self.lines):
+            if line[0] != "=" and line[0] != "?":
+                print(f"Rule { i }: { line }")
+            else:
+                print(line)
 
-    def help_show(self):
-        print('\n'.join(['show_all',
-                           'show all system',
-                           ]))
+    def do_show_rules(self, line):
+        for i, line in enumerate(self.lines):
+            if line[0] != "=" and line[0] != "?":
+                print(f"Rule {i}: {line}")
 
-    # Function addfacts
-    def do_add_facts(self, facts):
-        print("hi,", facts)
+    def do_show_facts(self, line):
+        for line in self.lines:
+            if line[0] == "=":
+                print(line)
 
-    def help_add_facts(self):
-        print('\n'.join(['add_facts [facts]',
-                           'add facts, ex: add_facts =ABD',
-                           ]))
+    def do_show_queries(self, line):
+        for line in self.lines:
+            if line[0] == "?":
+                print(line)
 
-    # Function del facts
+    # Add functions
+
+    def do_add_rule(self, rule):
+        if rule is None:
+            print("<rule> argument required")
+            return
+
+        self.lines.insert(0, rule)
+        try:
+            ESParser(self.lines)
+            print(f"{rule} was successfully added")
+        except (Exception, BaseException) as e:
+            print(f"Error adding the rule {rule}: { e }")
+            self.lines.pop(0)
+
+    def do_add_fact(self, fact):
+        if fact is None:
+            print("<fact> argument required")
+            return
+
+        for i, line in enumerate(self.lines):
+            if line[0] == "=":
+                if fact not in line:
+                    self.lines[i] = line[:1] + fact + line[1:]
+                try:
+                    ESParser(self.lines)
+                    print(f"{ fact } was successfully added")
+                except:
+                    print(f"Error adding the fact { fact }")
+                    self.lines[i] = line
+                return
+
+    @staticmethod
+    def help_add_fact():
+        print('add_fact <X> - With X being a single uppercase letter')
+
+    def do_add_query(self, query):
+        if query is None:
+            print("<query> argument required")
+            return
+
+        for i, line in enumerate(self.lines):
+            if line[0] == "?":
+                if query not in line:
+                    self.lines[i] = line[:1] + query + line[1:]
+                try:
+                    ESParser(self.lines)
+                    print(f"{ query } was successfully added")
+                except:
+                    print(f"Error adding the query { query }")
+                    self.lines[i] = line
+                return
+
+    @staticmethod
+    def help_add_query():
+        print('add_query <X> - With X being a single uppercase letter')
+
+
+
     def do_del_facts(self, facts):
         print("hi,", facts)
 
@@ -89,26 +153,9 @@ class ESPrompt(cmd.Cmd):
         print('\n'.join(['del_facts [facts]',
                            'del facts, ex: del_facts DB',
                            ]))
-    # Function show facts
-    def do_show_facts(self, line):
-        if line:
-            print("Error: command without arg")
-        else:
-            print("show_facts")
-
-    def help_show_facts(self):
-        print('\n'.join(['show_facts',
-                           'show facts, ex: show_facts',
-                           ]))
 
     # Function add queries
-    def do_add_queries(self, queries):
-        print("hi,", queries)
 
-    def help_add_queries(self):
-        print('\n'.join(['add_queries [queries]',
-                           'add queries, ex: add_queies ?DBF',
-                           ]))
 
     # Function del queries
     def do_del_queries(self, queries):
@@ -117,18 +164,6 @@ class ESPrompt(cmd.Cmd):
     def help_del_queries(self):
         print('\n'.join(['del_queries [queries]',
                            'del queries, ex: del_queies DB',
-                           ]))
-
-    # Function show queries
-    def do_show_queries(self, line):
-        if line:
-            print("Error: command without arg")
-        else:
-            print("show_queries")
-
-    def help_show_queries(self):
-        print('\n'.join(['show_queries',
-                           'show queries, ex: show_queies',
                            ]))
 
     # Function Exit

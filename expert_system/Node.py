@@ -71,10 +71,11 @@ class Node:
         fixed_ret.extend(f)
         unfixed_ret.extend(u)
 
-        print("Checking for parents", self.operand_parents)
-        f, u = self.solve_grouped_nodes(self.operand_parents, True)
-        fixed_ret.extend(f)
-        unfixed_ret.extend(u)
+        if state is None:
+            print("Checking for parents", self.operand_parents)
+            f, u = self.solve_grouped_nodes(self.operand_parents, True)
+            fixed_ret.extend(f)
+            unfixed_ret.extend(u)
 
         ret = fixed_ret if fixed_ret.__len__() is not 0 else unfixed_ret
         if ret.__len__() is not 0:
@@ -106,10 +107,11 @@ class Node:
         for child in nodes:
             if checking_parents and (
                     (isinstance(child, ConnectorNode) and child.type is not ConnectorType.AND)
-                    or isinstance(child, NegativeNode)
             ):
                 continue
             r = child.solve()
+            if isinstance(child, NegativeNode):
+                r = not r if r is not None else None
             if r is not None and child.state_fixed:
                 fixed_res.append(r)
             elif r is not None:

@@ -84,7 +84,7 @@ class Tree:
 
         atom = self.atoms.get(query)
         if atom is None:
-            raise BaseException("The query doesn't match any known atom")
+            raise BaseException(f"[Error] The query { query } doesn't match any known atom")
         res = atom.solve()
         if res is None:
             atom.set_state(False, True)

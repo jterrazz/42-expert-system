@@ -16,6 +16,7 @@ def resolve_lines(parser):
     return results
 
 
+# TODO Put in other place
 def save_history(results):
     exp_sys = Print.ESPrinter(parser.structured_rules, parser.facts, parser.queries).create_array_rules_facts_queries()
     with open(Env.LOG_PATH, 'a') as f:
@@ -47,7 +48,9 @@ if __name__ == "__main__":
                 print(f"{Color.PURPLE}[List of rules 📚]{Color.END} ")
                 Print.ESPrinter(parser.structured_rules, parser.facts, parser.queries).display_rules()
                 print("")
+
             res = resolve_lines(parser)
+
             if args and args.image:
                 Print.ESPrinter(parser.structured_rules, parser.facts, parser.queries).create_image()
                 print(f"{Color.PURPLE}Image { Env.IMG_PATH } create{Color.END} ")

@@ -4,7 +4,7 @@ from .util.Color import Color
 
 # from termcolor import colored
 from expert_system.parser.Parser import ESParser
-from expert_system.Tree import NPITree
+from expert_system import Tree
 # from main import resolve_lines
 
 
@@ -12,13 +12,14 @@ class ESPrompt(cmd.Cmd):
     def __init__(self, lines):
         super(ESPrompt, self).__init__()
         self.lines = lines
-
-    cmd.Cmd.prompt = f'{ Color.PURPLE }<ExpertSystem> { Color.END }'
+        self.prompt = f'{ Color.PURPLE }<ExpertSystem> { Color.END }'
 
     # TODO Check all are implemented
+
+    @staticmethod
     def do_h(self, line):
         print('\n'.join(['h                : Display help commands',
-                         'solve            : Solve the queries',
+                         'solve <id|None>  : Solve the queries',
                          'show             : Show rules, facts and queries',
                          'show_rules       : Show facts',
                          'show_facts       : Show facts',
@@ -33,24 +34,18 @@ class ESPrompt(cmd.Cmd):
                          'CTRL+D           : Exit',
                          ]))
 
-    def help_help_all(self):
-        print('\n'.join(['help_all',
-                           'help_all !!',
-                           ]))
+    def do_solve(self, id):
+        try:
+            parser = ESParser(self.lines)
+            queries = [id] if id else parser.queries
+            tree = Tree.NPITree(parser.structured_rules, parser.facts, parser.queries)
 
-    # Function resolve system
-    def do_solve(self, line):
-        if line:
-            print("Error: command without arg")
-        else:
-            resolve_lines(self.lines)
+            for query in queries:
+                print(f"{query} resolved as", tree.resolve_query(query))
+        except (Exception, BaseException) as e:
+            print(e)
+            pass
 
-    def help_show(self):
-        print('\n'.join(['resolve',
-                           'resolve !!',
-                           ]))
-
-    # Function open file
     def do_open(self, path):
         try:
             with open(path) as f:  # protect argv

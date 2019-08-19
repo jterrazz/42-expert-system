@@ -2,12 +2,13 @@ import cmd
 # from termcolor import colored
 from expert_system.parser.Parser import ExpertParser
 from expert_system.Tree import NPITree
+# from main import resolve_lines
 
 
 class ExpertPrompt(cmd.Cmd):
     def __init__(self, lines):
         super(ExpertPrompt, self).__init__()
-        self.parser = lines
+        self.lines = lines
 
     # cmd.Cmd.prompt = colored("ExpertSystem>> ", "cyan")
 
@@ -17,7 +18,7 @@ class ExpertPrompt(cmd.Cmd):
             print("Error: command without arg")
         else:
             print('\n'.join(['help_all       : show all help command',
-                             'resolve        : resolve system',
+                             'solve        : resolve system',
                              'show           : show all rules, facts and queries',
                              'show_facts     : show all facts',
                              'show_queries   : show all queries',
@@ -35,13 +36,11 @@ class ExpertPrompt(cmd.Cmd):
                            ]))
 
     # Function resolve system
-    def do_resolve(self, line):
+    def do_solve(self, line):
         if line:
             print("Error: command without arg")
         else:
-            tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
-            for query in parser.queries:
-                print(f"Resolve {query}", tree.resolve_query(query))
+            resolve_lines(self.lines)
 
     def help_show(self):
         print('\n'.join(['resolve',

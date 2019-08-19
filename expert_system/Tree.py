@@ -106,6 +106,7 @@ class NPITree(Tree):
         Rules must use the NPI notation (ex: AB+C|)
         Facts and queries must be represented as arrays of single characters (ex: Facts = ["A", "B"])
         """
+
         super(NPITree, self).__init__()
 
         self.create_atom_lst(npi_rules)
@@ -140,6 +141,7 @@ class NPITree(Tree):
         """
         Rules are formatted using the NPI notation.
         """
+
         if self.atoms.__len__() is 0:
             raise BaseException("The tree is empty")
 
@@ -161,7 +163,6 @@ class NPITree(Tree):
         stack = []
 
         for x in npi_rule:
-            # TODO If operator == !, then use the negative version
             if x not in OPERATORS:
                 stack.append(self.atoms[x])
             elif x == '!':

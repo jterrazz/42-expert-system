@@ -10,7 +10,7 @@ class ExpertParser:
         self.facts = []
         self.queries = []
 
-        self.ft_parser()  # set self.raw_rules
+        self.ft_parser()
         self.set_structured_rules()
 
     def set_structured_rules(self):
@@ -44,12 +44,12 @@ class ExpertParser:
 
     @staticmethod
     def ft_check_queries_in_list_atoms(atoms, queries):
-        querie = list(filter(None, re.split(r'\?|\s', queries)))
-        if querie:
-            querie = list(querie[0])
+        query = list(filter(None, re.split(r'\?|\s', queries)))
+        if query:
+            query = list(query[0])
         else:
             return False
-        for elem in querie:
+        for elem in query:
             if elem not in atoms:
                 return False
         return True

@@ -1,7 +1,7 @@
 from expert_system import Prompt, Tree, Print
 from expert_system.parser.Parser import ESParser
 from expert_system.config.Env import Env
-from expert_system.Cmd import ESCmd
+from expert_system.config.Cmd import ESCmd
 
 
 def resolve_lines(parser):

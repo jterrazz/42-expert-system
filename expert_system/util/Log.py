@@ -1,4 +1,4 @@
-from expert_system.Cmd import ESCmd
+from expert_system.config.Cmd import ESCmd
 from .Color import Color
 
 

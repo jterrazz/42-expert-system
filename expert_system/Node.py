@@ -71,10 +71,18 @@ class Node:
         fixed_ret.extend(f)
         unfixed_ret.extend(u)
 
-        print("Checking for parents", self.operand_parents)
+        # if isinstance(self, NegativeNode):
+        #     fixed_ret = [not r for r in fixed_ret]
+        #     unfixed_ret = [not r for r in unfixed_ret]
+
+        # if not (isinstance(self, ConnectorNode) and self.type is ConnectorType.IMPLY):
+        print(self, "Checking for parents", self.operand_parents)
         f, u = self.solve_grouped_nodes(self.operand_parents, True)
-        fixed_ret.extend(f)
-        unfixed_ret.extend(u)
+        # fixed_ret.extend(f)
+        # unfixed_ret.extend(u)
+
+        print(self, "fixed", fixed_ret)
+        print(self, "unfixed", unfixed_ret)
 
         ret = fixed_ret if fixed_ret.__len__() is not 0 else unfixed_ret
         if ret.__len__() is not 0:
@@ -88,6 +96,9 @@ class Node:
             #     raise BaseException("Resolution from children and parents gave different results")
 
         is_fixed = True if fixed_ret.__len__() is not 0 else False
+
+        if state is None:
+            state = self.state
 
         if state is not None:
             if isinstance(self, NegativeNode):
@@ -109,8 +120,10 @@ class Node:
             ):
                 continue
             r = child.solve()
-            # if isinstance(child, NegativeNode):
+            # if isinstance(self, NegativeNode) and not checking_parents: # isinstance(child, NegativeNode):
             #     r = not r if r is not None else None
+            if isinstance(self, NegativeNode) and isinstance(child, ConnectorNode) and child.type is ConnectorType.IMPLY and not checking_parents:
+                r = not r if r is not None else None
             if r is not None and child.state_fixed:
                 fixed_res.append(r)
             elif r is not None:

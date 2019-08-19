@@ -4,6 +4,7 @@ from expert_system import Prompt, Tree, Print
 from expert_system.parser.Parser import ESParser
 from expert_system.config.Env import Env
 from expert_system.config.Cmd import Cmd
+from expert_system.util.Color import Color
 
 
 def resolve_lines(parser):
@@ -39,12 +40,18 @@ if __name__ == "__main__":
         else:
             parser = ESParser(lines)
             if args and args.graph:
+                print(f"{Color.PURPLE}[Tree representation 🌳]{Color.END}")
                 Print.ESPrinter(parser.structured_rules, parser.facts, parser.queries).display_tree_in_shell()
+                print("")
             if args and args.rules:
+                print(f"{Color.PURPLE}[List of rules 📚]{Color.END} ")
                 Print.ESPrinter(parser.structured_rules, parser.facts, parser.queries).display_rules()
+                print("")
+            res = resolve_lines(parser)
             if args and args.image:
                 Print.ESPrinter(parser.structured_rules, parser.facts, parser.queries).create_image()
-            res = resolve_lines(parser)
+                print(f"{Color.PURPLE}Image { Env.IMG_PATH } create{Color.END} ")
+
             if args.history:
                 save_history(res)
 

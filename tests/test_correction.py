@@ -1,6 +1,7 @@
 from expert_system.Tree import NPITree
 from expert_system.parser.Parser import ExpertParser
 
+
 def test_and():
     try:
         with open('./tests/_examples/good_files/and.txt') as f:
@@ -13,6 +14,7 @@ def test_and():
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
     assert tree.resolve_query("C") is True
     assert tree.resolve_query("F") is False
+
 
 def test_and_in_conclusions():
     try:
@@ -29,6 +31,7 @@ def test_and_in_conclusions():
     assert tree.resolve_query("D") is True
     assert tree.resolve_query("U") is True
 
+
 def test_comments():
     try:
         with open('./tests/_examples/good_files/comments.txt') as f:
@@ -42,6 +45,7 @@ def test_comments():
     assert tree.resolve_query("C") is True
     assert tree.resolve_query("D") is True
     assert tree.resolve_query("F") is True
+
 
 def test_double_implies():
     try:
@@ -57,6 +61,7 @@ def test_double_implies():
     assert tree.resolve_query("C") is True
     assert tree.resolve_query("D") is True
 
+
 def test_mix():
     try:
         with open('./tests/_examples/good_files/mix.txt') as f:
@@ -71,6 +76,7 @@ def test_mix():
     assert tree.resolve_query("T") is False
     assert tree.resolve_query("X") is False
 
+
 def test_mix2():
     try:
         with open('./tests/_examples/good_files/mix2.txt') as f:
@@ -82,6 +88,7 @@ def test_mix2():
     parser = ExpertParser(content)
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
     assert tree.resolve_query("C") is True
+
 
 def test_multiple_initial_facts():
     try:
@@ -96,6 +103,7 @@ def test_multiple_initial_facts():
     assert tree.resolve_query("E") is True
     assert tree.resolve_query("F") is False
 
+
 def test_multiple_initial_facts2():
     try:
         with open('./tests/_examples/good_files/multiple_initial_facts2.txt') as f:
@@ -108,6 +116,7 @@ def test_multiple_initial_facts2():
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
     assert tree.resolve_query("E") is False
     assert tree.resolve_query("F") is False
+
 
 def test_multiple_initial_facts3():
     try:
@@ -122,6 +131,7 @@ def test_multiple_initial_facts3():
     assert tree.resolve_query("E") is False
     assert tree.resolve_query("F") is False
 
+
 def test_multiple_initial_facts4():
     try:
         with open('./tests/_examples/good_files/multiple_initial_facts4.txt') as f:
@@ -134,6 +144,7 @@ def test_multiple_initial_facts4():
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
     assert tree.resolve_query("E") is False
     assert tree.resolve_query("F") is True
+
 
 def test_multiple_initial_facts5():
     try:
@@ -148,6 +159,7 @@ def test_multiple_initial_facts5():
     assert tree.resolve_query("E") is False
     assert tree.resolve_query("F") is False
 
+
 def test_multiple_initial_facts6():
     try:
         with open('./tests/_examples/good_files/multiple_initial_facts6.txt') as f:
@@ -161,6 +173,7 @@ def test_multiple_initial_facts6():
     assert tree.resolve_query("E") is True
     assert tree.resolve_query("F") is True
 
+
 def test_multiple_no_initial_facts1():
     try:
         with open('./tests/_examples/good_files/no_initial_facts1.txt') as f:
@@ -173,6 +186,7 @@ def test_multiple_no_initial_facts1():
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
     assert tree.resolve_query("C") is False
 
+
 def test_multiple_no_initial_facts2():
     try:
         with open('./tests/_examples/good_files/no_initial_facts2.txt') as f:
@@ -184,6 +198,7 @@ def test_multiple_no_initial_facts2():
     parser = ExpertParser(content)
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
     assert tree.resolve_query("C") is False
+
 
 def test_not():
     try:
@@ -198,6 +213,7 @@ def test_not():
     assert tree.resolve_query("B") is False
     assert tree.resolve_query("D") is True
 
+
 def test_or():
     try:
         with open('./tests/_examples/good_files/or.txt') as f:
@@ -210,6 +226,7 @@ def test_or():
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
     assert tree.resolve_query("C") is True
     assert tree.resolve_query("F") is True
+
 
 def test_parenthesis():
     try:
@@ -228,6 +245,7 @@ def test_parenthesis():
     assert tree.resolve_query("F") is True
     assert tree.resolve_query("Z") is True
 
+
 def test_xor():
     try:
         with open('./tests/_examples/good_files/xor.txt') as f:
@@ -242,6 +260,7 @@ def test_xor():
     assert tree.resolve_query("F") is True
     assert tree.resolve_query("I") is True
     assert tree.resolve_query("L") is False
+
 
 def test_test_and1():
     try:
@@ -258,6 +277,7 @@ def test_test_and1():
     assert tree.resolve_query("K") is True
     assert tree.resolve_query("P") is True
 
+
 def test_test_and2():
     try:
         with open('./tests/_correction/test_and2') as f:
@@ -273,6 +293,7 @@ def test_test_and2():
     assert tree.resolve_query("K") is False
     assert tree.resolve_query("P") is True
 
+
 def test_test_or1():
     try:
         with open('./tests/_correction/test_or1') as f:
@@ -284,6 +305,7 @@ def test_test_or1():
     parser = ExpertParser(content)
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
     assert tree.resolve_query("A") is False
+
 
 def test_test_or2():
     try:
@@ -297,6 +319,7 @@ def test_test_or2():
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
     assert tree.resolve_query("A") is True
 
+
 def test_test_or3():
     try:
         with open('./tests/_correction/test_or3') as f:
@@ -308,6 +331,7 @@ def test_test_or3():
     parser = ExpertParser(content)
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
     assert tree.resolve_query("A") is True
+
 
 def test_test_or4():
     try:
@@ -321,6 +345,7 @@ def test_test_or4():
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
     assert tree.resolve_query("A") is True
 
+
 def test_test_paran1():
     try:
         with open('./tests/_correction/test_paran1') as f:
@@ -332,6 +357,7 @@ def test_test_paran1():
     parser = ExpertParser(content)
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
     assert tree.resolve_query("E") is False
+
 
 def test_test_paran2():
     try:
@@ -345,6 +371,7 @@ def test_test_paran2():
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
     assert tree.resolve_query("E") is True
 
+
 def test_test_paran3():
     try:
         with open('./tests/_correction/test_paran3') as f:
@@ -356,6 +383,7 @@ def test_test_paran3():
     parser = ExpertParser(content)
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
     assert tree.resolve_query("E") is False
+
 
 def test_test_paran4():
     try:
@@ -369,6 +397,7 @@ def test_test_paran4():
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
     assert tree.resolve_query("E") is False
 
+
 def test_test_paran5():
     try:
         with open('./tests/_correction/test_paran5') as f:
@@ -380,6 +409,7 @@ def test_test_paran5():
     parser = ExpertParser(content)
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
     assert tree.resolve_query("E") is True
+
 
 def test_test_paran6():
     try:
@@ -393,6 +423,7 @@ def test_test_paran6():
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
     assert tree.resolve_query("E") is True
 
+
 def test_test_paran7():
     try:
         with open('./tests/_correction/test_paran7') as f:
@@ -404,6 +435,7 @@ def test_test_paran7():
     parser = ExpertParser(content)
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
     assert tree.resolve_query("E") is False
+
 
 def test_test_paran8():
     try:
@@ -417,6 +449,7 @@ def test_test_paran8():
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
     assert tree.resolve_query("E") is False
 
+
 def test_test_paran9():
     try:
         with open('./tests/_correction/test_paran9') as f:
@@ -428,6 +461,7 @@ def test_test_paran9():
     parser = ExpertParser(content)
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
     assert tree.resolve_query("E") is False
+
 
 def test_test_paran10():
     try:
@@ -441,6 +475,7 @@ def test_test_paran10():
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
     assert tree.resolve_query("E") is True
 
+
 def test_test_same1():
     try:
         with open('./tests/_correction/test_same1') as f:
@@ -452,6 +487,7 @@ def test_test_same1():
     parser = ExpertParser(content)
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
     assert tree.resolve_query("A") is False
+
 
 def test_test_same2():
     try:
@@ -465,6 +501,7 @@ def test_test_same2():
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
     assert tree.resolve_query("A") is True
 
+
 def test_test_same3():
     try:
         with open('./tests/_correction/test_same3') as f:
@@ -476,6 +513,7 @@ def test_test_same3():
     parser = ExpertParser(content)
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
     assert tree.resolve_query("A") is True
+
 
 def test_test_same4():
     try:
@@ -489,6 +527,7 @@ def test_test_same4():
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
     assert tree.resolve_query("A") is True
 
+
 def test_test_xor1():
     try:
         with open('./tests/_correction/test_xor1') as f:
@@ -500,6 +539,7 @@ def test_test_xor1():
     parser = ExpertParser(content)
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
     assert tree.resolve_query("A") is False
+
 
 def test_test_xor2():
     try:
@@ -513,6 +553,7 @@ def test_test_xor2():
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
     assert tree.resolve_query("A") is True
 
+
 def test_test_xor3():
     try:
         with open('./tests/_correction/test_xor3') as f:
@@ -524,6 +565,7 @@ def test_test_xor3():
     parser = ExpertParser(content)
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
     assert tree.resolve_query("A") is True
+
 
 def test_test_xor4():
     try:
@@ -537,6 +579,7 @@ def test_test_xor4():
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
     assert tree.resolve_query("A") is False
 
+
 def test_test_neg1():
     try:
         with open('./tests/_correction/test_neg1') as f:
@@ -548,6 +591,7 @@ def test_test_neg1():
     parser = ExpertParser(content)
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
     assert tree.resolve_query("A") is False
+
 
 def test_test_neg2():
     try:
@@ -561,6 +605,7 @@ def test_test_neg2():
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
     assert tree.resolve_query("A") is True
 
+
 def test_test_neg3():
     try:
         with open('./tests/_correction/test_neg3') as f:
@@ -572,6 +617,7 @@ def test_test_neg3():
     parser = ExpertParser(content)
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
     assert tree.resolve_query("A") is False
+
 
 def test_test_neg4():
     try:
@@ -585,6 +631,7 @@ def test_test_neg4():
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
     assert tree.resolve_query("A") is False
 
+
 def test_test_neg5():
     try:
         with open('./tests/_correction/test_neg5') as f:
@@ -596,6 +643,7 @@ def test_test_neg5():
     parser = ExpertParser(content)
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
     assert tree.resolve_query("A") is False
+
 
 def test_test_slack1():
     try:
@@ -609,6 +657,7 @@ def test_test_slack1():
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
     assert tree.resolve_query("A") is False
 
+
 def test_test_slack2():
     try:
         with open('./tests/_examples/good_files/test_slack2') as f:
@@ -621,6 +670,7 @@ def test_test_slack2():
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
     assert tree.resolve_query("A") is False
 
+
 def test_test_slack3():
     try:
         with open('./tests/_examples/good_files/test_slack3') as f:
@@ -632,6 +682,7 @@ def test_test_slack3():
     parser = ExpertParser(content)
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
     assert tree.resolve_query("C") is False
+
 
 def test_test_slack4():
     try:

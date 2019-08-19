@@ -8,6 +8,11 @@ REGEX_OP = r'\+|\^|\||!'
 
 
 class ImplicationData:
+    """
+    Used to check when if implications are valid.
+    An implication is invalid only when True => False.
+    """
+
     def __init__(self, left, right):
         self.left = left
         self.right = right
@@ -30,10 +35,11 @@ class Tree:
 
     def __init__(self):
         """
-        Atoms store the list of UNIQUE elements. It means that the same instance of the Atom "A"
+        It stores the list of UNIQUE elements in .atom. It means that the same instance of the Atom "A"
         will be used for all the equations.
 
-        The root_node allows to connect all the nodes. It creates a unique tree for all the rules.
+        The root_node allows to connect all the nodes to a single Tree. So that all the rules
+        are connected using a unique graph.
         """
 
         self.atoms = {}
@@ -44,12 +50,11 @@ class Tree:
         self.root_node.is_root = True
 
     def __repr__(self):
-        return "🌲🌲🌲 \033[92mTree representation\033[0m 🌲🌲🌲\n" \
-            + self.root_node.__full_repr__()
+        return "<🌲 Tree: { self.atoms }>"
 
     def create_atom(self, atom_name):
         """
-        Each new atom is stored inside a dictionary for convenience and also avoid duplication.
+        Each new atom is stored inside a dictionary for convenience. It also avoids duplication.
         """
 
         atom = self.atoms.get(atom_name)
@@ -57,12 +62,11 @@ class Tree:
             atom = AtomNode(atom_name, self)
             self.atoms[atom_name] = atom
             self.root_node.add_operand(atom)
+
         return atom
 
     def create_connector(self, type):
-        # TODO Probably need to store it like atoms else delete this function
-        connector = ConnectorNode(type, self)
-        return connector
+        return ConnectorNode(type, self)
 
     def set_atom_state(self, atom_name, value):
         atom = self.atoms.get(atom_name)
@@ -73,7 +77,6 @@ class Tree:
             atom.state_fixed = True
 
     def resolve_query(self, query):
-        # if log
         print("\033[95mQUERY: Get the value of", query, "\033[0m")
 
         atom = self.atoms.get(query)
@@ -84,6 +87,7 @@ class Tree:
             atom.set_status(False, True)
             res = False
         self.check_errors()
+
         return res
 
     def check_errors(self):
@@ -94,7 +98,7 @@ class Tree:
 
 class NPITree(Tree):
     """
-    Creates a tree from rules facts and queries
+    Creates a tree from data following the pattern: rules, facts and queries.
     """
 
     def __init__(self, npi_rules, facts, queries):
@@ -103,6 +107,7 @@ class NPITree(Tree):
         Facts and queries must be represented as arrays of single characters (ex: Facts = ["A", "B"])
         """
         super(NPITree, self).__init__()
+
         self.create_atom_lst(npi_rules)
         self.set_atoms_state(npi_rules, facts, queries)
         self.set_atoms_relations(npi_rules)

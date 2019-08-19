@@ -34,7 +34,7 @@ if __name__ == "__main__":
     flag.add_argument("-g", "--graph", action='store_true', help="Displays the graph")
     flag.add_argument("-r", "--rules", action='store_true', help="Displays the rules")
     flag.add_argument("-i", "--image", action='store_true', help="Outputs the graph as an image")
-    flag.add_argument("--history", action='store_true', help="Keep old states in memory")
+    flag.add_argument("-s", "--history", action='store_true', help="Keep old states in memory")
     flag.add_argument("input", help="The file containing rules, facts and queries")
     args = flag.parse_args()
 
@@ -58,5 +58,6 @@ if __name__ == "__main__":
 
     except (Exception, BaseException) as e:
         # TODO Only catch our handled exception ???
+        raise
         print("{}".format(e))
         sys.exit(1)

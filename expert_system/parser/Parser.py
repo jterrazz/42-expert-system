@@ -58,7 +58,7 @@ class ExpertParser:
         input_lines = [x.strip() for x in self.raw_input]
         content_file = list(filter(None, input_lines))
 
-        regex_rule = re.compile(r"(^((\()*(!){0,2})*[A-Z](\))*((\s*[(+|^)]\s*((\()*(!){0,2})*[A-Z](\))*)*)?\s*(=>|<=>)\s*((\()*(!){0,2})*[A-Z](\))*((\s*[(+)]\s*((\()*(!){0,2})*[A-Z](\))*)*)?\s*$)")
+        regex_rule = re.compile(r"(^((\()*(\s)*(!){0,2})*(\s)*[A-Z](\s)*(\))*((\s*[(+|^)]\s*((\()*(\s)*(!){0,2})*(\s)*[A-Z](\s)*(\))*)*)?\s*(=>|<=>)\s*((\()*(\s)*(!){0,2})*[A-Z](\s)*(\))*((\s*[(+)]\s*((\()*(\s)*(!){0,2})*(\s)*[A-Z](\s)*(\))*)*)?\s*$)")
         regex_fact = re.compile(r"(^=[A-Z]*(\s)*$)")
         regex_queries = re.compile(r"(^\?[A-Z]*(\s)*$)")
 

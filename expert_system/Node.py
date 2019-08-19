@@ -43,11 +43,9 @@ class Node:
 
     def set_status(self, status, is_fixed):
         # TODO Add check if value was already set
-        # if self.state_fixed is True and is_fixed is False:
-        #     print("Not modified because state with fixed state already set")
-        #     return self.state
-        # if is_fixed and self.state is not None and self.state is not status:
-        #     raise BaseException("Changed an already set state")
+        if self.state_fixed is True and is_fixed is True and self.state is not None and self.state != status:
+            raise BaseException("Confict")
+
         self.state = status
         self.state_fixed = is_fixed
         print(f'{ self.__repr__() } set to', status, f"(result is {is_fixed})")

@@ -7,8 +7,8 @@ A + B + C => D	# A and B and C implies D
 A | B => C		# A or B implies C
 A + !B => F		# A and not B implies F
 C | !G => H		# C or not G implies H
-(V ^ W) + (S | B) => X		# V xor W implies X
-(C | A) + B => Y + Z	# A and B implies Y and Z
+(V ^ W ) + (S | B) => X		# V xor W implies X
+(C | A ) + B => Y + Z	# A and B implies Y and Z
 C | D => X 	# C or D implies X or V
 E + F => !V		# E and F implies not V
 

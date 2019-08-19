@@ -122,7 +122,7 @@ class NegativeNode(Node):
         super(NegativeNode, self).add_child(child)
         child.operand_parents.append(self)
 
-    def set_status(self, status, is_fixed): # TODO Add set_by_true if it's implication
+    def set_status(self, status, is_fixed):
         res = super(NegativeNode, self).set_status(status, is_fixed)
         self.children[0].set_status(not res if res is not None else None, is_fixed)
         return res

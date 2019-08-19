@@ -30,10 +30,10 @@ def save_history(results):
 
 if __name__ == "__main__":
     flag = argparse.ArgumentParser(description='ExpertSystem @ Paris 42 School - Made by @abbensid and @jterrazz')
-    flag.add_argument("-m", choices=['shell', 'interactive'], default='mode_shell', help="Interface mode")
-    flag.add_argument("-d", action='store_true', help="Displays the graph")
-    flag.add_argument("-r", action='store_true', help="Displays the rules")
-    # flag.add_argument("-i", action='store_true', help="create graph system")
+    flag.add_argument("-m", "--mode", choices=['shell', 'interactive'], default='mode_shell', help="Interface mode")
+    flag.add_argument("-g", "--graph", action='store_true', help="Displays the graph")
+    flag.add_argument("-r", "--rules", action='store_true', help="Displays the rules")
+    flag.add_argument("-i", "--image", action='store_true', help="Outputs the graph as an image")
     flag.add_argument("--history", action='store_true', help="Keep old states in memory")
     flag.add_argument("input", help="The file containing rules, facts and queries")
     args = flag.parse_args()
@@ -42,20 +42,21 @@ if __name__ == "__main__":
         with open(args.input) as f:
             lines = f.readlines()
 
-        if args.m == "interactive":
+        if args.mode == "interactive":
             Prompt.ESPrompt(lines).cmdloop()
         else:
             parser = ESParser(lines)
-            if args and args.d:
+            if args and args.graph:
                 Print.ESPrinter(parser.structured_rules, parser.facts, parser.queries).display_tree_in_shell()
-            if args and args.r:
+            if args and args.rules:
                 Print.ESPrinter(parser.structured_rules, parser.facts, parser.queries).display_rules()
-            if args and args.i:
+            if args and args.image:
                 Print.ESPrinter(parser.structured_rules, parser.facts, parser.queries).create_image()
             res = resolve_lines(parser)
             if args.history:
                 save_history(res)
 
     except (Exception, BaseException) as e:
+        # TODO Only catch our handled exception ???
         print("{}".format(e))
         sys.exit(1)

@@ -4,14 +4,14 @@ import argparse
 # from expert_system.Prompt import ExpertPrompt
 from expert_system.parser.Parser import ExpertParser
 from expert_system.Tree import NPITree
-# from expert_system.ShowTree import ShowTree
+from expert_system.ShowTree import ShowTree
 
 
 def resolve_lines(lines):
     parser = ExpertParser(lines)
 
     # create tree image
-    # ShowTree(parser.structured_rules, parser.facts, parser.queries).create_image()
+    ShowTree(parser.structured_rules, parser.facts, parser.queries).create_image()
 
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
     for query in parser.queries:

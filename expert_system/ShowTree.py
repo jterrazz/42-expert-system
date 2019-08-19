@@ -26,9 +26,16 @@ class ShowTree:
                 i += 1
                 pop0 = stack.pop()
                 pop1 = stack.pop()
-                connector = Node(str(ShowTree.count), display_name=x)
-                pop0.parent, pop1.parent = connector, connector
-                stack.append(connector)
+                if pop0.display_name in OPERATORS and pop0.display_name == x:
+                    pop1.parent = pop0
+                    stack.append(pop0)
+                elif pop1.display_name in OPERATORS and pop1.display_name == x:
+                    pop0.parent = pop1
+                    stack.append(pop1)
+                else:
+                    connector = Node(str(ShowTree.count), display_name=x)
+                    pop0.parent, pop1.parent = connector, connector
+                    stack.append(connector)
             else:
                 stack.append(Node(x, display_name=x))
             ShowTree.count += 1

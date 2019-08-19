@@ -4,6 +4,11 @@
 
 
 Put in requirment.txt:
+virtualenv venv
+source venv/bin/activate
+python3 -m pip install -r requirements.txt
+brew install graphviz
+	
 pip3 install virtualenv
 source
 > pip install -U pytest

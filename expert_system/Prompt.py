@@ -15,8 +15,6 @@ class ESPrompt(cmd.Cmd):
     def set_lines(self, lines):
         self.lines = [f for f in filter(None, [l.replace("\n", "").replace(" ", "").replace("\s", "") for l in lines])]
 
-    # TODO Check all are implemented
-
     @staticmethod
     def do_h(line):
         print('\n'.join(['h                : Display help commands',

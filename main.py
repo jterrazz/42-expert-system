@@ -13,8 +13,18 @@ def resolve_lines(parser):
     # create tree image
     # ShowTree(parser.structured_rules, parser.facts, parser.queries).create_image()
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
+    result = {}
     for query in parser.queries:
-        print(f"Resolve {query}", tree.resolve_query(query))
+        result[query] = tree.resolve_query(query)
+        print(f"Resolve {query}", result[query])
+
+    exp_sys = ShowTree(parser.structured_rules, parser.facts, parser.queries).create_array_rules_facts_queries()
+    with open('Experthistory', 'a') as f:
+        for query, val in result.items():
+            f.write(query + '=' + str(val) + ',')
+        f.write('\n')
+        for x in exp_sys:
+            f.write(x + '\n')
 
 
 if __name__ == "__main__":

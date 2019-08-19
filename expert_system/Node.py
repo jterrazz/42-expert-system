@@ -97,11 +97,14 @@ class Node:
 
         is_fixed = True if fixed_ret.__len__() is not 0 else False
 
+        need_reverse = True
         if state is None:
+            need_reverse = False
             state = self.state
+        print("NEW STATE", state)
 
         if state is not None:
-            if isinstance(self, NegativeNode):
+            if isinstance(self, NegativeNode) and need_reverse:
                 state = not state if state is not None else None
             return self.set_status(state, is_fixed)
         return None

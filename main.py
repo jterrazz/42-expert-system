@@ -6,8 +6,6 @@ from expert_system.parser.Parser import ExpertParser
 from expert_system.Tree import NPITree
 from expert_system.ShowTree import ShowTree
 
-args = None
-
 
 def resolve_lines(parser):
     # create tree image
@@ -32,11 +30,10 @@ if __name__ == "__main__":
         with open(args.input) as f:
             lines = f.readlines() # TODO Maybe we should actually do more than 1000
 
-        parser = ExpertParser(lines)
-
         if args.m == "interactive":
-            ExpertPrompt().cmdloop()
+            ExpertPrompt(lines).cmdloop()
         else:
+            parser = ExpertParser(lines)
             if args and args.d:
                 ShowTree(parser.structured_rules, parser.facts, parser.queries).display_tree_in_shell()
             if args and args.r:

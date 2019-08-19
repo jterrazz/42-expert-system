@@ -5,6 +5,10 @@ from expert_system.Tree import NPITree
 
 
 class ExpertPrompt(cmd.Cmd):
+    def __init__(self, lines):
+        super(ExpertPrompt, self).__init__()
+        self.parser = lines
+
     # cmd.Cmd.prompt = colored("ExpertSystem>> ", "cyan")
 
     # Function help general

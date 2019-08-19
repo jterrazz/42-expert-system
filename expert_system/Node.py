@@ -60,13 +60,11 @@ class Node:
         state = None
         if self.state is not None:
             print(self, "is", self.state)
-            state = self.state
-            if self.state_fixed:
-                return state
+            return self.state
 
         # TODO Add this to operands
         fixed_ret = []
-        unfixed_ret = [state]
+        unfixed_ret = []
 
         print("Checking for children:", self.children)
         f, u = self.solve_grouped_nodes(self.children, False)

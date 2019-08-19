@@ -14,11 +14,13 @@ good_results = [
     ("and_in_conclusions.txt", [True, True, True, True, True]),
     ("AND_LIST", [False]),
     ("AND_OR", [True]),
-    ("BI_IF", [True]),
+    ("BI_IF", [True, True]),
     ("comments.txt", [True, True, True]),
     ("double_implies.txt", [True, True, True]),
     ("easy_test.txt", [True, True, False]),
-    # ("empty_init_test.txt", [False, True, False]), # Must trigger error on last
+    ("empty_init_test.txt", [False, True, True]),
+    ("error_0.txt", ["ERROR"]),
+    ("error_1.txt", ["ERROR"]),
     ("HAfffff_.txt", [True, True, False, True]),
     ("hard_imply_2.txt", [True]),
     ("HARDDDDDER_.txt", [True, True, True, True]),
@@ -33,17 +35,17 @@ good_results = [
     ("multiple_initial_facts4.txt", [False, True]),
     ("multiple_initial_facts5.txt", [False, False]),
     ("multiple_initial_facts6.txt", [True, True]),
-    # ("NEGATION_SIMPLE_1", [True]), # TODO Should raise error
-    # ("NEGATION_SIMPLE_2", [False]),
-    # ("NEGATION_SIMPLE_3", [False]),
-    # ("NEGATION_SIMPLE_4", [False]),
+    ("NEGATION_SIMPLE_1", [True]),
+    ("NEGATION_SIMPLE_2", ["ERROR"]),
+    ("NEGATION_SIMPLE_3", [True]),
+    ("NEGATION_SIMPLE_4", [True]),
     ("no_initial_facts1.txt", [False]),
     ("no_initial_facts2.txt", [False]),
     ("not.txt", [False, True]),
     ("or.txt", [True, True]),
     ("parentheses_test.txt", [True, True, True, True]),
     ("parenthesis.txt", [True, False, False, True, True, True]),
-    # ("raise_me_daddy.txt", [True]), # TODO
+    ("raise_me_daddy.txt", ["ERROR"]),
     ("test_blyat.txt", [True]),
     ("test_blyat1.txt", [True]),
 
@@ -72,7 +74,15 @@ def test_good_files(input, expected):
     tree = NPITree(parser.structured_rules, parser.facts, parser.queries)
     i = 0
     for query in parser.queries:
-        assert tree.resolve_query(query) == expected[i]
+        if expected[i] == "ERROR":
+            try:
+                tree.resolve_query(query)
+            except:
+                pass
+                continue
+            assert False
+        else:
+            assert tree.resolve_query(query) == expected[i]
         i += 1
 
 

@@ -21,4 +21,4 @@ E + F => !V		# E and F implies not V
 ?GVX			# Queries : What are G, V and X ?
 # G is False
 # V is True
-# X is Conflict [True, False, False]
+# X is True [True, True, True]

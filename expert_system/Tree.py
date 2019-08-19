@@ -7,6 +7,22 @@ LST_OP = {'+': ConnectorType.AND, '|': ConnectorType.OR, '^': ConnectorType.XOR}
 REGEX_OP = r'\+|\^|\||!'
 
 
+class ImplicationData:
+    def __init__(self, left, right):
+        self.left = left
+        self.right = right
+
+    def __repr__(self):
+        return f"<Implication .left: { self.left } .right: { self.right }>"
+
+    def validate(self):
+        print("validate")
+        left = self.left.solve()
+        right = self.right.solve()
+        if left is True and right is False:
+            raise BaseException("Error: The implication", self, "returned True => False")
+
+
 class Tree:
     """
     A tree stores the state of the expert system based on rules, facts and queries
@@ -22,6 +38,7 @@ class Tree:
 
         self.atoms = {}
         self.connectors = []
+        self.implication = []
         self.root_node = ConnectorNode(ConnectorType.AND, self)
         self.root_node.parsed = True
         self.root_node.is_root = True
@@ -62,7 +79,17 @@ class Tree:
         atom = self.atoms.get(query)
         if atom is None:
             raise BaseException("The query doesn't match any known atom")
-        return atom.solve()
+        res = atom.solve()
+        if res is None:
+            atom.set_status(False, True)
+            res = False
+        self.check_errors()
+        return res
+
+    def check_errors(self):
+        print("Checking errors")
+        for i in self.implication:
+            i.validate()
 
 
 class NPITree(Tree):
@@ -118,10 +145,12 @@ class NPITree(Tree):
             connector_imply = self.create_connector(ConnectorType.IMPLY)
             right.add_child(connector_imply)
             connector_imply.add_operand(left)
+            self.implication.append(ImplicationData(left, right))
             if rule.type is ImplicationType.EQUAL:
                 connector_imply_1 = self.create_connector(ConnectorType.IMPLY)
                 left.add_child(connector_imply_1)
                 connector_imply_1.add_operand(right)
+                self.implication.append(ImplicationData(right, left))
 
     def set_atom_relations_from_npi(self, npi_rule):
         stack = []

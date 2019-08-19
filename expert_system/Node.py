@@ -43,11 +43,9 @@ class Node:
 
     def set_status(self, status, is_fixed):
         # TODO Add check if value was already set
-        # if self.state_fixed is True and is_fixed is False:
-        #     print("Not modified because state with fixed state already set")
-        #     return self.state
-        # if is_fixed and self.state is not None and self.state is not status:
-        #     raise BaseException("Changed an already set state")
+        if self.state_fixed is True and is_fixed is True and self.state is not None and self.state != status:
+            raise BaseException("Confict")
+
         self.state = status
         self.state_fixed = is_fixed
         print(f'{ self.__repr__() } set to', status, f"(result is {is_fixed})")
@@ -60,7 +58,9 @@ class Node:
         state = None
         if self.state is not None:
             print(self, "is", self.state)
-            return self.state
+            state = self.state
+            if self.state_fixed is True:
+                return state
 
         # TODO Add this to operands
         fixed_ret = []
@@ -71,10 +71,18 @@ class Node:
         fixed_ret.extend(f)
         unfixed_ret.extend(u)
 
-        print("Checking for parents", self.operand_parents)
+        # if isinstance(self, NegativeNode):
+        #     fixed_ret = [not r for r in fixed_ret]
+        #     unfixed_ret = [not r for r in unfixed_ret]
+
+        # if not (isinstance(self, ConnectorNode) and self.type is ConnectorType.IMPLY):
+        print(self, "Checking for parents", self.operand_parents)
         f, u = self.solve_grouped_nodes(self.operand_parents, True)
-        fixed_ret.extend(f)
-        unfixed_ret.extend(u)
+        # fixed_ret.extend(f)
+        # unfixed_ret.extend(u)
+
+        print(self, "fixed", fixed_ret)
+        print(self, "unfixed", unfixed_ret)
 
         ret = fixed_ret if fixed_ret.__len__() is not 0 else unfixed_ret
         if ret.__len__() is not 0:
@@ -89,8 +97,14 @@ class Node:
 
         is_fixed = True if fixed_ret.__len__() is not 0 else False
 
+        need_reverse = True
+        if state is None:
+            need_reverse = False
+            state = self.state
+        print("NEW STATE", state)
+
         if state is not None:
-            if isinstance(self, NegativeNode):
+            if isinstance(self, NegativeNode) and need_reverse:
                 state = not state if state is not None else None
             return self.set_status(state, is_fixed)
         return None
@@ -109,8 +123,10 @@ class Node:
             ):
                 continue
             r = child.solve()
-            # if isinstance(child, NegativeNode):
+            # if isinstance(self, NegativeNode) and not checking_parents: # isinstance(child, NegativeNode):
             #     r = not r if r is not None else None
+            if isinstance(self, NegativeNode) and isinstance(child, ConnectorNode) and child.type is ConnectorType.IMPLY and not checking_parents:
+                r = not r if r is not None else None
             if r is not None and child.state_fixed:
                 fixed_res.append(r)
             elif r is not None:

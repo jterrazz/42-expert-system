@@ -12,11 +12,11 @@ def resolve_lines(parser):
     results = {}
     for query in parser.queries:
         results[query] = tree.resolve_query(query)
-        print(f"{query} resolved as", results[query])
+        color = Color.GREEN if results[query] is True else Color.FAIL
+        print(f"{ query } resolved as { color }{ results[query] }{ Color.END }")
     return results
 
 
-# TODO Put in other place
 def save_history(results):
     exp_sys = Print.ESPrinter(parser.structured_rules, parser.facts, parser.queries).create_array_rules_facts_queries()
     with open(Env.LOG_PATH, 'a') as f:

@@ -17,7 +17,6 @@ A + !B => F # A and not B implies F
 C | !G => H # C or not G implies H
 V ^ W => X # V xor W implies X
 A + B => Y + Z # A and B implies Y and Z
-C | D => X | V # C or D implies X or V
 E + F => !V # E and F implies not V
 A + B <=> C # A and B if and only if C
 A + B <=> !C # A and B if and only if not C
@@ -138,3 +137,7 @@ connector_imply.append_child(node_a)
 ### Handling priorities
 
 We use the NPI notation to handle all operations priorities.
+
+## Credits
+- @abbensid
+- @jterrazz

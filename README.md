@@ -135,3 +135,7 @@ connector_imply.append_child(node_a)
 ### Handling priorities
 
 We use the NPI notation to handle all operations priorities.
+
+## Credits
+- @abbensid
+- @jterrazz

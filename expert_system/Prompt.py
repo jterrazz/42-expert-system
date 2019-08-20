@@ -85,7 +85,7 @@ class ESPrompt(cmd.Cmd):
     # Add functions
 
     def do_add_rule(self, rule):
-        if rule is None:
+        if rule is None or rule.__len__() is 0:
             print("<rule> argument required")
             return
 
@@ -98,7 +98,7 @@ class ESPrompt(cmd.Cmd):
             self.lines.pop(0)
 
     def do_add_fact(self, fact):
-        if fact is None:
+        if fact is None or fact.__len__() is 0:
             print("<fact> argument required")
             return
 
@@ -119,7 +119,7 @@ class ESPrompt(cmd.Cmd):
         print('add_fact <X> - With X being a single uppercase letter')
 
     def do_add_query(self, query):
-        if query is None:
+        if query is None or query.__len__() is 0:
             print("<query> argument required")
             return
 
@@ -142,6 +142,9 @@ class ESPrompt(cmd.Cmd):
     # Delete functions
 
     def do_del_rule(self, rule_id):
+        if rule_id is None or rule_id.__len__() is 0:
+            print("<rule_id> argument required")
+            return
         try:
             id = int(rule_id)
             if self.lines[id][0] != "=" and self.lines[id][0] != "!":

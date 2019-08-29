@@ -2,8 +2,6 @@
 
 > Python implementation of a backward chaining inference engine.
 
-![Presentation](./.assets/screenshot-0.png)
-
 ## Presentation
 
 The project receives an **input file** describing a set of rules, initial facts and queries. It must follows the following format:
@@ -30,7 +28,7 @@ A + B <=> !C # A and B if and only if not C
 ?GVX
 ```
 
-![Command screenshot](./.assets/screenshot-1.png)
+![Presentation](./.assets/screenshot-0.png)
 
 ## Getting started
 
@@ -62,6 +60,8 @@ The program works in two modes: `shell` and `interactive`. For more detail, `pyt
 ```bash
 usage: main.py [-h] [-m {shell,interactive}] [-g] [-r] [-i] [-s] [-v] input
 ```
+
+![Command screenshot](./.assets/screenshot-1.png)
 
 ### Testing
 

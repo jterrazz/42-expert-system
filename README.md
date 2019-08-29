@@ -2,6 +2,8 @@
 
 > Python implementation of a backward chaining inference engine.
 
+![Presentation](./.assets/screenshot-0.png)
+
 ## Presentation
 
 The project receives an **input file** describing a set of rules, initial facts and queries. It must follows the following format:

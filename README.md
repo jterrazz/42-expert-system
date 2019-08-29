@@ -28,7 +28,7 @@ A + B <=> !C # A and B if and only if not C
 ?GVX
 ```
 
-![Command screenshot](./assets/screenshot-1.png)
+![Command screenshot](./.assets/screenshot-1.png)
 
 ## Getting started
 
